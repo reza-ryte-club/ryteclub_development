@@ -1,4 +1,4 @@
-story-teller
-============
+Ryte Club
+===========
 
-story writing app
+A place where you can write, extend and share ideas.
