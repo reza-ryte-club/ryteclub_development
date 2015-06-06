@@ -1,0 +1,37 @@
+.contact{
+
+ position: relative;
+    width: 100%;
+    margin: 80px 0% 80px 0%;
+    padding: 20px 40px 40px;
+    text-align: center;
+    background: transparent;
+    border: 0px solid #ccc;
+    display: block;
+	overflow-x: hidden;
+	overflow-y: hidden; 
+    margin: 0px auto 15%;}
+
+
+ .feedback{
+        width: 100%;
+        margin: 80px 0% 80px 0%;
+ 
+        
+
+    }
+
+   .feedback p{
+    text-align: center;
+   }
+
+   .feedback textarea{
+    color: gray;
+    width: 70%;
+    resize: none;
+   }
+   .feedback input{
+    color: gray;
+    width: 70%;
+    resize: none;
+   }

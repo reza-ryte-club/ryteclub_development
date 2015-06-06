@@ -1,0 +1,63 @@
+
+<div>
+
+
+<%# user prompted to start a story and proceeded to new create a new story%>
+
+
+<%#= link_to "Create a story",new_tale_path, class: "navbar-btn btn-info btn pull-left" %>
+
+<% stories_by_me = Tale.where(user_id: current_user.id) %>
+<% if stories_by_me.count == 0 %>
+<%= "You didn't create any story" %>
+<% else %>
+<h2>Your Created Stories</h2>
+<br/>
+<div>
+<% stories_by_me.each do |s| %>
+    
+    <% url = url_for(:controller => 'plots', :action => 'new', :tale_id => s.id)  %>
+
+    <%= link_to s.title,url %>
+    &nbsp;&nbsp;&nbsp;
+    <%= link_to '',s, method: :delete, data: { confirm: 'Are you sure?' }, class: "octicon octicon-paintcan" %> <br />
+
+    <% end %>
+</div>
+
+<% end %>
+
+
+
+<div>
+Follower update
+
+<br />
+
+
+<% @activities.each do |activity| %>
+  <div class="activity">
+    <% followers = Follow.where(follower_id: current_user.id, followable_type: User).pluck(:followable_id) %>
+
+    <% if activity.owner_id!=nil %>
+    <%#= activity.inspect %>
+        <% if followers.include? activity.owner_id %>
+
+
+        <% userFirstNames = User.where(id: activity.owner_id).pluck(:firstname) %>
+        <%# userLastNames  = User.where(id: activity.owner_id).pluck(:lastname)  %>
+        <%#userNames = userFirstNames[0]+ ' ' +userLastNames[0] %>
+
+        <%#= link_to activity.owner_id.,  '/'	 %>
+        <% if activity.trackable %>
+        <%= link_to userFirstNames[0],  profiles_index_path(activity.owner_id)    %>
+        <%= render_activity activity %>
+        <% end %>
+        <% end %>
+    <%#  activity.owner_id created new story named %>
+    <%# activity.trackable_id %>
+    <br/>
+    <% end %>
+  </div>
+<% end %>
+</div>

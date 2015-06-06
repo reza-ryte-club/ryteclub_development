@@ -1,0 +1,61 @@
+<strong>Follow History</strong> <br />
+<div>
+
+
+
+<% followingsUser =  Follow.where(follower_id: params[:format], followable_type: User).pluck(:followable_id).reverse %>
+<% followingsTale =  Follow.where(follower_id: params[:format], followable_type: Tale).pluck(:followable_id).reverse %>
+
+<% if followingsTale ==[] && followingsUser ==[] %> 
+There is no follow history <br />
+<% else %>
+
+<% followingsUser.each do |f| %>
+
+<% fs = User.where(id: f).pluck(:email) %>
+<% followingsFirstName = User.where(id: f).pluck(:firstname) %>
+<%# followingsLastName =  User.where(id: f).pluck(:lastname) %>
+<% followingsName = followingsFirstName[0] %> <%#+' '+followingsLastName[0] %>
+
+<%= link_to  @userFirstName[0], profiles_index_path(params[:format]) %> started following <%= link_to followingsName,profiles_index_path(f)  %>
+<br />
+
+<% end %>
+
+
+<% followingsTale.each do |f| %>
+
+<% fs = Tale.where(id: f).pluck(:title) %>
+<% fs.each do|followingsEmail| %>
+<%= link_to  @userFirstName[0], profiles_index_path(params[:format]) %> started following
+
+<% tales =  Tale.where(id: f) %>
+<% tales.each do |t| %>
+ 
+	
+	<% url = url_for(:controller => 'plots', :action => 'new', :tale_id => t.id)  %>
+
+	<%= link_to t.title,url %>
+
+	
+	<% end %>
+
+
+<br/>
+<% end %>
+
+<br />
+<% end %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,107 @@
+<%= render "tales/navbar" %>
+<% content_for :title do %>
+  <%= @titles[0] %>
+<% end %>
+<div class="editor">
+<% if user_signed_in? %>
+  <%= form_for(@plot) do |f| %>
+      <%= render "header" %>
+
+
+      <div class="char-count" style = "color:red;float:right;"></div>
+      <%= f.cktext_area :description %>
+      <%= f.hidden_field :tale_id, value: params[:tale_id] %>   
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      
+
+
+
+
+      <div class="actions">
+                    <%= f.submit "Extend", class: "button" %>
+      </div>
+                     
+        <script>
+        /*
+
+        $(document).ready(function(){
+          $('.actions').hide();
+          $('textarea').on('keyup',function(){
+                 console.log($(this).val().length);
+                 var char_counter =  $(this).val().length;
+                 if(char_counter>=300 && char_counter<1001)
+                      {$('.actions').show();
+                       $('.char-count').css("color","green");
+                       $('.char-count').html(char_counter);}
+                 else
+                      {
+                        $('.actions').hide();
+                        if(char_counter<300) { var char_left = 300-char_counter;
+                            if(char_left>1)
+                            $('.char-count').html(char_left+" more characters are needed");
+                            else
+                            $('.char-count').html(char_left+" more character is needed");
+                            $('.char-count').css("color","red");}
+                        if(char_counter>1000) {
+                            var char_surpassed = char_counter-1000;
+                            if(char_surpassed >1)
+                            $('.char-count').html(char_surpassed+" extra characters have been found");
+                            else 
+                            $('.char-count').html(char_surpassed+" extra character has been found");
+                            $('.char-count').css("color","red");
+                             }      
+                      }
+            });
+
+
+
+        });
+
+
+*/
+    </script>
+<% end %>
+<% else %>
+  <strong><br/><br/><%= "Please log in to extend the"+ content_type %></strong>
+<% end %>
+</div>
+
+
+
+<style>
+.editor{
+
+    position: relative;
+    width: 100%;
+    margin: 80px 0% 80px 0%;
+    padding: 20px 40px 40px;
+    text-align: center;
+    margin: 0px auto -6%;
+    height: 86%;
+  }
+
+.editor h1 {
+  margin-top: 10%;
+}
+
+.editor textarea{
+  width: 70%;
+  resize: none;
+  height: 250px;
+  margin: 0 15%;
+}
+
+
+h1{
+  color: #000000;
+}
+
+.cke_chrome {
+
+margin-left: 24vw;
+}
+
+.actions{
+  margin-top: 50px;
+}
+</style>

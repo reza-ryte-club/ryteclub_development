@@ -1,0 +1,34 @@
+<%= render "tales/navbar" %>
+
+<div class="authentication">
+ <h3>Ryte Club</h3>
+ 
+ <h2> 
+  <%= link_to "Log in with Facebook", user_omniauth_authorize_path(:facebook), class: "buttonFacebook" %>     </h2>
+  <%#= link_to "Log in with Twitter", user_omniauth_authorize_path(:twitter), class: "buttonTwitter" %>
+    
+<!--
+    <h3 class="auth">or Log in via email</h3>
+
+
+
+<div class="authentication-form">
+ -->
+   <%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+   <%#= f.email_field :email, placeholder:"Email", autofocus: true, required: true %>
+   <%#= f.password_field :password, placeholder: "Password", autocomplete: "off", required: true %>
+   
+   
+  <h2> <%#= f.submit 'Log in',  class: 'button'  %></h2>
+   <%# end %>
+
+<%#- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  
+
+  <!-- <p><%#= link_to "Forgot your password?", new_password_path(resource_name) %></p> -->
+        
+ <%# end -%>
+  
+ 
+        
+</div>

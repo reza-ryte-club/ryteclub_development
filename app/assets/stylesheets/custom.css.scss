@@ -1,0 +1,823 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+$white-is-elegant: #ffffff;
+$gray-hover: #AFAAAA;
+/* universal */
+
+html {
+
+width: 100%;
+height: 100%;
+
+}
+
+body {
+margin: 0px;
+padding: 0px;
+/* font: normal 100% Oxygen, Georgia, serif; */
+font-family: "Helvetica Neue",Helvetica,"Myriad Pro","Lucida Grande",sans-serif;
+width: 100%;
+height: 100%; 
+
+
+
+} 
+
+
+
+
+
+
+h1 {
+  
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 45px;
+  font-weight: 100;
+  letter-spacing: 0.016em;
+  position: relative;
+  text-align: left; 
+  display: inline-block; 
+
+
+}
+h3 {
+  
+  
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: 50px;
+  font-weight: 100;
+  margin-left: 40%;
+  margin-top: 16%;
+  position: relative;
+}
+h4 { 
+    font-size: 25px;
+    margin-bottom: 5%;
+    margin-left: 36%;
+    margin-top: 1%;
+}
+
+h2, h4, h5, h6 {
+  
+  font-family: "Crimson Text", Georgia, serif;
+  font-weight: 100;
+  text-align: left; 
+  display: inline-block; 
+  letter-spacing: 0.016em;
+
+}
+
+
+
+
+
+p {
+  
+font-family: "Oxygen", serif;
+font-size: 19px;
+line-height: 1.6;
+text-align:left;
+letter-spacing: 0.01em;
+
+}
+
+.tale-heading {
+  
+    display: inline-block;
+    font-size: 38px;
+    margin-bottom: 9px;
+    position: relative;
+    text-decoration: none; 
+    color: rgba(82, 82, 142, 0.96);
+    font-weight: 100;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+&:hover, &:focus{
+      color: black;
+      text-decoration: none; 
+    }
+
+}
+
+
+.tale-contributor {
+  
+color: rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 3px;
+    position: relative;
+    text-decoration: none;
+&:hover, &:focus{
+      color: rgba(0,0,0,0.7);
+      text-decoration: none; 
+    }
+
+}
+/* list under the story */
+
+
+
+.cover-photo-bucket {
+  
+
+   background-image: none;
+    background-position: center center;
+    background-size: cover;
+    bottom: 0;
+    display: block;
+    height: 55%;
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+
+.list-inline  {
+  
+ margin-bottom: 17px;
+    margin-left: -6px;
+    margin-top: 15px;
+    text-decoration: none;
+    padding-left: 1px; 
+}
+
+.list-inline-story-page {
+  
+    margin-bottom: 23px;
+    padding-left: 0;
+    
+}
+
+
+.contribute-button {
+  
+  border: 1px solid gray;
+    border-radius: 7px;
+    box-sizing: border-box;
+    /*color: #ffffff; */
+    color: rgb(0,0,0);
+    display: block;
+    font-weight: 600;
+    margin-left: 0;
+    padding: .75vw;
+    position: relative;
+    text-align: center;
+    /* text-decoration: underline; */
+    width: 8vw;
+    font-size: 1vw;
+
+
+
+    /* background-color: #2AB006;  */ 
+
+    &:hover, &:focus{
+    color: #ffffff;
+    text-decoration: none;
+    border-color: rgba(0,0,0,0.3); 
+     background: #006daa; 
+    }
+ 
+
+
+}
+
+.follow-button {
+    
+      /* box-sizing: border-box; */
+  color: black;
+  display: inline-block;
+  font-weight: 400;
+  margin-left: 15vw;
+  margin-top: 0vw;
+  /* padding: 0.75vw; */
+  position: relative;
+  /* text-align: center; */
+  /* width: 8vw; */
+  font-size: 1vw;
+  text-decoration: underline;
+
+
+
+    &:hover, &:focus{
+    text-decoration: underline;
+    color: rgba(0,0,0,.8);
+    text-decoration: none;
+    }
+ 
+
+}
+
+.follow-button a{
+    color: #000000;
+    text-decoration: none;
+  
+  
+}
+
+.share-button {
+
+
+    border: 1px solid gray;
+    border-radius: 7px;
+    box-sizing: border-box;
+    /* color: #ffffff; */
+    color: rgba(0,0,0,1);
+    display: block;
+    font-weight: 600;
+    margin-left: 284px;
+    margin-top: -43px;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    text-decoration: underline;
+    width: 82px;
+    /*background-color: #3b5998; */
+
+    &:hover, &:focus{
+color: #000000;
+text-decoration: none;
+border-color: rgba(0,0,0,0.3); 
+background: #1d315b;
+text-decoration: underline;
+    }
+ 
+
+
+}
+
+.publish-button {
+
+
+    
+    
+      box-sizing: border-box;
+  color: black;
+  display: inline-block;
+  font-weight: 400;
+  margin-left: 0vw;
+  margin-top: 0vw;
+  /* padding: .75vw; */
+  position: relative;
+  text-align: center;
+  text-decoration: underline;
+  width: 9vw;
+  font-size: 1vw;
+
+    &:hover, &:focus{
+color: rgba(0,0,0,.8);
+text-decoration: underline;
+ }
+ 
+
+
+}
+
+
+
+.share-button a{
+      color: #000000;
+      text-decoration: none;
+}
+
+
+  .button-wrapper {
+
+  }
+
+
+
+
+
+
+/* header */
+
+story-title  {
+  
+  display: block;
+  position: relative;
+  width: 56%;
+  margin-left: 15vw;
+  margin-top: 5vw;
+
+}
+
+.story-title h1 {
+    
+    display: inline-block;
+    margin-left: 15vw;
+    margin-top: 0;
+    position: relative;
+    letter-spacing: 0.015em;
+    font-weight: 100;
+    font-size: 4vw;
+    font-family:  "Helvetica Neue", "lato" ,sans-serif;
+
+}
+
+.story-title h4 {
+
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+    position: relative;
+    color: rgba(0,0,0,0.7);
+
+}
+
+
+
+
+/* .navbar-inverse{
+  background-color: $white-is-elegant;
+  border-color: transparent;
+    .navbar-nav > li > a {
+      color: $gray-light;
+      &:hover, &:focus{
+      color: #333;
+    }
+  }
+}
+*/
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.content-bucket {
+  
+  display: inline-block;
+   /* margin: 21px auto 25px; */
+    margin-left: 15vw;
+    margin-right: auto;
+    margin-top: 3vh;
+    width: 70%;
+}
+
+.content-bucket p { 
+      color: #000000;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+      font-family: "Helvetica Neue","lato",sans-serif;
+      font-size: 1.4vw;
+      font-weight: 200;
+      margin-top: 2vw;
+}
+
+
+
+/* footer */
+
+
+
+  
+
+/* home page */
+.starter {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+
+
+/* Inspired by medium */
+
+ .button { display: inline-block;
+ position: relative;
+ height: 38px;
+ line-height: 37px;
+ padding: 0 16px;
+ outline: 0;
+ color: rgba(0,0,0,0.44);
+ background: rgba(0,0,0,0);
+ font-size: 14px;
+ text-align: center;
+ text-decoration: none;
+ cursor: pointer;
+ border: 1px solid rgba(0,0,0,0.15);
+ vertical-align: bottom;
+ white-space: nowrap;
+ border-radius: 999em; 
+ letter-spacing: -0.02em;
+ font-weight: 400;
+ font-style: normal;
+ box-sizing: border-box;
+ transition: .1s background-color,.1s border-color,.1s color;
+ 
+ text-rendering: optimizeLegibility;}
+
+ .button:hover { color:rgba(0,0,0,0.6);
+    text-decoration: none;
+border-color: rgba(0,0,0,0.3); 
+background: rgb(235,233,233);}
+
+
+
+/* create story button */
+.create_story_button { 
+display: inline-block;
+ position: relative;
+ height: 44px;
+ line-height: 37px;
+ padding: 0 16px;
+ outline: 0;
+ color: rgba(0,0,0,0.44);
+ background: rgba(0,0,0,0);
+ font-size: 14px;
+ text-align: center;
+ text-decoration: none;
+ cursor: pointer;
+ border: 1px solid rgba(0,0,0,0.15);
+ vertical-align: bottom;
+ white-space: nowrap;
+ border-radius: 999em; 
+ letter-spacing: -0.02em;
+ font-weight: 400;
+ font-style: normal;
+ box-sizing: border-box;
+ transition: .1s background-color,.1s border-color,.1s color;
+ 
+ text-rendering: optimizeLegibility;}
+
+ .create_story_button:hover { color:rgba(0,0,0,0.6);
+    text-decoration: none;
+border-color: rgba(0,0,0,0.6); }
+
+
+
+.thumbnail {
+  margin-top: 30px;
+  border-radius: 6px;
+  padding: 4px 40px; 
+  margin-bottom:-24px;
+  backgound-color:white;
+  border: 5px solid #dddddd;
+
+
+}
+
+
+.badge{
+  float: right;
+}
+
+
+
+
+ .buttonHome { 
+ 
+    border: 1px solid gray;
+    border-radius: 7px;
+    box-sizing: border-box;
+    color: black;
+    display: block;
+    font-weight: 600;
+    margin-left: 161px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 82px;
+
+ }
+
+ .buttonHome:hover { color:rgba(0,0,0,0.6);
+    text-decoration: none;
+border-color: rgba(0,0,0,0.3); 
+background: rgb(235,233,233);}
+
+
+
+.buttonFacebook { display: inline-block;
+ position: relative;
+ height: 38px;
+ line-height: 37px;
+ padding: 0 16px;
+ outline: 0;
+ color: #ffffff;
+ background: #3b5998;
+ font-size: 15px;
+ text-align: center;
+ text-decoration: none;
+ cursor: pointer;
+ border: 1px solid rgba(0,0,0,0.15);
+ vertical-align: bottom;
+ white-space: nowrap;
+ border-radius: 999em; 
+ letter-spacing: .08em;
+ font-weight: 400;
+ font-style: normal;
+ box-sizing: border-box;
+ transition: .1s background-color,.1s border-color,.1s color;
+ 
+ text-rendering: optimizeLegibility;
+margin-top: 50px;
+margin-bottom: 50px;
+margin-left: 5px;
+margin-right: 5px;
+ }
+
+.buttonFacebook:hover { 
+    color: #ffffff;
+    text-decoration: none;
+    border-color: rgba(0,0,0,0.3); 
+    background: #1d315b;
+    }
+
+.buttonFacebook:focus { 
+    color: #ffffff;
+    text-decoration: none;
+    border-color: rgba(0,0,0,0.3); 
+    background: #1d315b;
+    }
+
+.buttonFacebook:active { 
+    color: #ffffff;
+    text-decoration: none;
+    border-color: rgba(0,0,0,0.3); 
+    background: #1d315b;
+    }
+
+
+.buttonFacebook:visited { 
+    color: #ffffff;
+    text-decoration: none;
+    border-color: rgba(0,0,0,0.3); 
+    background: #1d315b;
+    }
+
+
+
+
+.buttonTwitter { display: inline-block;
+ position: relative;
+ height: 38px;
+ line-height: 37px;
+ padding: 0 16px;
+ outline: 0;
+ color: #ffffff;
+ background: #55acee;
+ font-size: 15px;
+ text-align: center;
+ text-decoration: none;
+ cursor: pointer;
+ border: 1px solid rgba(0,0,0,0.15);
+ vertical-align: bottom;
+ white-space: nowrap;
+ border-radius: 999em; 
+ letter-spacing: .08em;
+ font-weight: 400;
+ font-style: normal;
+ box-sizing: border-box;
+ transition: .1s background-color,.1s border-color,.1s color;
+ 
+ text-rendering: optimizeLegibility;
+ margin-top: 50px;
+margin-bottom: 50px;
+margin-left: 5px;
+margin-right: 5px;
+
+}
+
+ .buttonTwitter:hover { color: #ffffff;
+    text-decoration: none;
+border-color: rgba(0,0,0,0.3); 
+background: #006daa;}
+
+
+.follower-box{
+  
+border-bottom: 1px solid black;
+border-top: 1px solid black;
+height: 24px;
+width: 27%;
+margin: 20px auto 0px auto;
+}
+
+.bio{
+height: 24px;
+width: 100%;
+margin: 20px auto 20px auto;
+}
+
+/* Home page CSS container stuff */
+
+.meta-container {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    height: 226px;
+    margin-left: 16%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: relative;
+    width: 69%;
+    margin-top: 5%; 
+}
+
+.content-container {
+    display: inline-block;
+    height: 176px;
+    margin-left: 2%;
+    margin-top: -1%;
+    position: relative;
+    width: 96%;
+}
+
+p.story-title-wrapper {
+   
+    color: rgba(0, 0, 0, 0.6);
+    display: block;
+    font-family: "Crimson Text",Georgia,serif;
+    font-size: 29px;
+    font-weight: 100;
+    line-height: 1;
+    margin-left: 225px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-top: 17px;
+    position: absolute;
+    margin-top: -23%; 
+
+    
+
+}
+
+.story-title-wrapper a{
+   
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+    p.author-name-homepage {
+    
+
+    color: rgba(0, 0, 0, 0.6);
+    display: block;
+    font-family: "Oxygen",serif;
+    font-size: 14px;
+    font-weight: 100;
+    left: 26%;
+    
+    
+    margin-top: -7%;
+    position: relative;
+    top: -29%;
+
+
+
+        }
+
+
+  p.inline-button-homepage-div {
+
+    display: block;
+    margin-left: 24%;
+    padding-left: 15px;
+    position: absolute;
+    top: 100%; 
+
+        }
+
+
+  .wrapped-paragraph 
+
+   { 
+
+   width: 61%; 
+
+   position: relative; 
+   display: block; top: 2%; 
+   left: 26%; 
+   top: -66%; 
+} 
+
+  .wrapped-paragraph p {
+
+        font-size: 18px;
+        line-height: 1.1;
+        font-family: "Oxygen", serif;
+        font-weight: 100;
+        color: rgba(0,0,0,0.3); 
+
+
+  }
+
+
+
+        .inline-button-homepage-div a {
+            
+
+            padding: 0px 15px 0px 0px; 
+            color: rgba(0,0,0,0.8);
+            text-decoration: none; 
+
+
+
+        }
+
+        .homepage-image-div  {
+
+    
+     border-radius: 2%;
+    display: block;
+    height: 200px;
+    position: relative;
+    width: 200px;
+
+
+  }
+
+  .homepage-tab-list  {
+
+background-color: red;
+    display: inline-block;
+    height: 83px;
+    position: relative;
+    width: 340px;
+    left: 40%;
+
+
+  }
+
+.char-count{
+  
+  margin-right: 15%;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+.journal{
+  color: #000000;
+}
+
+
+.notification p{
+  color: #000000;
+}
+
+.notification h3{
+  color: #000000;
+}
+
+
+
+
+
+
+
+.story-contribution-button {
+  
+width: 17vw;
+margin: 9vh 28vw;
+color: #FFF;
+border: 1px solid #FFF;
+padding-left: 4.65vw;
+border-radius: 2px;
+cursor: pointer;
+position: absolute;
+font-size: 3vw;
+font-family: Lucida, sans-serif;
+font-weight: 100;
+
+    &:hover, &:focus{
+
+position: absolute;
+width: 17vw;
+margin: 9vh 47vw;
+color: #FFF;
+border: 1px solid #FFF;
+border-radius: 2px;
+cursor: pointer;
+padding-left: 2.6vw;
+font-size: 3vw;
+font-family: Lucida, sans-serif;
+font-weight: 100;
+    
+
+    }
+ 
+
+
+}

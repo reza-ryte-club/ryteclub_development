@@ -1,0 +1,243 @@
+
+  <% if user_signed_in? and current_user.id.to_s==params[:format].to_s %>
+      <div class = "profile-edit-button">
+      <span class="octicon octicon-pencil" data-toggle="tooltip" data-placement="top" data-original-title="Edit your bio"></span>
+
+      </div>  
+      <div class = "profile-bio-info">
+      </div>
+      <div class= "profile-bio-new" contenteditable="true">
+      </div>
+
+      
+      <script>
+      $(document).ready(function(){
+      
+
+       // disable inline editing of ckeditor.
+       CKEDITOR.disableAutoInline = true;
+
+
+        var commandValue = 0;
+        //tooltip initilized
+        $('[data-toggle="tooltip"]').tooltip();  
+
+        
+
+        $('.profile-bio-new').css('border','none'); 
+        $('.profile-edit-button').hide();
+        //Check whether the bio is null
+        //arrage DOM according to that 
+         $.ajax({
+                  type: "GET",
+                  url: "/bios/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: "",
+                  success: function(data){
+                          var tale_index;
+                          for(var i = 0;data[i];i++){
+                            if(data[i].user_id=="<%= current_user.id %>"){
+                              $('.profile-bio-info').hide();
+                              $('.profile-bio-new').show();
+                              $('.profile-bio-new').html(data[i].title);
+                              $('.profile-edit-button').show();
+                               var texts = $('.profile-bio-new').text();
+                    if(!texts.trim()){
+                        $('.profile-bio-new').hide();
+                        $('.profile-bio-info').html("Add your short bio");
+                        $('.profile-bio-info').show();
+                        $('.profile-edit-button').hide();                  
+                        }
+                    else{
+                        $('.profile-edit-button').show();
+                        }
+
+                              commandValue = 1; //command value 1 indicates PUT operation
+                              break;
+                            }
+                            else{
+                              
+                              $('.profile-bio-info').html("Add your short bio");
+                              $('.profile-bio-info').show();
+                              $('.profile-bio-new').hide();
+                              $('.profile-edit-button').hide();
+                            }
+                          }
+
+                          if(data.length==0){
+                            $('.profile-bio-info').html("Add your short bio");
+                              $('.profile-bio-info').show();
+                              $('.profile-bio-new').hide();
+                              $('.profile-edit-button').hide();
+                          }  
+
+                        }});
+                 
+
+
+        
+        
+$('.profile-bio-info').mouseup(function(){
+                $(this).html("");
+                $('.profile-bio-new').show();
+                $('.profile-bio-new').focus();
+                $('.profile-bio-new').css('border',' 1px solid gray');              
+                });
+        
+
+
+
+        function autoSaveBio(context,command){
+          var id_of_content;
+            if(command ==0){
+                          var  talemeta =  { 
+                                            "user_id": "<%= current_user.id %>",
+                                            "title": "" 
+                                            };         
+                      
+                          talemeta.title =  safe_tags($(context).html());
+                          //post operation 
+                          $.ajax({
+                                    type: "POST",
+                                    url: "/bios" ,
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    data: JSON.stringify(talemeta),
+                                    success: function(){ }
+                                  });
+                          commandValue = 1;
+                         
+                                                      
+                        }
+         
+
+         if(command == 1){ //put operation 
+                  //get the info for updating tale id
+                  $.ajax({
+                  type: "GET",
+                  url: "/bios/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: "",
+                  success: function(data){
+                          var tale_index;
+                          for(var i = 0;data[i];i++){
+                            if(data[i].user_id=="<%= current_user.id %>"){
+                              tale_index = data[i].id;
+                              break;  
+                            }
+                          }
+                          
+                          
+                          
+                          var  talemeta =  { "id": tale_index ,
+                                            "user_id": "<%= current_user.id %>",
+                                            "title": "" 
+                                            };  
+                          talemeta.title =  safe_tags($(context).html());
+                          $.ajax({
+                                  type: "PUT",
+                                  url: "/bios/"+ talemeta.id ,
+                                  contentType: "application/json; charset=utf-8",
+                                  dataType: "json",
+                                  data: JSON.stringify(talemeta),
+                                  success: function(){
+                                        }
+                                  });
+
+
+                          
+                                      }
+
+                              });
+                            }          
+
+    }
+  
+
+
+
+
+        function safe_tags(str) {
+          
+            return str.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g," ").replace(/<br>/g,"").replace(/<div>/g,"").replace(/<\/div>/g,"") ;
+        }
+
+
+
+        $('.profile-edit-button').mouseup(function(){
+                $('.profile-bio-new').focus();                
+        });
+
+        $('.profile-bio-new').focus(function(){
+          $('.profile-edit-button').hide();
+        });
+
+
+      
+        var contents =  $('.profile-bio-new');
+
+        $('.profile-bio-new').on('keyup',function(e){      
+              if(e.keyCode==13 && !e.shiftKey)
+              {
+                  // prevent default behavior
+                  e.preventDefault();
+                  $(this).blur();    
+              }  
+        });
+
+        
+        $('.profile-bio-new').on('blur',function(e){
+                  $(this).css('border','none');  
+                  //extracting the text from Html
+                  var texts = $('.profile-bio-new').text();
+
+                  if (contents!=$(this)){
+                    autoSaveBio(e.target, commandValue);
+                    }                   
+
+
+
+                    if(!texts.trim()){
+                        $('.profile-bio-new').hide();
+                        $('.profile-bio-info').html("Add your short bio");
+                        $('.profile-bio-info').show();
+                        $('.profile-edit-button').hide();                  
+                        }
+                    else{
+                        $('.profile-edit-button').show();
+                        }
+        });
+      });
+      </script>
+
+  
+<% else %>
+                 <% if @bio[0]!= nil %>
+              <div class="profile-bio-new">
+                  <%= @bio[0].title.html_safe %>
+                  </div>
+                  <script>
+            
+            $(document).ready(function(){  
+                    $('.profile-bio-new').html(safe_tags($(this));
+                  });
+
+          function safe_tags(str){  
+            return str.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g," ").replace(/<br>/g,"").replace(/<div>/g,"").replace(/<\/div>/g,"");}
+            </script>
+
+                 <% end %> 
+<% end %>
+
+
+
+
+
+
+<style>
+.octicon-pencil{
+  font-size: 1vw;
+}
+</style>

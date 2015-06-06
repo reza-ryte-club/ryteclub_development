@@ -1,0 +1,13 @@
+<%= render "layouts/side_bar" %>
+<div class="b-container">
+
+    <h3>Ryte Club</h3>
+  	<p>Forgot your password?</p>
+
+			<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  			<%= devise_error_messages! %>
+			<%= f.email_field :email,placeholder: "Email", autofocus: true %>
+
+  			<%= f.submit "Request New password", class: "button" %>
+			<% end %>
+</div>  

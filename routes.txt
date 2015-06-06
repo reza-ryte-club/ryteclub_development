@@ -1,0 +1,110 @@
+                  Prefix Verb            URI Pattern                            Controller#Action
+        new_user_session GET             /users/sign_in(.:format)               devise/sessions#new
+            user_session POST            /users/sign_in(.:format)               devise/sessions#create
+    destroy_user_session DELETE          /users/sign_out(.:format)              devise/sessions#destroy
+ user_omniauth_authorize GET|POST        /users/auth/:provider(.:format)        omniauth_callbacks#passthru {:provider=>/twitter|facebook/}
+  user_omniauth_callback GET|POST        /users/auth/:action/callback(.:format) omniauth_callbacks#:action
+           user_password POST            /users/password(.:format)              devise/passwords#create
+       new_user_password GET             /users/password/new(.:format)          devise/passwords#new
+      edit_user_password GET             /users/password/edit(.:format)         devise/passwords#edit
+                         PATCH           /users/password(.:format)              devise/passwords#update
+                         PUT             /users/password(.:format)              devise/passwords#update
+cancel_user_registration GET             /users/cancel(.:format)                devise/registrations#cancel
+       user_registration POST            /users(.:format)                       devise/registrations#create
+   new_user_registration GET             /users/sign_up(.:format)               devise/registrations#new
+  edit_user_registration GET             /users/edit(.:format)                  devise/registrations#edit
+                         PATCH           /users(.:format)                       devise/registrations#update
+                         PUT             /users(.:format)                       devise/registrations#update
+                         DELETE          /users(.:format)                       devise/registrations#destroy
+                   users GET             /users(.:format)                       users#index
+           finish_signup GET|PATCH       /users/:id/finish_signup(.:format)     users#finish_signup
+               edit_user GET             /users/:id/edit(.:format)              users#edit
+                    user PATCH           /users/:id(.:format)                   users#update
+                         PUT             /users/:id(.:format)                   users#update
+        update_role_user PATCH           /user/update_role(.:format)            users#update_role
+                         GET             /user/edit(.:format)                   users#edit
+                   tales GET             /tales(.:format)                       tales#index
+                         POST            /tales(.:format)                       tales#create
+                new_tale GET             /tales/new(.:format)                   tales#new
+               edit_tale GET             /tales/:id/edit(.:format)              tales#edit
+                    tale GET             /tales/:id(.:format)                   tales#show
+                         PATCH           /tales/:id(.:format)                   tales#update
+                         PUT             /tales/:id(.:format)                   tales#update
+                         DELETE          /tales/:id(.:format)                   tales#destroy
+                    root GET             /                                      tales#index
+              tales_list GET             /tales/list(.:format)                  tales#tales_list
+         homepages_index GET             /homepages/index(.:format)             homepages#index
+        activities_index GET             /activities/index(.:format)            activities#index
+          journals_index GET             /journals/index(.:format)              journals#index
+                contacts GET             /contacts(.:format)                    contacts#index
+                         POST            /contacts(.:format)                    contacts#create
+             new_contact GET             /contacts/new(.:format)                contacts#new
+            edit_contact GET             /contacts/:id/edit(.:format)           contacts#edit
+                 contact GET             /contacts/:id(.:format)                contacts#show
+                         PATCH           /contacts/:id(.:format)                contacts#update
+                         PUT             /contacts/:id(.:format)                contacts#update
+                         DELETE          /contacts/:id(.:format)                contacts#destroy
+                    bios GET             /bios(.:format)                        bios#index
+                         POST            /bios(.:format)                        bios#create
+                 new_bio GET             /bios/new(.:format)                    bios#new
+                edit_bio GET             /bios/:id/edit(.:format)               bios#edit
+                     bio GET             /bios/:id(.:format)                    bios#show
+                         PATCH           /bios/:id(.:format)                    bios#update
+                         PUT             /bios/:id(.:format)                    bios#update
+                         DELETE          /bios/:id(.:format)                    bios#destroy
+             invitations GET             /invitations(.:format)                 invitations#index
+                         POST            /invitations(.:format)                 invitations#create
+          new_invitation GET             /invitations/new(.:format)             invitations#new
+         edit_invitation GET             /invitations/:id/edit(.:format)        invitations#edit
+              invitation GET             /invitations/:id(.:format)             invitations#show
+                         PATCH           /invitations/:id(.:format)             invitations#update
+                         PUT             /invitations/:id(.:format)             invitations#update
+                         DELETE          /invitations/:id(.:format)             invitations#destroy
+                sharings GET             /sharings(.:format)                    sharings#index
+                         POST            /sharings(.:format)                    sharings#create
+             new_sharing GET             /sharings/new(.:format)                sharings#new
+            edit_sharing GET             /sharings/:id/edit(.:format)           sharings#edit
+                 sharing GET             /sharings/:id(.:format)                sharings#show
+                         PATCH           /sharings/:id(.:format)                sharings#update
+                         PUT             /sharings/:id(.:format)                sharings#update
+                         DELETE          /sharings/:id(.:format)                sharings#destroy
+                 follows GET             /follows(.:format)                     follows#index
+                         POST            /follows(.:format)                     follows#create
+              new_follow GET             /follows/new(.:format)                 follows#new
+             edit_follow GET             /follows/:id/edit(.:format)            follows#edit
+                  follow GET             /follows/:id(.:format)                 follows#show
+                         PATCH           /follows/:id(.:format)                 follows#update
+                         PUT             /follows/:id(.:format)                 follows#update
+                         DELETE          /follows/:id(.:format)                 follows#destroy
+          profiles_index GET             /profiles/index(.:format)              profiles#index
+                pages_id GET             /pages/id(.:format)                    pages#show
+                  fruits GET             /fruits(.:format)                      fruits#index
+                         POST            /fruits(.:format)                      fruits#create
+               new_fruit GET             /fruits/new(.:format)                  fruits#new
+              edit_fruit GET             /fruits/:id/edit(.:format)             fruits#edit
+                   fruit GET             /fruits/:id(.:format)                  fruits#show
+                         PATCH           /fruits/:id(.:format)                  fruits#update
+                         PUT             /fruits/:id(.:format)                  fruits#update
+                         DELETE          /fruits/:id(.:format)                  fruits#destroy
+                    plot POST            /plots/:id/update(.:format)            plots#update
+                   plots GET             /plots(.:format)                       plots#index
+                         POST            /plots(.:format)                       plots#create
+                new_plot GET             /plots/new(.:format)                   plots#new
+               edit_plot GET             /plots/:id/edit(.:format)              plots#edit
+                         GET             /plots/:id(.:format)                   plots#show
+                         PATCH           /plots/:id(.:format)                   plots#update
+                         PUT             /plots/:id(.:format)                   plots#update
+                         DELETE          /plots/:id(.:format)                   plots#destroy
+        featured_stories GET             /featured_stories(.:format)            tales#featured_stories
+        trending_stories GET             /trending_stories(.:format)            tales#trending_stories
+               tales_new POST            /tales/new(.:format)                   tales#new
+                         GET             /tales/:id(.:format)                   tales#show
+                         GET             /profiles/:id(.:format)                profiles#index
+              profilesOf GET|POST|DELETE /profilesOf(.:format)                  profiles#follow
+             profilesOfU GET|POST|DELETE /profilesOfU(.:format)                 profiles#unfollow
+                 talesOf GET|POST|DELETE /talesOf(.:format)                     tales#follow
+                talesOfU GET|POST|DELETE /talesOfU(.:format)                    tales#unfollow
+                 likesOf GET|POST|DELETE /likesOf(.:format)                     tales#like
+                likesOfU GET|POST|DELETE /likesOfU(.:format)                    tales#unlike
+                         GET|POST|DELETE /fruit(.:format)                       fruits#ruin
+                    page GET             /pages/*id                             high_voltage/pages#show

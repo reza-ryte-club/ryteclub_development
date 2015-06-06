@@ -1,0 +1,321 @@
+ <% plots = Plot.where(tale_id: @tale.id).order(:id) %>
+      <% plots.each do |p| %>
+
+<!--      <iframe width="560" height="315" src="https://www.youtube.com/embed/y-waTi8BPdk" frameborder="0" allowfullscreen></iframe>
+
+      <iframe src="//player.vimeo.com/video/117934677?color=ea6a47&title=0&byline=0&portrait=0&badge=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+-->
+
+
+
+
+      <% plotphoto = Plotphoto.where(plot_id: p.id).order(:created_at) %>  
+
+          <% if user_signed_in? %>
+                  <% if p.user_id == current_user.id %>
+                  <script>
+                      $(document).ready(function(){
+                        $('[data-toggle="tooltip"]').tooltip();    
+                      });
+                  </script>
+
+    <div class="plot-of-content" id="plot_editor_<%=p.id%>" contenteditable="true" data-toggle="tooltip" data-placement="left" data-original-title="Click here to edit">
+    <%=  p.description.html_safe %></div>
+        <% if plotphoto[0]!= nil %>
+          <% plotphoto.each do|pp| %>
+
+            <% if pp.image_url!= nil %>
+              <div class="plotphotothumb">
+              
+              <% if @tale.id>223 %>
+              <%= image_tag pp.image_url(:best), id: "plot-image-#{pp.id}" %>
+              <% else %>
+              <%= image_tag pp.image_url, id: "plot-image-#{pp.id}" %>
+              <% end %>
+
+              </div>
+            <% end %>
+
+
+            <br />
+          <% end %>
+          <% end %>      
+    <div id="<%=p.id%>" class='boo'></div>
+    <div class="uploadImage" id="plot_image_uploader_<%=p.id%>">
+    <% plotphoto = Plotphoto.where(plot_id: p.id) %>  
+     
+     <div class = "edit_plot_image_form">    
+        <%= form_for(Plotphoto.new, html: {multipart: true}) do |f| %>
+            <!-- <img id="temp_image" src="#" alt="your image" /> -->
+            
+            <div class="plotImageUpload btn plot-cover-upload"  data-toggle="tooltip" data-placement="left" data-original-title="Upload an image">
+            <div class="button-text" ><span class="mega-octicon octicon-cloud-upload"></span></div>  
+                <%= f.file_field :image, class: "plotupload",accept: " image/jpeg, image/png, image/jpg", required: true %>  
+                <%= f.hidden_field :plot_id, value: p.id, class: "cover_value" %>
+            </div>
+          
+        </div>
+
+
+
+        </div>
+
+
+        <% end %>
+
+          
+
+
+                  <% else %>    
+
+                            <%=  p.description.html_safe %>
+                            
+                            <% if plotphoto[0]!= nil %>
+                                <% plotphoto.each do|pp| %>
+                                    <% if pp.image_url!= nil %>
+                                            
+                                            <div class="plotphotothumb">
+                       
+                            <% if @tale.id>223 %>
+              <%= image_tag pp.image_url(:best), id: "plot-image-#{pp.id}" %>
+              <% else %>
+              <%= image_tag pp.image_url, id: "plot-image-#{pp.id}" %>
+              <% end %>
+                                          </div>
+                                            <br />
+                                    <% end %>
+                                <% end %>
+                            <% end %>      
+    
+                  <% end %>
+          <% else %> 
+
+                <%= simple_format p.description.html_safe %>
+
+                            <% if plotphoto[0]!= nil %>
+                                <% plotphoto.each do|pp| %>
+                                    <% if pp.image_url!= nil %>
+                                            <div class="plotphotothumb">
+                       
+                                <% if @tale.id>223 %>
+              <%= image_tag pp.image_url(:best), id: "plot-image-#{pp.id}" %>
+              <% else %>
+              <%= image_tag pp.image_url, id: "plot-image-#{pp.id}" %>
+              <% end %>
+                                </div>
+                                            <br />
+                                    <% end %>
+                                <% end %>
+                            <% end %>      
+    
+          <%end%>
+     <%end%>
+
+
+
+<script>
+    $(document).ready(function(){  
+
+
+
+
+
+        
+        $(".plotupload").change(function(){
+          
+          //console.log($(this).parent().parent().parent().parent().attr("id"));
+  var plot_div_id=$(this).parent().parent().parent().parent().attr("id");
+  var plot_id = parseInt(plot_div_id.replace("plot_image_uploader_", ""));
+  readPlotURL(this,plot_id);
+        });
+           
+           function readPlotURL(input,plot_id){
+    
+    if (input.files && input.files[0]) {   
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            
+            var plotId = "#"+plot_id;
+            
+            jQuery('<div/>', {
+                                
+                                class: 'image-of-content',
+                                html: "<img class='testicle'></img>"
+                                }).appendTo(plotId);           
+            
+
+
+            $('.testicle').attr('src', e.target.result);
+            var old_width = $('.testicle').width();
+            var old_height = $('.testicle').width();
+            if(old_width>700){
+
+                          var new_width =  700;
+                          var new_height = (700*(old_height/old_width));    
+                          $('.testicle').attr('width',new_width);
+                          $('.testicle').attr('height',new_height);
+                        
+            }
+
+            $('.testicle').css('margin-bottom','10px');
+            $('.testicle').attr("class","");
+            
+        }
+        reader.readAsDataURL(input.files[0]);
+    }}
+
+
+
+
+
+
+
+
+
+
+      $('.uploadImage').hide();
+
+var myInterval;
+var interval_delay = 500;
+var is_interval_running = false; //Optional
+
+    $(".plot-of-content").focus(function(e){
+      
+        console.log("woo hoo");
+        var plot_id = $(this).attr('id');
+        var extracted_plot_id= plot_id.replace(/plot_editor_/,"")
+        var previous_content = null;
+        clearInterval(myInterval); 
+        if  (!is_interval_running)
+              myInterval = setInterval(function(){
+                        var plot_contents =  e.target.innerHTML;
+                        var plotUpdateData= { "description": plot_contents };
+                        if(plot_contents!=previous_content){
+                           console.log(plot_contents); 
+                           $.ajax({
+                                  type: "PUT",
+                                  url: "/plots/"+ extracted_plot_id,
+                                  contentType: "application/json; charset=utf-8",
+                                  dataType: "json",
+                                  data: JSON.stringify(plotUpdateData),
+                                  success: function(data){
+                                  $("#loader-wrapper").show().delay(3000).fadeOut();
+                                  }});
+                           previous_content = plot_contents;         
+                           } 
+
+
+
+                        }, 3000);
+    }).blur(function(){
+        clearInterval(myInterval); 
+        
+        is_interval_running = false;
+    });
+
+
+ 
+
+
+$('.plot-of-content').mouseover(function(){
+  var id = parseInt(this.id.replace("plot_editor_", ""));
+  var plot_image_uploader_div = "#plot_image_uploader_" + id;
+  $(plot_image_uploader_div).show();
+ $("div[id^='plot_editor_']").each(function(){
+      var plot_id = parseInt(this.id.replace("plot_editor_", ""));
+      var plot_image_uploader_hidden_div = "#plot_image_uploader_" + plot_id;
+              if(plot_id!=id){
+                $(plot_image_uploader_hidden_div).hide();
+              }});});
+
+
+
+ $("img[id^='plot-image-']").each(function(){
+    var plot_image_id = parseInt(this.id.replace("plot-image-", ""));
+    var plot_image_div = "#plot-image-" + plot_image_id;
+
+  $(plot_image_div).load(function() {
+        var image_height = $(this).height();
+        var image_width = $(this).width();
+        if(image_width>700){
+                          var new_width =  700;
+                          var new_height = (700*(image_height/image_width));    
+                          $(plot_image_div).attr('width',new_width);
+                          $(plot_image_div).attr('height',new_height);
+                        }
+                                    
+
+    });
+
+
+  
+
+ });
+
+
+
+
+});
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+ 
+
+<style>
+
+
+.plotImageUpload {
+  position: relative;
+  overflow: hidden;
+  margin-top: 10vh;
+  margin-left: 44vw;
+}
+.plotImageUpload input.plotupload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+
+.plot-cover-upload {
+            color: black;
+            background-color: white;
+            border-color: #cccccc;
+            }
+
+.plot-cover-upload:hover {
+            color: white;
+            background-color: gray;
+            border-color: #cccccc;
+            }
+.edit_plotphoto{
+  margin-bottom: 5px;
+}
+
+
+   
+   .cke_editable form {
+border: none;
+
+}
+
+.plotphotothumb{
+  background-color: white;
+}
+   
+</style>

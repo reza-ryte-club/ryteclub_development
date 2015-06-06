@@ -1,0 +1,229 @@
+      <% url_for_twitter = "https:\/"+"\/"+"ryte.club\/"+"tales\/"+@tale.id.to_s %>
+      <% dataText = "Ryte Club story :: "  +@tale.title + " \n \r " +url_for_twitter %>
+      <% dataTextTwitter = "https://twitter.com\/"+"share?url=ryte.club&text="+ dataText  %>
+      <% dataLink = "https://ryte.club\/"+ "tales\/"+@tale.id.to_s %>
+      <% dataLinkFull = "https://www.facebook.com\/"+"sharer\/"+"sharer.php?u="+dataLink %>
+                  
+
+<div class = "story-page-facebook-button" id="<%= @tale.id %>">
+<%= link_to "",dataLinkFull,class: "fa fa-facebook-square", target: "_blank"%></div>
+
+
+
+<div class = "story-page-twitter-button" id="<%= @tale.id %>">
+<%= link_to "",dataTextTwitter,class: "fa fa-twitter", target: "_blank"%>
+</div>
+
+<% if user_signed_in?%>
+
+		<% if @tale.user_id == current_user.id %>
+		<div class = "story-page-title-show" contenteditable="true">
+			<% title_of_content =  @titles[0] %>
+		<h1></h1> 
+
+<script>
+// Multiple space has to be reserved 
+$(document).ready(function(){
+		$('h1').append(html_header_fix("<%= title_of_content %>"));		
+				});
+function html_header_fix(str){
+		return str.replace(/ /g,'&nbsp;');
+		}
+	
+
+</script>
+
+<script type="text/contentTitle" class= "metainfo">
+                      {
+                      "id":"<%= @tale.id %>",
+                      "title":"<%= @tale.title %>",
+                      "user_id":"<%= @tale.user.id %>"
+                      }
+  </script>
+</div>
+		<% else %>
+			<div class = "story-page-title-show">
+				<h1><%= @titles[0] %></h1> 
+			</div>
+		<% end %>
+<% else %>
+		<div class = "story-page-title-show">
+		<h1><%= @titles[0] %></h1> 
+		</div>
+<% end %>  
+<style>
+.story-page-title-show:focus{
+	outline:0;
+  	outline:none;
+  
+}
+</style>
+<script>
+$(document).ready(function(){
+	var contents =  $(".story-page-title-show").find('h1');
+	console.log(contents);
+
+ $('.story-page-title-show').on('keyup', function(e) {
+          if (contents!=$(this)){
+            autoSavePost(e.target);
+          } 
+        });
+
+
+ });
+
+
+ function autoSavePost(context){
+        var talemeta = JSON.parse($(context).find('.metainfo').html());
+       // console.log(talemeta);
+        talemeta.title =  safe_tags($(context).find('h1').html());
+        console.log(talemeta.title); 
+       $.ajax({
+            type: "PUT",
+            url: "/tales/" + talemeta.id ,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(talemeta),
+            success: function(){
+
+            	/* return status 204 but it is harmless (No Content) 
+				 Firefox consoleshows error.
+            	*/
+            	
+                
+            }
+        });      
+    }
+
+
+function safe_tags(str) {
+	console.log("safe has been called");
+    return str.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g," ").replace(/<br>/g," ") ;
+}
+
+
+ 
+
+
+</script>
+<div id="authors">
+
+<div class="author-names">
+
+<% contributors =  Plot.where(tale_id: @tale.id).pluck(:user_id).uniq.count %>
+
+<% if contributors<2 %>
+<% started_by = User.where(id: @tale.user_id).pluck(:firstname) %>
+
+<%=  link_to started_by[0],profiles_index_path(@tale.user_id) %>
+<% else %>
+<%= plots_contributor(@tale.id) %>
+<% end %>
+
+</div> 
+      
+
+<br />
+</div>
+
+
+<style>
+
+.story-title h1{
+	color: rgba(0,0,0,1);
+}
+
+.content-bucket {
+color: black;
+}
+
+.author-names  { 	font-family: Arial, sans-serif;
+                    font-weight: 100;
+                    font-size: 1.1vw;
+                    padding: 5px;
+                    color: black;
+                    margin-left: 15vw;
+                  }
+
+.author-names a { color: black;}
+
+.author-names a:hover {  color: rgba(0,0,0,0.8);
+                         text-decoration: none;}
+
+.story-page-title-show {
+    -webkit-user-select: auto !important;
+}
+
+
+.story-page-facebook-button{
+  margin-left: 87vw;
+  margin-top: 0vw;
+  position: relative;
+  margin-bottom: 1vw;
+}
+
+.story-page-twitter-button {
+  
+  margin-left: 90vw;
+  margin-top: -3.5vw;
+  position: relative;
+  margin-bottom: 1vw;
+
+}
+.story-page-facebook-button a{
+  color: rgb(52, 96, 163);
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.story-page-twitter-button a{
+  color: rgb(84, 203, 255);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.story-page-facebook-button a:hover{
+ color: rgb(52, 96, 163);
+ text-decoration: none;
+}
+
+.story-page-twitter-button a:hover{
+ color: rgb(84, 203, 255);
+ text-decoration: none;
+}
+.story-page-facebook-button a:focus{
+ color: rgb(52, 96, 163);
+ text-decoration: none;
+}
+
+.story-page-twitter-button a:focus{
+ color: rgb(84, 203, 255);
+ text-decoration: none;
+}
+.story-page-facebook-button a:active{
+ color: rgb(52, 96, 163);
+ text-decoration: none;
+}
+
+.story-page-twitter-button a:active{
+ color: rgb(84, 203, 255);
+ text-decoration: none;
+}
+.story-page-facebook-button a:visited{
+ color: rgb(52, 96, 163);
+ text-decoration: none;
+}
+
+.story-page-twitter-button a:visited{
+ color: rgb(84, 203, 255);
+ text-decoration: none;
+}
+
+
+
+.fa{
+  font-size: 2.5vw;
+}
+
+</style>

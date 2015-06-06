@@ -1,0 +1,64 @@
+ <% if @tale.private_flag==0 %>
+                      <div class="publish-button">Published</div>
+                      <% else %>
+                      <div class="publish-button">Publish</div>
+                      <% end %>
+
+                      <script>
+                        $(document).ready(function(){
+                              $('.publish-button').mouseup(function(){                   
+                                        var text_of_div = $(this).text();
+                                        if(text_of_div==="Unpublish")
+                                        {        
+                                        var publishData = {
+                                                     "id": "<%= @tale.id %>",
+                                                     "private_flag": "1"
+                                                     };
+                                       $.ajax({
+                                               type: "PUT",
+                                               url: "/tales/"+ publishData.id,
+                                               contentType: "application/json; charset=utf-8",
+                                               dataType: "json",
+                                               data: JSON.stringify(publishData),
+                                               success: function(data){
+                                               console.log("Unpublished");
+                                               
+                                             }});
+                                       $(this).html("Publish");
+                                       }
+
+                                       if(text_of_div==="Publish"){
+
+                                        var publishData = {
+                                                      "id": "<%= @tale.id %>",
+                                                      "private_flag": "0"
+                                                      };
+                                      $.ajax({
+                                            type: "PUT",
+                                            url: "/tales/"+ publishData.id,
+                                            contentType: "application/json; charset=utf-8",
+                                            dataType: "json",
+                                            data: JSON.stringify(publishData),
+                                            success: function(data){
+                                              console.log("published");
+                                            }});
+                                      $(this).html("Published");
+                                       }      
+                                      }); 
+                                      
+              $('.publish-button').mouseover(function(){
+                                  var text_of_div = $(this).text();
+                                  if(text_of_div=="Published"){
+                                                              $(this).html("Unpublish");
+                                      }
+                                      }); 
+              
+              $('.publish-button').mouseleave(function(){
+                                  var text_of_div = $(this).text();
+                                  if(text_of_div=="Unpublish"){
+                                  $('.publish-button').html("Published");          
+
+                                }        
+                                });
+                        });
+                      </script>  

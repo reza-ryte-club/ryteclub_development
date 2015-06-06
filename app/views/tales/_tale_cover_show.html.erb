@@ -1,0 +1,14 @@
+<!-- Classification of content-type whether story of opinion or sci-fi-->
+<% if @talecover[0] != nil %>
+<div class="story-show-cover">
+            <%= image_tag @talecover[0].cover_url, width: "100%"%>  
+</div>
+
+<% else %>
+<script>
+ $(document).ready(function(){
+ 	$('.story-title-container').css('margin','7vh 20vw 1vw 15vw');
+ 	$('.story-page-twitter-button ').css('margin-top','5vw');
+ });	
+ </script>	
+<% end %>

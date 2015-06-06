@@ -1,0 +1,204 @@
+          <% if user_signed_in? %>
+                  <%  if current_user.id == @tale.user_id or shared_emails(@tale.id).include?current_user.email %>
+               <!--   <div class = "add-more">Add More Content</div> -->
+               <div class = "add-more"></div>
+
+                  <script>
+                    $(document).ready(function(){
+
+
+
+
+                      var myNewPlotInterval;
+                      var is_new_plot_interval_running = false; //Optional
+
+                      $(".add-more").mouseup(function(){
+
+                        jQuery('<div/>', {
+                        id: 'adding_new_plot',
+                        class: 'plot-of-content',
+                        contenteditable: "true",
+                        html: 'Start writing from here!<br /><br /><br /><br /><br /><br /><br /><br />'
+                        }).appendTo('.content-bucket');
+                        CKEDITOR.inline(adding_new_plot);
+                        $(this).hide();
+                        var plot_create_interval_counter = 0;
+
+                        var newPlotInterval;
+                        var is_new_interval_running = false; //Optional
+                        var previous_content = null;
+                        var new_plot_id;
+
+
+
+                        $("#adding_new_plot").focus(function(e){
+                        $(this).html("<br /><br /><br /><br /><br /><br /><br /><br />");
+                        clearInterval(myNewPlotInterval); 
+                       
+                       if(!is_new_plot_interval_running){
+
+                         myNewPlotInterval = setInterval(function(){
+                         console.log("interval is going on"); 
+                         plot_create_interval_counter++; 
+                          var plotCreateData={
+                                      tale_id: "<%= @tale.id %>",
+                                      description: $("#adding_new_plot").html(),
+                                      user_id: "<% current_user.id %>"
+                          };
+
+                          if(plot_create_interval_counter<2){
+                          $.ajax({
+                                  type: "POST",
+                                  url: "/plots/",
+                                  contentType: "application/json; charset=utf-8",
+                                  dataType: "json",
+                                  data: JSON.stringify(plotCreateData),
+                                  success: function(data){
+                                    new_plot_id = data.id;
+                                  }});}
+                          else{
+
+                          var plotUpdateData={ description: $("#adding_new_plot").html()};
+                          $.ajax({
+                                  type: "PUT",
+                                  url: "/plots/"+new_plot_id,
+                                  contentType: "application/json; charset=utf-8",
+                                  dataType: "json",
+                                  data: JSON.stringify(plotUpdateData),
+                                  success: function(data){}});
+
+                          }
+                          },3000);}}).blur(function(){
+
+                            $(".add-more").show();
+                            clearInterval(myNewPlotInterval); 
+                            is_new_plot_interval_running = false;
+                            var new_id_name = "plot_editor_"+new_plot_id;
+                            var $new_uploader_id_name = "plot_image_uploader_"+new_plot_id;
+                            var html_value = $("#adding_new_plot").html();
+                            $("#adding_new_plot").hide();
+                            $("#adding_new_plot").attr("id",new_id_name);
+
+                            jQuery('<div/>', {
+                                id: new_id_name,
+                                class: 'plot-of-content',
+                                contenteditable: "true",
+                                html: html_value
+                                }).appendTo('.content-bucket');
+                          
+                            $('.content-bucket').append(  
+                             "<div id="+new_plot_id+" class='boo'></div><div class='uploadImage' id="+$new_uploader_id_name+" data-toggle='tooltip' data-placement='left' data-original-title='Upload an image'><%= escape_javascript render "add_files"  %></div>");
+                            
+                            
+                            $("input[id=hidden_field_id]").val(new_plot_id);
+                            $(".cover_value").attr("id",""); 
+
+
+                            
+                            
+
+                            
+
+
+        $('.plot-of-content').mouseover(function(){
+  var id = parseInt(this.id.replace("plot_editor_", ""));
+  var plot_image_uploader_div = "#plot_image_uploader_" + id;
+  $(plot_image_uploader_div).show();
+ $("div[id^='plot_editor_']").each(function(){
+      var plot_id = parseInt(this.id.replace("plot_editor_", ""));
+      var plot_image_uploader_hidden_div = "#plot_image_uploader_" + plot_id;
+              if(plot_id!=id){$(plot_image_uploader_hidden_div).hide();}});});
+
+
+
+
+
+        $('.new_plotphoto').fileupload();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                           
+
+
+
+
+                          var myInterval;
+                          var interval_delay = 500;
+                          var is_interval_running = false; //Optional
+
+    $(".plot-of-content").focus(function(e){
+      
+      
+
+        console.log("woo hoo");
+        var plot_id = $(this).attr('id');
+        var extracted_plot_id= plot_id.replace(/plot_editor_/,"")
+        var previous_content = null;
+        clearInterval(myInterval); 
+        if  (!is_interval_running)
+              myInterval = setInterval(function(){
+                        var plot_contents =  e.target.innerHTML;
+                        var plotUpdateData= { "description": plot_contents };
+                        if(plot_contents!=previous_content){
+                           console.log(plot_contents); 
+                           $.ajax({
+                                  type: "PUT",
+                                  url: "/plots/"+ extracted_plot_id,
+                                  contentType: "application/json; charset=utf-8",
+                                  dataType: "json",
+                                  data: JSON.stringify(plotUpdateData),
+                                  success: function(data){
+                                  $("#loader-wrapper").show().delay(3000).fadeOut();
+                                  }});
+                           previous_content = plot_contents;         
+                           } 
+
+
+
+                        }, 3000);
+    }).blur(function(){
+        clearInterval(myInterval); 
+        is_interval_running = false;
+    });});});});
+                  </script>
+
+
+
+
+                  <% end %>
+                  <% end %>
+
+
+
+
+<style>
+.add-more{
+position: relative;
+width: 100vw;
+height: 20vh;
+margin-bottom: 2vh;
+margin-top: 5vh;
+}
+
+
+
+.plot-of-content:focus{
+  outline: none;
+}
+</style>                  

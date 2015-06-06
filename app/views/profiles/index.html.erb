@@ -1,0 +1,201 @@
+<%= render 'tales/navbar' %>
+<% userName =  @userFirstName[0] %>
+<% content_for :title do %><%=  userName %><% end %>
+
+<div class="profile-left">
+
+          <div class="user-photo"> 
+          <% social_identity = Identity.where(user_id: params[:format], provider: "facebook") %>
+          <% if social_identity[0] != nil %>
+          <% graph = Koala::Facebook::API.new(Koala::Facebook::OAuth.new("878916972138133","1c19d3ff9cf496854d4e506030f592b1").get_app_access_token) %>
+          <% profile_path = graph.get_picture(social_identity[0].uid, type: "large") %>
+          <%= link_to((image_tag profile_path), profiles_index_path(params[:format]), class: "wendy") %>
+          <script>
+          $(document).ready(function(){
+         /*   var old_width = $('.user-photo img').width();
+           var old_height = $('.user-photo img').height(); 
+           
+
+           var viewport_width=   $(window).width();
+           var viewport_height=  $(window).height();
+
+
+           var new_width =  viewport_width * (old_width/1440);
+           var new_height = viewport_height * (old_height/801);
+
+
+           new_width = new_width+"px";
+           new_height = new_height+"px";
+           $('.user-photo img').attr('width',new_width);
+           $('.user-photo img').attr('width',new_height); 
+
+                $('.content-section-story').css('margin-top','8.5vh');
+            */
+
+          });
+          </script>
+          <% end %>
+
+          </div> <!-- end of user-photo -->
+          
+
+
+          <div class="user-name"> 
+          <%= link_to userName, profiles_index_path(params[:format])%>
+          </div> <!-- end of user-name -->
+  
+
+
+
+
+
+  <div class="bio-box">  <!--Founder and CEO, Ryte Club. Doer of things and learner of dreams. Imagining the world to be more interesting each day, every minute.  -->
+  <%= render "bio" %>  
+  </div><!-- end of bio -->
+
+  <%= render "follow_button" %>
+  <%= render "follow_track" %>
+
+   </div><!-- end of profile-left -->
+
+
+
+  
+
+
+
+<% if params[:filter]=="followers"%>
+  <div class = "stories-by-user-detail">
+    <%= render "followers" %>
+  </div><!-- end of stories-by-user-detail -->
+
+<% elsif params[:filter]=="followings"%>
+  <div class = "stories-by-user-detail">
+    <%= render "followings" %>
+  </div><!-- end of stories-by-user-detail -->
+<% elsif params[:filter]=="followings-story"%>
+  <div class = "stories-by-user-detail">
+    <%= render "stories" %>
+  </div><!-- end of stories-by-user-detail -->
+<% elsif params[:filter]=="published"%>
+  
+    <%= render "published" %>
+  
+<% else %>
+    <%= render 'story_by' %>
+<% end %>
+<!--
+-->
+<!-- end of stories-by-user-detail -->
+<script>
+  $(document).ready(function(){
+
+    $('.follow-user').mouseup(function(){
+      var url = "<%= profiles_index_path(params[:format], filter: 'followings') %>"   
+      $(location).attr('href',url);
+    });
+    
+
+    $('.followed-by').mouseup(function(){
+      var url = "<%= profiles_index_path(params[:format], filter: 'followers') %>" 
+      $(location).attr('href',url);
+    }); 
+
+
+    $('.follow-stories').mouseup(function(){
+      var url = "<%= profiles_index_path(params[:format], filter: 'followings-story') %>" 
+      $(location).attr('href',url);
+    });
+
+    $('.create-new').mouseup(function(){
+      var url = "<%= new_tale_path %>"   
+      $(location).attr('href',url);
+      console.log("clicked");
+    });
+    
+
+
+
+
+  });
+</script>
+
+
+
+
+ <style>
+      .profile-bio-info{
+        cursor: pointer;
+      }
+
+      .profile-bio-new{
+  padding: 25px 0px;
+  margin-top: -5vw;
+  width: 15vw;
+  margin-left: -5vw;
+  font-size: 1vw;
+  position: absolute;      }
+
+      .profile-edit-button{
+        text-align: right;
+        cursor: pointer;
+        margin-left: 7vw;
+        margin-top: 0vw;
+        position: absolute;
+      }
+      .create-new{
+               color: green;
+                border: 2px solid black;
+                padding: 2vw;
+                margin-left: 76vw;
+                cursor: pointer;
+                position: fixed;
+                margin-top: 30vh;
+                box-shadow: 2px 2px 2px rgba(0,0,9,0.5);
+                width: 13vw;
+      }
+
+      .octicon-plus {  font-size: 4.4vw;
+                      color: black;
+                     margin-left: 2.7vw;}
+
+      .write-new{
+       
+       margin-top: 1vh;
+
+      color: black;
+
+      }
+        .write-new{font-family: "Oxygen", serif;
+  font-size: 1.5vw;
+  line-height: 1.6;
+  text-align: left;
+  letter-spacing: 0.01em;}
+
+.profile-left{
+  position: fixed;
+  margin-top: 10vh;
+
+}      
+.user-name{
+  position: relative;
+
+}
+.user-photo{
+    top: 0vw;
+}
+
+.wendy{
+  font-size: 1vw;
+}
+
+      </style>
+
+      </section>
+
+<% if user_signed_in? and current_user.id.to_s==params[:format].to_s %>      
+<div class="create-new">
+    <span class="mega-octicon octicon-plus"> </span>
+    <p class="write-new"> Start Writing </p>
+</div>
+<% end %>

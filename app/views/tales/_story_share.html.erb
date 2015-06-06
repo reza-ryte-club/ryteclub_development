@@ -1,0 +1,202 @@
+ <ul class="list-inline-story-page"> 
+      <div class="button-wrapper"> 
+
+      
+      <% url = url_for(:controller => 'plots', :action => 'new', :tale_id => @tale.id)  %>
+         <% url2 = "https://ryte.club\/"+"plots\/"+"new?tale_id="+ @tale.id.to_s %>
+         <% url2extend = "https://ryte.club\/"+"plots\/"+"new?tale_id="+ @tale.id.to_s+"#extend" %>
+        
+        <% if user_signed_in? %>
+            <%  if current_user.id == @tale.user_id or shared_emails(@tale.id).include?current_user.email %>
+                      <%#= link_to "Contribute",url, class: "contribute-button" %> 
+              <% end %>
+              <% if current_user.id == @tale.user_id %>
+                      <a href="#invite" rel="modal:open" class="follow-button" id="invitation-button"> Invite </a>
+                     
+                     <%= render "publish" %>
+              <% end %>
+
+
+            <%  if current_user.id != @tale.user_id %>
+              <%  if  current_user.follows?(Tale.find(@tale.id)) %>
+                  <%# url1 = url_for(:controller => 'tales', :action => 'unfollow', :followings_id => tale_id )  %>
+                  <%#= link_to "unfollow",url1, class: "follow-button" %> 
+
+                  <div class = "tale-follow-button">Unfollow</div>
+              <% else %>
+                  <%# url = url_for(:controller => 'tales', :action => 'follow', :followings_id => tale_id )  %>
+                  <%#= link_to "follow",url, class: "follow-button" %> 
+
+                  <div class="tale-follow-button">Follow</div>
+              <% end %>
+
+
+
+
+          <script> 
+
+
+          $(document).ready(function(){
+
+
+            //figure out if the button is follow or unfollow
+
+
+               
+               $('.tale-follow-button').mouseup(function(e){
+
+                 //if that is found to be "Follow", the turn it to "Unfollow"
+                  var stateOfFollow = $(this).text();
+
+                  if (stateOfFollow == "Follow"){
+
+                    $(this).html("Unfollow"); 
+
+                //first case: if detected = "follow", then show unfollow. creating a row.
+
+                creation_of_rows(e.target);
+                  
+
+
+
+                  }
+
+
+                 // if that is found to be "unfollow", the turn it to "Follow"
+                 if (stateOfFollow == "Unfollow"){
+
+                        $(this).html("Follow");
+
+                        deletion_of_rows(e.target);   
+
+ }
+
+                 });
+
+                         });
+
+          function creation_of_rows(sendingdata){
+
+            var row_creation = {
+
+              "follower_type": "User",
+              "follower_id": "<%=current_user.id%>",
+              "followable_type": "Tale",
+              "followable_id": "<%=@tale.id%>" }
+
+              console.log(row_creation);
+
+
+
+
+                                        
+           $.ajax({
+
+                  type: "POST",
+                  url: "/follows/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(row_creation),
+                  success: function(data){}
+
+             });
+                  }
+
+         function  deletion_of_rows(deletedata){
+
+
+
+
+
+
+
+
+          $.ajax({
+                   type: "GET",
+                   url: "/follows/",
+                   contentType: "application/json; charset=utf-8",
+                   dataType: "json",
+                   data: "",
+                   success: function(data){   
+                    for(var i=0; data[i];i++)
+                      {
+                        if(data[i].followable_type=="Tale" && data[i].followable_id=="<%= @tale.id %>" && data[i].follower_id=="<%= current_user.id %>"){
+                         $.ajax({
+                          type: "DELETE",
+                          url: "/follows/"+data[i].id,
+                          contentType: "application/json; charset=utf-8",
+                          dataType: "json",
+                          data: "",
+                          success: function(data){ console.log("success")},
+                          error: function(data){ console.log("error");},
+                          warning: function(data){console.log("warning");}
+
+                        });
+                       }}}
+                       });
+
+
+          }
+
+
+
+
+
+
+               
+
+
+
+               //second case: if detected = "unfollow", then follow. delete a row.  
+
+
+
+
+
+          </script> 
+
+
+
+
+
+
+            <% end %>  
+
+
+
+
+        <% else %>
+        
+     <!--   <a href="#ex1" rel="modal:open" class="contribute-button"> Contribute </a> -->
+        <a href="#follow" rel="modal:open" class="follow-button"> Follow </a>
+        
+        <% end %>
+
+
+      <% url_for_twitter = "https:\/"+"\/"+"ryte.club\/"+"tales\/"+@tale.id.to_s %>
+      <% dataText = "Ryte Club story :: "  +@tale.title + " \n \r " +url_for_twitter %>
+      <% dataTextTwitter = "https://twitter.com\/"+"share?url=ryte.club&text="+ dataText  %>
+      <% dataLink = "https://ryte.club\/"+ "tales\/"+@tale.id.to_s %>
+      <% dataLinkFull = "https://www.facebook.com\/"+"sharer\/"+"sharer.php?u="+dataLink %>
+                  
+
+<div class = "story-page-facebook-button" id="<%= @tale.id %>">
+<%= link_to "",dataLinkFull,class: "fa fa-facebook-square", target: "_blank"%>
+<%= link_to "",dataTextTwitter,class: "fa fa-twitter", target: "_blank"%>
+</div>
+
+
+
+
+        </div> 
+       </ul>
+
+       <style>
+       .fa-twitter{
+        color: rgb(84, 203, 255);
+       }
+       .fa-facebook{
+        color: rgb(52, 96, 163);
+       }
+
+       </style>

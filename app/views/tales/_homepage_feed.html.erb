@@ -1,0 +1,375 @@
+<div class="story-section">
+    <div class="container">
+        <div class="col-xs-18 col-md-12 col-ls-12"> 
+
+
+<% if @current_tales!= nil %>
+<% @current_tales.each do |tale| %>
+     <% line_counter  = 0 %>
+     <% char_counter = 0 %>
+     <% title_word_counter = 0 %>
+     <% title_char_counter = 0 %>
+
+    <div class="homepage-meta-container">  
+      <div class="homepage-content-container"> 
+
+        <% talephoto = Talephoto.where(tale_id: tale.id) %>
+          <% if talephoto[0] != nil %>
+            <%= image_tag talephoto[0].cover_url(:thumb), class: "homepage-story-image-div" %>
+            <% else %>
+            <%= image_tag "no_cover.jpg", class: "homepage-story-image-div" %>
+          <% end %>
+
+
+              <p class ="homepage-story-title-wrapper">
+                       <% title_word_counter = title_word_counter+tale.title.split.size %>
+                       <% title_words = tale.title.split(' ') %> 
+                       <% title_words.each do|title_word| %>
+                          <% title_char_counter = title_char_counter + title_word.length %>  
+                          <% if title_char_counter>47 %>
+                              <% break %>
+                          <% else %>
+                          <% title_char_counter = title_char_counter + title_word.length %><%# end %>
+                        <% end %>  
+                        <% end %>
+        <% tale_title = truncate(tale.title, length: title_char_counter){""} %>
+        <%= link_to(tale_title.html_safe,tale) %>
+        </p>
+
+<!--
+  <div class="homepage-wrapped-paragraph">
+        <%# tale.plots.order(:id).each do |plot| %>            
+            <%#= simple_format truncate(plot.description, length: 160){link_to "Read More",tale, class: 'read-more'} %>
+            <%# break %>
+        <%# end %>    
+  </div>
+-->
+ <div class="homepage-wrapped-paragraph">
+    <p>  
+    <% if tale.subheading!= nil %>  
+    <%=  sanitize(tale.subheading).truncate(120).html_safe%>
+    <% if tale.subheading.length>120%>
+    <%= link_to "Read More",tale, class: 'read-more'%>
+    <% end %>
+    <% end %>
+    </p>
+    </div>
+
+
+
+
+<div class="homepage-extend-follow-share">  
+<script>
+$(document).ready(function(){
+  $('.dropdown-toggle').dropdown();
+});
+
+</script>
+    <% url = url_for(:controller => 'plots', :action => 'new', :tale_id => tale.id)  %>
+    <ul class="nav nav-pills ">
+    <% if user_signed_in? %>
+        
+      <%  if current_user.id == tale.user_id or shared_emails(tale.id).include?current_user.email %>
+        <li role="presentation" style = "backgroud-color: white">              
+              <%= link_to "  Contribute",url %> 
+      <% end %>
+
+   <% if tale.user_id !=  current_user.id %> 
+        <% ifFollow =  current_user.follows?(Tale.find(tale.id)) %>
+        <% if ifFollow %>
+    <!-- never change the following lines' indentation, it requires for proper jquery navigation -->
+    <li role="presentation"  style = "backgroud-color: white"><a href="javascript:void(0);"><div class = "homepage-story-follow" id="<%= tale.id %>">Unfollow</div></a></li>
+        <% else %>
+    <!-- never change the following lines' indentation, it requires for proper jquery navigation -->
+    <li role="presentation"  style = "backgroud-color: white"><a href="javascript:void(0);"><div class = "homepage-story-follow" id="<%= tale.id %>">Follow</div></a></li>
+        <% end %>
+ <% end %>
+ <% end %>
+ 
+    
+    <li role="presentation" class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+      Share <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+      <% url_for_twitter = "https:\/"+"\/"+"ryte.club\/"+"tales\/"+tale.id.to_s %>
+      <% dataText = "Ryte Club story :: "  +tale.title + " \n \r " +url_for_twitter %>
+      <% dataTextTwitter = "https://twitter.com\/"+"share?url=ryte.club&text="+ dataText  %>
+      <% dataLink = "https://ryte.club\/"+ "tales\/"+tale.id.to_s %>
+      <% dataLinkFull = "https://www.facebook.com\/"+"sharer\/"+"sharer.php?u="+dataLink %>
+                  <li role="presentation"><%= link_to " Facebook",dataLinkFull, target: "_blank"%></li>
+                            <li role="presentation"><%= link_to " Twitter",dataTextTwitter, target: "_blank" %></li>
+    
+
+      
+    </ul>
+  </li>
+</ul>
+</div>
+
+       
+
+
+
+   </div>  <!-- end of content-container -->
+ </div> <!-- end of meta-container -->
+
+<% end %>
+<% end %>
+
+
+
+
+
+<% if user_signed_in? %>
+<script>
+$(document).ready(function(){
+  var command ;
+  $(".homepage-story-follow").mouseup(function(e){
+              var text_of_div = $(this).text();
+              console.log(text_of_div);
+              
+
+              if(text_of_div == "Follow"){
+                  console.log("follow detected");
+                  $(this).html("UnFollow");
+                  console.log("changed to unfollow");
+                  command = 0;
+                  autoSaveFollow(e.target, command,$(this).attr('id'));
+                 
+                
+                }
+              else{
+                  console.log("unfollow detected");
+                  $(this).html("Follow");
+                  console.log("changed to follow");
+                  command = 1;
+                  autoSaveFollow(e.target, command,$(this).attr('id'));
+                
+              }
+
+                
+              });
+});
+
+
+
+function autoSaveFollow(context,command,tale_id){
+  //console.log(tale_id);
+
+  if(command==0){
+
+
+                  var followData = {
+                                    "follower_type": "User",
+                                    "follower_id": "<%= current_user.id %>",
+                                    "followable_type": "Tale",
+                                    "followable_id": tale_id
+                  };
+                  
+
+                  console.log(followData);
+                  $.ajax({
+                  type: "POST",
+                  url: "/follows/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(followData),
+                  success: function(data){}
+                  }); 
+                  
+                  }
+  if(command==1){
+    
+                $.ajax({
+                type: "GET",
+                url: "/follows/",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: "",
+                success: function(data){   
+                    for(var i=0; data[i];i++)
+                      {
+                        if(data[i].followable_type=="Tale" && data[i].followable_id==tale_id && data[i].follower_id=="<%= current_user.id %>"){
+                          $.ajax({
+                              type: "DELETE",
+                              url: "/follows/"+data[i].id,
+                              contentType: "application/json; charset=utf-8",
+                              dataType: "json",
+                              data: "",
+                              success: function(data){}});
+                          }
+                      }
+                  }
+                });
+
+
+
+  }  
+}
+</script>
+<% end %>
+
+                </div>
+            </div>
+        <footer>
+        <div class="container-footer">
+        
+        <%= link_to "Feedback",   contacts_path, class: "ryte-club-footer" %> 
+        <%= link_to "Contact",   page_path('contacts_footer'), class: "ryte-club-footer" %> 
+        <%= link_to "FAQ",   page_path('about'), class: "ryte-club-footer" %> 
+        
+
+      </div>
+
+</footer>
+
+        </div>
+
+
+
+
+
+
+
+<style> 
+
+.container-about { 
+  width: 100%;
+  background: url("/assets/alexandria.jpg") 30% 40% no-repeat;
+  background-size: cover;
+   height: 600vh; 
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+
+}
+
+.homepage-about-brand-heading { 
+    position: relative;
+    margin: 0vh 0vw 10vh 3vw;
+    /* width: 36%; */
+    color: #FFF;
+    font-weight: 100;
+    font-family: "calluna-sans",sans-serif;
+    font-size: 7vw;
+}
+
+.homepage-about-moto{ 
+position: relative;
+width: 100%;
+margin: 4vh 0vw;
+color: #FFF;
+font-family: Lucida,sans-serif;
+font-weight: 200;
+text-align: center;
+font-size: 1.3vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.feed-section {
+    padding-top: 100px;
+    height: 100vh;
+    background-color: white;
+    width: 100%;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+
+}
+
+.content-section-story {
+    height: 100vh;
+    background-color: #fff;
+}
+
+
+
+@media(min-width:767px) {
+    .content-section {
+        padding-top: 150px;
+    }
+
+    
+
+   
+}
+
+
+
+
+
+
+
+.container-footer {
+position: relative;
+display: inline-block;
+width: 60%;
+text-align: center;
+padding: 0px;
+margin-left: 20%;
+}
+
+footer {
+padding: 20px 0;
+background-color: black;
+margin-top: 3vh;
+padding-top: 5px;
+border-top: 1px solid #eaeaea;
+}
+
+.ryte-club-footer  {
+margin: 8px;
+color: white;
+font-family: Arial, sans-serif;
+  font-weight: 200;
+
+}
+
+.ryte-club-footer:hover {
+
+ background-color: transparent;
+  text-decoration: none;
+color: rgba(255,255,255,0.6)
+
+}
+.ryte-club-footer:active {
+
+ color: rgba(255,255,255,1)
+
+}
+.ryte-club-footer:focus {
+color: rgba(255,255,255,1)
+
+}
+
+.ryte-club-footer:visited {
+color: rgba(255,255,255,1)
+
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+text-decoration: none;
+background-color: #ffffff;
+}
+
+
+
+</style>
+
+ 

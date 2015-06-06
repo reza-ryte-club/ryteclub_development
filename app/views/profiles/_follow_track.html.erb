@@ -1,0 +1,21 @@
+
+  <div class="follow-track"> 
+      <% if @numberOfFollowings<2 %>  
+        <p class="follow-user"> Follows  <%= @numberOfFollowings %> user </p>
+      <% else %>
+        <p class="follow-user"> Follows  <%= @numberOfFollowings %> users </p>
+      <% end %>
+
+      <% if @numberOfFollowers<2 %> 
+        <p class="followed-by"> Followed by <%= @numberOfFollowers %> user </p>
+      <% else %>
+        <p class="followed-by"> Followed by <%= @numberOfFollowers %> users </p>
+      <% end %>
+
+      <%# if @numberOfFollowingsTale<2 %>  
+      <!--  <p class="follow-stories"> Follows <%= @numberOfFollowingsTale %> stories </p> -->
+      <%# else %>
+        <!-- <p class="follow-stories"> Follows <%= @numberOfFollowingsTale %> stories </p> -->
+      <%# end %>
+   </div><!-- end of follow-track -->
+   

@@ -1,0 +1,202 @@
+<%= render "top" %>
+<script>
+/*	$(document).ready(function(){
+	$('.f-button').each(function(){
+	var counter = 0;
+	$(this).mouseover(function(){
+		if(counter%2==0)
+		$(this).html("<a class='octicon octicon-check'></a>");
+		else
+		$(this).html("<a class='octicon octicon-x'></a>");	
+		});
+
+	$(this).mouseleave(function(){
+		if(counter%2==0)
+		$(this).html("<a class='octicon octicon-plus'></a>");
+		else
+		$(this).html("<a class='octicon octicon-check'></a>");	
+		});
+
+
+	$(this).mouseup(function(){	
+	counter++;
+		if(counter%2==0) $(this).html("<a class='octicon octicon-plus'></a>");
+ 		else 
+ 		$(this).html("<a class='octicon octicon-check'></a>");
+ 		$(this).toggleClass('f-button-clicked',counter%2!=0);
+		});
+	});	
+ });
+*/
+
+</script>
+
+
+
+
+<% if @numberOfFollowers>0 %>
+
+<div class="follower-container">
+<% if @numberOfFollowers>1 %>
+<h4>Followers</h4>
+<% else %>
+<h4>Follower</h4>
+<% end %>
+
+</div>	
+
+
+
+
+
+<div class="follower-container">	
+<div class="col-4 col-sm-4 col-lg-4">
+     		<% count = 1 %>
+	  		<% @followers.each do |follower| %>
+			<% if count%3==0 %>
+
+
+
+      		<div class ="thumbnail">
+      		<% social_identity = Identity.where(user_id: follower, provider: "facebook") %>
+			<% if social_identity[0] != nil %>
+				<% graph = Koala::Facebook::API.new(Koala::Facebook::OAuth.new("878916972138133","1c19d3ff9cf496854d4e506030f592b1").get_app_access_token) %>
+				<% profile_path = graph.get_picture(social_identity[0].uid, type: "small") %>
+				<%= image_tag profile_path, class: "person" %>
+				<% else %>
+				<%= image_tag "person.jpg", class: "person" %>
+			<% end %>
+
+      		<% user = User.where(id: follower) %>
+      		<%= link_to user[0].firstname,profiles_index_path(follower), class: "follower-thumbnail" %>
+      	<!--
+
+			<%# if user_signed_in? %>
+
+      		<div class="f-button">
+			<a class="octicon octicon-plus"></a> 
+			</div> 
+      		
+      		<%# end %>
+      	-->
+
+      	
+      		</div>			
+
+
+
+     
+    
+    <% end %>
+  <% count += 1 %>
+  <% end %>
+  </div>
+
+
+
+<div class="col-4 col-sm-4 col-lg-4">
+		    <% count = 1 %>
+	  		<% @followers.each do |follower| %>
+			<% if count%3==1 %>
+
+	<div class ="thumbnail">
+      		<% social_identity = Identity.where(user_id: follower, provider: "facebook") %>
+			<% if social_identity[0] != nil %>
+				<% graph = Koala::Facebook::API.new(Koala::Facebook::OAuth.new("878916972138133","1c19d3ff9cf496854d4e506030f592b1").get_app_access_token) %>
+				<% profile_path = graph.get_picture(social_identity[0].uid, type: "small") %>
+				<%= image_tag profile_path, class: "person" %>
+				<% else %>
+				<%= image_tag "person.jpg", class: "person" %>
+			<% end %>
+
+      		<% user = User.where(id: follower) %>
+      		<%= link_to user[0].firstname,profiles_index_path(follower), class: "follower-thumbnail" %>
+    		
+		  <!--
+
+			<%# if user_signed_in? %>
+
+      		<div class="f-button">
+			<a class="octicon octicon-plus"></a> 
+			</div> 
+      		
+      		<%# end %>
+      	-->
+
+
+      	</div>			
+
+
+
+     
+    
+    <% end %>
+  <% count += 1 %>
+  <% end %>
+  </div>
+
+
+
+<div class="col-4 col-sm-4 col-lg-4">
+		    <% count = 1 %>
+	  		<% @followers.each do |follower| %>
+			<% if count%3==2 %>
+		
+    				 	<div class ="thumbnail">
+      		<% social_identity = Identity.where(user_id: follower, provider: "facebook") %>
+			<% if social_identity[0] != nil %>
+				<% graph = Koala::Facebook::API.new(Koala::Facebook::OAuth.new("878916972138133","1c19d3ff9cf496854d4e506030f592b1").get_app_access_token) %>
+				<% profile_path = graph.get_picture(social_identity[0].uid, type: "small") %>
+				<%= image_tag profile_path, class: "person" %>
+				<% else %>
+				<%= image_tag "person.jpg", class: "person" %>
+			<% end %>
+
+      		<% user = User.where(id: follower) %>
+      		<%= link_to user[0].firstname,profiles_index_path(follower), class: "follower-thumbnail" %>
+         <!--
+
+			<%# if user_signed_in? %>
+
+      		<div class="f-button">
+			<a class="octicon octicon-plus"></a> 
+			</div> 
+      		
+      		<%# end %>
+      	-->
+	
+      
+      	</div>			
+
+
+
+     
+    
+    <% end %>
+  <% count += 1 %>
+  <% end %>
+  </div>
+
+
+</div>
+<% else %>
+<div class="follower-container"> 
+	<div class="calvin-lonely-image">
+	<%= image_tag "Hobbes-calvin-alone.png", height: "100%", width: "100%" %>
+	</div>
+	<div class="no-follower">
+		No one is following <%= @userFirstName[0] %>.
+	</div>
+</div>
+<% end %>
+
+<style>
+.working-stories{
+  margin-top: -2.5vw;
+  position: absolute;
+  margin-left: 9vw;
+}
+.created-stories{
+  margin-top: 8vw;
+}
+</style>

@@ -1,0 +1,115 @@
+<% numberOfDigitsFollow = 0 %>
+<% numberOfDigitsRecommend = 0 %>
+
+<% if @followCount<9%>
+<% numberOfDigitsFollow = 4 %>
+<% elsif @followCount>9 and @followCount<100%>
+<% numberOfDigitsFollow = 3 %>
+<% elsif @followCount>99 and @followCount<1000%>
+<% numberOfDigitsFollow = 2 %>
+<% else %>
+<% numberOfDigitsFollow = 1 %>
+<% end %>
+
+
+
+<% if @likeCount<9%>
+<% numberOfDigitsRecommend = 4 %>
+<% elsif @likeCount>9 and @likeCount<100%>
+<% numberOfDigitsRecommend = 3 %>
+<% elsif @likeCount>99 and @likeCount<1000%>
+<% numberOfDigitsRecommend = 2 %>
+<% else %>
+<% numberOfDigitsRecommend = 1 %>
+<% end %>
+
+
+
+
+
+
+<% if user_signed_in? %>
+    
+<div class="follow-container">
+    <div class = "follower-box">
+    <% if @followCount>1 %>
+      <% numberOfDigitsFollow.times do |gap|%>
+          &nbsp;
+      <% end %>
+      <%=link_to @followCount.to_s+" Followers", '/' %> 
+      
+      
+      
+  
+    <% else %>
+    <% numberOfDigitsFollow.times do |gap|%>
+        &nbsp;
+      <% end %>
+
+    <%=link_to @followCount.to_s+ " Follower", '/' %> 
+      
+    <% end %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    |&nbsp;&nbsp;&nbsp;
+
+    <% if @likeCount>1 %>
+    <%=link_to @likeCount.to_s+" Recommendations", '/'%> 
+    
+    
+    <% numberOfDigitsRecommend.times do |gap|%>
+      &nbsp;
+      <% end %>
+    <% else %>
+    <%=link_to @likeCount.to_s+" Recommendation", '/'%>
+    <% numberOfDigitsRecommend.times do |gap|%>
+      &nbsp;
+      <% end %>
+    
+    <% end %> 
+    </div>
+  </div>
+
+
+
+
+<% unless current_user.id == @authors[0]%>
+  
+     
+  <% if current_user.follows?(Tale.find(params[:tale_id])) %>
+        <% url1 = url_for(:controller => 'tales', :action => 'unfollow', :followings_id => params[:tale_id] )  %>
+        <strong><%= link_to "  unfollow  ",url1,class: "button" %></strong>
+  <% else %>
+            <% url = url_for(:controller => 'tales', :action => 'follow', :followings_id => params[:tale_id] )  %>
+            <strong><%= link_to "   follow   ",url ,class: "button"%></strong>
+            
+  <% end %>
+
+  
+
+    <% if Tale.find(params[:tale_id]).liked_by?current_user %>
+    <% url3 = url_for(:controller => 'tales', :action => 'unlike', :followings_id => params[:tale_id] )  %>
+    <strong><%= link_to " thumbs down ",url3,class: "button" %> </strong>
+            
+    <% else %>
+    <% url4 = url_for(:controller => 'tales', :action => 'like', :followings_id => params[:tale_id] )  %>
+    <strong><%= link_to "  recommend  ",url4,class: "button"  %></strong>
+    <% end %>
+
+
+<% end %>
+<% end %>
+<br />
+
+
+<style>
+.follower-box{
+  width: 40%;
+}
+
+.follow-button {
+color: red;
+}
+
+.recommend-button {
+color: red;
+}
+</style>

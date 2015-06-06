@@ -1,0 +1,20 @@
+<strong>Contributed by <%= @userFirstName[0] %></strong> <br />
+<div>
+<% plots =  Plot.where(user_id: params[:format]).order(:created_at) %>
+<% if plots ==[]  %> 
+<%= @userFirstName[0] %> didn't contributed to any story <br />
+<% else %>
+
+<% plots.each do |p| %>
+	<%= link_to  @userFirstName[0], profiles_index_path(params[:format]) %> contributed in 
+		<% titles = Tale.where(id: p.tale_id).pluck('title') %>
+		
+	<% url = url_for(:controller => 'plots', :action => 'new', :tale_id => p.tale_id)  %>
+	<%= link_to titles[0],url %><br />
+
+<% end %>
+
+
+<br />
+<% end %>
+</div>

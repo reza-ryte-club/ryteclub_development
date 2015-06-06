@@ -1,0 +1,33 @@
+/* 
+footer {padding: 20px 0;
+margin-top: 10%;	
+background-color: black;
+}
+
+.container-footer  {
+
+position: relative;
+display: inline-block;
+width: 60%;
+text-align: center;
+padding: 0px;
+margin-left: 20%;
+
+}
+
+.ryte-club-footer  {
+margin: 8px;
+color: white;
+font-family: Arial, sans-serif;
+  font-weight: 200;
+
+}
+
+.ryte-club-footer:hover {
+
+ background-color: transparent;
+  text-decoration: none;
+color: rgba(255,255,255,0.6)
+
+}
+*/

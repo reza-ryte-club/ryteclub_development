@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tale_id: 
+  genre_id: 
+
+two:
+  tale_id: 
+  genre_id: 

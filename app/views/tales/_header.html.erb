@@ -1,0 +1,241 @@
+
+
+
+<% if user_signed_in?%>
+    <% if @tale.user_id == current_user.id %>    
+      <div class="story-title-container" id="tale_title" contenteditable="true" data-toggle="tooltip" data-placement="left" data-original-title="Click here to edit"><%=@titles[0].html_safe%></div> 
+
+      <% if @subheadings[0]!= nil %>
+      <div class = "story-subheading-container" id="tale_subheading" contenteditable="true" data-toggle="tooltip" data-placement="left" data-original-title="Click here to edit"><%= @subheadings[0].html_safe %></div>
+      <% else %>
+      <div class = "story-subheading-container" id="tale_subheading" contenteditable="true" data-toggle="tooltip" data-placement="left" data-original-title="Click here to edit"><%="Tell us what it is about." %></div>
+
+
+      <% end %>
+
+<script>
+  $(document).ready(function(){
+  var keyup_counter = 0;
+  var subheading_keyup_counter = 0;
+  var tale_id = 0;
+  var plot_id = 0;
+  var previous_plot = "";
+    $('#tale_title').keyup(function(){ 
+          keyup_counter++;
+          var taleUpdateData = {"title": $('.story-title-container').html()}              
+          $.ajax({
+                  type: "PUT",
+                  url: "/tales/"+"<%= @tale_id %>",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(taleUpdateData),
+                  success: function(data){           
+                     $("#loader-wrapper").show().delay(3500).fadeOut();
+                  }});});
+
+    $('#tale_subheading').keyup(function(){ 
+          subheading_keyup_counter++;
+          var taleSubheadingUpdateData = {"subheading": $('.story-subheading-container').html()}              
+          $.ajax({
+                  type: "PUT",
+                  url: "/tales/"+"<%= @tale_id %>",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(taleSubheadingUpdateData),
+                  success: function(data){           
+                     $("#loader-wrapper").show().delay(3500).fadeOut();
+                  }});});
+
+  });
+
+</script>
+
+
+    <% else %>
+    <% if @talecover[0]== nil %>
+    <% end %>
+
+      <div class = "story-title-container"><%= @titles[0].html_safe %></div>
+      <% if @subheadings[0]!= nil %>
+      <div class = "story-subheading-container"><%= @subheadings[0].html_safe %></div>
+
+      <% end %>
+    <% end %>
+<% else %>
+
+    <% if @talecover[0]== nil %>
+    <% end %>
+
+    
+    <div class = "story-title-container"><%= @titles[0].html_safe %></div>
+    <% if @subheadings[0]!= nil %>
+    <div class = "story-subheading-container"><%= @subheadings[0].html_safe %></div>
+    <% end %>
+    <% end %>  
+<style>
+.story-page-title-show:focus{
+  outline:0;
+    outline:none;
+  
+}
+</style>
+
+
+
+
+
+
+
+
+<div id="authors">
+
+<div class="author-names">
+
+<% contributors =  Plot.where(tale_id: @tale.id).pluck(:user_id).uniq.count %>
+<% if contributors<2 %>
+<% started_by = User.where(id: @tale.user_id).pluck(:firstname) %>
+<%=  link_to started_by[0],profiles_index_path(@tale.user_id) %>
+<% else %>
+<%= plots_contributor(@tale.id) %>
+<% end %>
+</div> 
+      
+
+<br />
+</div>
+
+
+<style>
+
+.story-title h1{
+  color: rgba(0,0,0,1);
+}
+
+.content-bucket {
+color: black;
+}
+
+.author-names  {    font-family: Arial, sans-serif;
+                    font-weight: 100;
+                    font-size: 1.1vw;
+                    padding-top: 1vw;
+                    color: black;
+                    margin-left: 15vw;
+                  }
+
+.author-names a { color: rgba(245, 101, 12,1);}
+
+.author-names a:hover {  color: rgba(245, 101, 12,.8);
+                         text-decoration: none;}
+.author-names a:visited {  color: rgba(245, 101, 12,.1);
+                         text-decoration: none;}
+.author-names a:active {  color: rgba(245, 101, 12,.1);
+                         text-decoration: none;}
+.author-names a:focus {  color: rgba(245, 101, 12,.1);
+                         text-decoration: none;}
+
+
+.story-page-title-show {
+    -webkit-user-select: auto !important;
+}
+
+
+.story-page-facebook-button{
+    margin-left: 84vw;
+    position: relative;
+    margin-bottom: 1vw;
+    margin-top: -2vw;
+}
+
+.story-page-twitter-button {
+  
+  margin-left: 82vw;
+  margin-top: 19.5vw;
+  position: absolute;
+  margin-bottom: 1vw;
+
+}
+.story-page-facebook-button a{
+
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.story-page-twitter-button a{
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.story-page-facebook-button a:hover{
+ color: rgb(52, 96, 163);
+ text-decoration: none;
+}
+
+.story-page-twitter-button a:hover{
+ color: rgb(84, 203, 255);
+ text-decoration: none;
+}
+.story-page-facebook-button a:focus{
+ color: rgb(52, 96, 163);
+ text-decoration: none;
+}
+
+.story-page-twitter-button a:focus{
+ color: rgb(84, 203, 255);
+ text-decoration: none;
+}
+.story-page-facebook-button a:active{
+ color: rgb(52, 96, 163);
+ text-decoration: none;
+}
+
+.story-page-twitter-button a:active{
+ color: rgb(84, 203, 255);
+ text-decoration: none;
+}
+.story-page-facebook-button a:visited{
+ color: rgb(52, 96, 163);
+ text-decoration: none;
+}
+
+.story-page-twitter-button a:visited{
+ color: rgb(84, 203, 255);
+ text-decoration: none;
+}
+
+
+
+.fa{
+  font-size: 2.5vw;
+}
+
+
+.story-title-container{
+          color: rgba(0,0,0,.8);
+          border: none;
+          width: 70%;
+          margin: 0 20vw 1vw 15vw;
+          padding-top: 9px;
+          font-family: "Helvetica Neue","lato",sans-serif;
+          font-weight: 600;
+          font-size: 4.3vw;
+          line-height: 1.2;
+
+}
+
+.story-subheading-container{
+          color: rgba(0,0,0,1);
+          border: none;
+          width: 70%;
+          margin: 0 20vw 0vw 15vw;
+          padding-top: 9px;
+          font-family: "Helvetica Neue","lato",sans-serif;
+          font-weight: 100;
+          font-size: 2.3vw;
+          line-height: 1.2;
+          padding-bottom: 1vw;
+
+}
+</style>

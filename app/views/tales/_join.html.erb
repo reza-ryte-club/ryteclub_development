@@ -1,0 +1,106 @@
+<section id="join" class="container content-join text-center">
+    
+<!--<div class = "landing-page-join">
+-->
+<div class="blurred-back">
+<div class="wanna-join">
+Want to Join?
+</div>
+<%= link_to "Sign Up Now", user_omniauth_authorize_path(:facebook), class: "landingpage-signup" %> 
+<%= render "footer" %>
+</div>
+
+<!--
+
+</div>
+        
+    
+
+-->
+
+
+
+
+
+</section>
+
+
+<style> 
+
+.content-join { 
+      
+  background: url("https://dyy410q63q7mo.cloudfront.net/Manuscript.jpg") 30% 40% no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100vw;
+
+
+}
+
+
+.landingpage-signup{
+  color: white;
+  background: rgba(0,0,0,0.2);
+  margin-top: 49vh;
+  position: absolute;
+  font-family: "Helvetica Neue",Helvetica,"Myriad Pro","Lucida Grande",sans-serif;
+  font-size: 4vw;
+  margin-left: 51vw;
+  padding: .8vw;
+  font-weight: 100;
+  border-radius: 0%;
+  cursor: pointer;
+}
+
+
+.landingpage-signup:hover{
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 216, 255, 0.67);
+    -moz-box-shadow:    0px 0px 30px 0px rgba(0, 216, 255, 0.67);
+    box-shadow:         0px 0px 30px 0px rgba(0, 216, 255, 0.67);  
+    
+}
+
+.wanna-join{
+     position: absolute;
+  font-family: "Helvetica Neue",Helvetica,"Myriad Pro","Lucida Grande",sans-serif;
+  font-size: 6vw;
+  margin-left: 44vw;
+  margin-top: 28vh;
+  font-weight: 400;  
+
+}
+
+
+.blurred-back a{
+  font-family: "Helvetica Neue",Helvetica,"Myriad Pro","Lucida Grande",sans-serif;
+  font-size: 4vw;
+  color: white;
+  text-decoration: none;
+}
+
+
+.blurred-back a:hover{
+  color: white;
+  text-decoration: none;
+
+}
+
+
+.container {
+  
+   padding-left: 0px;}
+
+</style>
+
+
+
+
+
+
+
+ 
+
+ 

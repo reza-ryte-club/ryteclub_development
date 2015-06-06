@@ -1,0 +1,21 @@
+<div class = "like-follow">
+<% url = "https://ryte.club\/"+"plots\/"+"new?tale_id="+ params[:tale_id] %>
+<% dataText = "Ryte Club story \""  +@titles[0]+ "\" has got new update  " +"\n"+ url%>
+<% dataTextTwitter = "https://twitter.com\/"+"share?url=ryte.club&text="+ dataText  %>
+<% dataLink = "https://ryte.club\/"+ "plots\/new\?tale_id="+params[:tale_id] %>
+<% dataLinkFull = "https://www.facebook.com\/"+"sharer\/"+"sharer.php?u="+dataLink %>
+
+
+
+<%= link_to((image_tag "twitter.png",:style => "width:38px; height:38px;", size: 50), dataTextTwitter, target: "_blank") %>
+<%= link_to((image_tag "facebook.jpeg",:style => "width:38px; height:38px;", size: 50), dataLinkFull, target: "_blank") %>
+</div>
+
+
+<style>
+
+.like-follow{
+	margin-top: 30px;
+}
+
+</style>

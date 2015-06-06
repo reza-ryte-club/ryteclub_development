@@ -1,0 +1,27 @@
+
+	<%# if @sign_up_counter == 2 %>
+	<div class = "a-container">
+	<%= "We would love to see your friends on our platform" %>
+
+	Enter an email:
+	
+	<%= form_for(Invitation.new) do|f| %>
+			<%= f.text_field :to_email , placeholder: "Email", required: true%>
+			<%= f.hidden_field :from_email,value: current_user.email %>
+			<%= f.text_area :message, value: @emailMessage00, readonly: true %>
+    	<div class="actions">
+      		<%= f.submit "Send Invitation", class: "button" %>
+    	</div>
+	<% end %>
+
+	or Invite a friend:
+	</div>
+
+
+
+	<%# end %>
+
+
+
+
+

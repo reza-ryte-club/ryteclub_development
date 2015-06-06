@@ -1,0 +1,9 @@
+<%# if activity.trackable %>
+created a story 
+	<% url = url_for(:controller => 'plots', :action => 'new', :tale_id => activity.trackable.id)  %>
+
+	
+
+  <%= link_to activity.trackable.title, url %>
+<%# else  which has since been removed
+<%# end %>

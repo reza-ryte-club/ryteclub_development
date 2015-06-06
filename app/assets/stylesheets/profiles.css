@@ -1,0 +1,383 @@
+
+.profile-container { margin-top: 26%;}
+
+.user-photo {      
+              margin-left: 5vw;
+              top: 6vw;
+              position: relative;
+            }
+
+.user-photo img {
+
+padding-top: 15px;
+padding-bottom: 15px;
+border-top: 1px solid rgba(0, 0, 0, 0.4);
+border-bottom: 1px solid rgba(0, 0, 0, 0.4);          
+
+                }
+
+ .user-name { 
+  display: inline-block;
+  padding: 1vw;
+  margin-left: 4vw;
+  margin-bottom: 5vw;
+  font-family: Arial,sans-serif;
+  font-size: 1.5vw;
+  font-weight: 100;
+}
+
+.user-name a { 
+color: rgba(0, 0, 0, 1);
+text-decoration: none;
+
+}
+
+.user-name a:hover{
+  color: rgba(0, 0, 0, 1);
+  background-color: transparent;
+}
+
+.follow-track { 
+  display: block;
+  text-align: center;
+  padding: 3px;
+  color: rgba(255,255,255,0.8);
+  margin-left: -11vw;
+  margin-top: 2vw;
+  position: relative;
+              }
+
+.follow-user {      display: block;
+                    background: none repeat scroll 0% 0% #000;
+                    text-align: center;
+                    border-radius: 3px;
+                    padding: .35vw;
+                    color: rgba(255,255,255,0.8);
+                    font-family: "Arial", serif;
+                    margin-left: 15.5vw;
+                    width: 14vw;
+                    cursor: pointer;
+                    font-size: 1.3vw;}
+
+.followed-by {    display: block;
+                  background: none repeat scroll 0% 0% #000;
+                  text-align: center;
+                  border-radius: 3px;
+                  padding: .35vw;
+                  color: rgba(255,255,255,0.8);
+                  font-family: "Arial",serif;
+                  margin-left: 15.5vw;
+                  width: 14vw;
+                  cursor: pointer;
+                  font-size: 1.3vw;
+            }
+
+.follow-stories {   display: block;
+                    background: none repeat scroll 0% 0% #000;
+                    text-align: center;
+                    border-radius: 3px;
+                    padding: .35vw;
+                    color: rgba(255,255,255,0.8);
+                    font-family: "Arial", serif;
+                    margin-left: 15.5vw;
+                    width: 14vw;
+                    cursor: pointer;
+                    font-size: 1.3vw;
+                   }
+
+                  .follow-user:hover ,.followed-by:hover,.follow-stories:hover { 
+
+
+                    color: rgba(255,255,255,0.4);
+
+                  }
+
+
+.profile-page-follow-button {     
+
+  width: 6vw;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  border: 1px solid gray;
+  margin-left: 9vw;
+  /* margin-top: 0vw; */
+  border-radius: 3px;
+  padding-top: 0.3vw;
+  background-color: black;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: .3vw;
+  font-size: 1vw;
+}
+
+.profile-page-follow-button:hover {
+ 
+
+color: rgba(255,255,255,1);
+text-decoration: none;
+
+}
+
+.bio-box { 
+   width: 4vw;
+  margin-left: 10vw;
+  margin-bottom: 7vw;
+  margin-top: 2vw;
+  color: #000000;
+  display: block;
+  position: relative;
+}
+
+.bio-box a{
+  color: rgba(0,0,0,1);
+}
+
+.bio-box a:hover{
+  color: rgba(0,0,0,0.5);
+  text-decoration: none;
+  background-color: transparent;
+}
+
+
+.profile{
+
+    position: relative;
+    width: 100%;
+    margin: 80px 0% 80px 0%;
+    padding: 20px 40px 40px;
+    text-align: center;
+    margin: 0px auto -6%;
+    height: 86%;}
+
+.profile h3 {
+  margin: 10% auto 0 auto;
+}
+.profile h1 {
+  margin: 10% auto 0 auto;
+}
+.profile h2 {
+  margin: 0 auto 0 auto;
+}
+
+.profile p {
+  margin-left: 42.6%;
+}
+
+.profile a {
+  text-decoration: none;
+  color: #5c5c5c5;
+}
+
+
+
+
+.edit-bio-container{
+    position: relative;
+    width: 100%;
+    margin: 80px 0% 80px 0%;
+    padding: 20px 40px 40px;
+    text-align: center;
+    background: transparent;
+    border: 0px solid #ccc;
+    display: block;
+  overflow-x: hidden;
+  overflow-y: hidden; 
+    margin: 0px auto 40%;
+
+
+
+
+
+    
+}
+.edit-bio-container h3{
+    color: #000000;
+    margin-left: 0%;
+    margin-top: 15vh;
+    font-size: 2vw;
+    margin-bottom: 20px;
+}
+
+.edit-bio-container textarea{
+color: #000;
+width: 50%;
+margin: 0 25% 20px 25%;
+font-size: 1.5vw;
+resize: none;
+padding: 3vw;
+line-height: 3vw;
+
+}
+
+
+.char-count-bio{
+  color: green;
+  float:right;
+  margin-right: 25%;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+.person{
+  width: 40px;
+  height: 40px;   
+  border-radius: 20px;
+  float: left;
+  position: relative;
+  margin: -8px 0px 0 0px;
+}
+
+
+.person-bio-page{
+  width: 14vw;
+  height: 14vw;
+  border-radius: 8px;
+  float: left;
+  position: relative;
+  margin: -8px 0px 0 0px;
+}
+
+.follower-thumbnail{
+  margin-left: 10px;
+}
+
+.thumbnail{ border: 0 solid #dddddd;
+  margin-bottom: 5px;
+}
+
+.follower-container{
+  color: #000000;
+  margin-top: 100px;
+}
+
+
+
+
+.following-thumbnail{
+  margin-left: 10px;
+}
+
+
+.followings-container{
+  color: #000000;
+  margin-top: 100px;
+}
+
+
+.followings-container h4{
+  font-size: 1.5vw;
+}
+
+
+.thumbnail > img, .thumbnail a > img{
+  height: 40px;
+}
+
+.no-follower{
+            margin: 0vh 0vw 50vh 25vw;
+            width: 24vw;
+            font-size: 2vw;
+            padding: 5px;
+            border-radius: 4px;
+      }
+
+.no-following{
+            margin: 0vh 0vw 50vh 25vw;
+            width: 24vw;
+            font-size: 2vw;
+            padding: 5px;
+            border-radius: 4px;
+      }      
+.calvin-lonely-image{
+  
+    height:30vw;
+    width:30vw;
+    margin-left:20vw;
+    margin-top:30vh;
+    }
+
+.profile-homepage-image-div{
+         
+    border-radius: 2%;
+    display: block;
+    height: 200px;
+    position: relative;
+    width: 200px;
+  margin-bottom: 3%;
+  margin-top: 20px;
+}
+
+p.story-title-wrapper {
+  margin: -32% 208px 0px;
+}
+
+
+.row{
+  margin-bottom: 20px;
+}
+
+.profile-story-title-wrapper{
+    color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  font-family: "Crimson Text",Georgia,serif;
+  font-size: 29px;
+  font-weight: 100;
+  line-height: 1;
+  position: absolute;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  /* margin-top: 2%; */
+}
+
+.profile-story-title-wrapper a{
+   
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;  
+  }
+
+ .profile-story-title-wrapper a:hover{
+   background-color: transparent;
+  } 
+
+.created-stories{
+  display: inline-block;
+  padding: 1vw;
+  color: #000;
+  font-size: 1.2vw;
+  cursor: pointer;
+  font-weight: 400;
+  font-family: "Helvetica neue",lato,sans-serif;
+  margin-left: -24vw;
+  position: relative;
+  margin-top: -2vw;}
+.working-stories { 
+
+   display: inline-block;
+  font-size: 1.2vw;
+  padding: 1vw;
+  color: black;
+  cursor: pointer;
+  font-weight: 200;
+  font-family: "Helvetica neue",lato,sans-serif;
+  margin-left: 37vw;
+  position: absolute;
+  margin-top: -37vw;
+}
+
+.working-stories:hover {
+
+  color: rgba(0,0,0,0.6);
+  
+}
+.working-stories a{
+  color: black;
+}
+.working-stories a:hover{
+  color: rgba(0,0,0,0.6);
+}
+
+

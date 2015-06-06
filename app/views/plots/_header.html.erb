@@ -1,0 +1,19 @@
+<h1><%= @titles[0].html_safe %></h1> 
+
+<div id="authors">
+
+<h4>
+<% contributors =  Plot.where(tale_id: params[:tale_id]).pluck(:user_id).uniq.count %>
+<% main_author = Tale.where(id: params[:tale_id]).pluck(:user_id) %>
+<% if contributors<2 %>
+<% started_by = User.where(id: main_author[0]).pluck(:firstname) %>
+
+<%=  link_to started_by[0],profiles_index_path(main_author[0]) %>
+<% else %>
+<%= plots_contributor(params[:tale_id]) %>
+<% end %>
+      </h4>
+<br />
+</div>
+
+

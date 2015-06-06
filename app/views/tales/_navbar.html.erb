@@ -1,0 +1,212 @@
+<script>
+
+
+$(document).ready(function(){
+  //check whether it is homepage for navbar animation
+   homepage = 0;
+   $('.dropdown-toggle').dropdown();
+
+}); 
+
+
+
+
+
+
+
+</script>
+
+
+<style>
+
+
+body {
+
+    color: #fff;
+    background-color: #fff;
+}
+
+
+</style>
+
+
+
+<!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top top-nav-collapse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                <%= link_to(image_tag("logo.png", height: "50px"), '/', class: "logo-image") %>
+                <%= link_to "Write", new_tale_path %>
+    
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+  
+
+
+  <% if user_signed_in? %>
+  <li> <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+<span class="octicon octicon-rocket"></span>    <span class="caret"></span>
+  </button>
+  
+
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    
+
+  <% journals = Journal.where(notification_to: current_user.id).last(4) %>  
+  <% journal_counter = journals.count %>
+  <% journals.reverse.each do|j| %>
+    <% tale = Tale.where(id: j.notification_id) %>
+    <% if tale[0]!= nil %>
+    <% if tale[0].private_flag==1 %>
+    <% journal_counter = journal_counter-1 %>
+    <% end %>
+    <% end %>
+    <% end %>
+
+
+<% if journal_counter>0 %> 
+  <% loop = 0 %>
+  <% journals.reverse.each do|j| %>
+
+      <% loop = loop+1 %>
+
+
+
+
+
+  <%if j.notification_type == "StoryCreate" %>
+    <% author = Tale.where(id: j.notification_id).pluck(:user_id) %>
+    <% authorName = User.where(id: author[0]).pluck(:firstname) %>
+    <% tale = Tale.where(id: j.notification_id) %>
+    <% if tale[0]!= nil %>
+
+    <% if tale[0].private_flag==0 %>
+
+    <% storyCreateString = authorName[0]  + " started writing "+ tale[0].title+ "." %>
+    <li role="presentation"> <%= link_to storyCreateString.html_safe,tale[0],role: "menuitem", tabindex: "-1" %> </li>
+    <% end %>
+
+    <% end %>
+  <% end %>
+
+
+<% end %>
+    
+
+    <% if loop< journals.count %>
+          <li role="presentation" class="divider"></li>
+    <% end %>
+
+    <li role="presentation"> 
+     <% if journals.count>4 %> 
+    <%= link_to "See More", journals_index_path,role: "menuitem", tabindex: "-1", style: " text-align: center" %> </li>
+    <li role="presentation" class="divider"></li>
+    <% end %>
+
+    <% else %> <!-- if journals.count>0 -->
+    <li role="presentation"> 
+    <%= link_to "You don't have any notification.", profiles_index_path(current_user.id),role: "menuitem", tabindex: "-1", style: " text-align: center" %> </li>
+<% end %> <!-- if journals.count>0 -->
+
+  </ul>
+
+</div> 
+
+</li>
+<% end %> 
+<!-- if current_user.signed_in? -->
+
+
+
+                   <li><%= link_to "","/", class: "octicon octicon-home" %></li>
+                     <% if user_signed_in? %>
+                        <li><%= link_to " #{current_user.firstname.downcase}",profiles_index_path(current_user.id) %></li>
+                        <li><%= link_to "", destroy_user_session_path,class: "octicon octicon-sign-out",  method: :delete %></li>
+                     <% else %>
+                        <li><%= link_to " Login", new_user_session_path %> </li>
+                     <% end %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <style> 
+
+         .dropdown {
+position: relative;
+margin-top: 8px;
+margin-right: 17px; 
+} 
+
+
+.btn-default {
+color: white;
+background-color: black;
+border-color: black;
+}
+
+.btn-default:hover {
+    color: rgba(255,255,255,.8);
+    text-decoration: none;  
+    background: transparent;
+    border-color: black;
+
+}
+
+
+.btn-default:active {
+    background: transparent;
+}
+
+.btn-default:focus { 
+
+    background: transparent;
+    color: white;
+
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+    color: rgba(255,255,255,0.6);
+    background-color: transparent;
+    border-color: 1 px solid gray;
+}
+
+.dropdown-menu li a:hover { color: rgba(128,128,128,0.6);
+}
+.dropdown-menu li a:active { color: rgba(128,128,128,1);
+}
+.dropdown-menu li a:focus { color: rgba(128,128,128,1);
+}
+.dropdown-menu li a:visited { color: rgba(128,128,128,.5);
+}
+
+.dropdown-menu li { 
+  color: rgba(0,0,0,1);
+  padding: 9px 0px;}
+
+.dropdown-menu .divider {
+height: 1px;
+margin: 0px 0;
+overflow: hidden;
+background-color: gray;
+padding: 0px; } 
+
+.dropdown-menu {
+padding: 0px 0;
+margin: 0px 0 0; }
+
+.btn-default { border-color: none; }
+
+
+
+    </style>

@@ -1,0 +1,79 @@
+.tale-title-container{
+  color: #000;
+  position: relative;
+  width: 100%;
+  padding: 0vw 40px 0 0;
+  text-align: center;
+  background: transparent;
+  border: 0px solid #ccc;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 10vh auto 0vh;
+}
+.tale-title-container h3{
+		color: #000000;
+		margin-left: 0%;
+		margin-top: 10%;
+}
+
+.tale-title-container textarea{
+		border: none;
+        color: #000;
+		width: 60%;
+        margin: 0 20vw 0vw 20vw;
+        padding-top: 9px;
+        font-family: "Helvetica Neue","lato",sans-serif;
+        font-weight: 100;
+        font-size: 3.5vw;
+        line-height: 1.2;
+}
+
+
+.tale-title-container textarea:focus{
+  
+  outline:0;
+  outline:none;
+  font-size: 3.5vw;
+}
+
+
+
+
+
+
+
+
+
+.tale-cover-upload {
+            color: black;
+            background-color: white;
+            border-color: #cccccc;
+            }
+
+.tale-cover-upload:hover {
+            color: white;
+            background-color: gray;
+            border-color: #cccccc;
+            }
+.tale-subheading-container{ 
+  
+
+}
+.tale-subheading-container textarea{
+        
+        color: #000;
+        border: none;
+      width: 60%;
+        margin: 0 0vw 2vw 20vw;
+          padding-top: 9px;
+        font-family: "Helvetica Neue","lato",sans-serif;
+        font-weight: 100;
+        font-size: 2.5vw;
+}
+.tale-subheading-container textarea:focus{
+    font-size: 2.5vw;
+    outline:0;
+    outline:none;
+  
+}

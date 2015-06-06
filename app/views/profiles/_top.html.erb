@@ -1,0 +1,6 @@
+<div class= "navigation-bucket"> 
+    <div class="created-stories"> 
+      <%= link_to "Work-in-progress",profiles_index_path(params[:format]) %>
+      <%= link_to "Published",profiles_index_path(params[:format], filter: 'published') %>
+    </div>
+</div>

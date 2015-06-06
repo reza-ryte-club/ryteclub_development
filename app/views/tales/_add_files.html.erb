@@ -1,0 +1,68 @@
+
+
+
+ <div class = "edit_plot_image_form">    
+        <%= form_for(Plotphoto.new, html: {multipart: true}) do |f| %>
+            <div class="plotImageUpload btn plot-cover-upload"  data-toggle="tooltip" data-placement="left" data-original-title="Upload an image">
+            <div class="button-text" ><span class="mega-octicon octicon-cloud-upload"></span></div>  
+                <%= f.file_field :image, class: "plotupload",accept: " image/jpeg, image/png, image/jpg", required: true %>  
+                <%= f.hidden_field :plot_id, value: 90,id: "hidden_field_id", class: "cover_value" %>
+
+            </div>
+            <% end %>
+            
+            
+
+
+
+          
+        </div>
+   
+
+
+<script>
+        $(document).ready(function(){            
+                    var plot_image_id = 0;
+                    $(".plotupload").change(function(){
+                        
+        var plot_div_id = $(this).parent().parent().parent().parent().attr("id");
+        var plot_id = parseInt(plot_div_id.replace("plot_image_uploader_", ""));
+        console.log(plot_id);                        
+                                readPlotURL(this,plot_id);
+                                });
+
+
+
+function readPlotURL(input,plot_id){
+    plot_image_id++;
+    if (input.files && input.files[0]) {   
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var id_of_image_div = "plot_image_" + plot_image_id;
+            var plotId = "#"+plot_id;
+            
+            jQuery('<div/>', {
+                                id: id_of_image_div,
+                                class: 'image-of-content',
+                                html: "<img class='testicle'></img>"
+                                }).appendTo(plotId);           
+            
+
+
+            $('.testicle').attr('src', e.target.result);
+            var old_width = $('.testicle').width();
+            var old_height = $('.testicle').width();
+            if(old_width>700){
+
+                          var new_width =  700;
+                          var new_height = (700*(old_height/old_width));    
+                          $('.testicle').attr('width',new_width);
+                          $('.testicle').attr('height',new_height);
+                        
+            }
+            $('.testicle').css('margin-bottom','10px');
+            $('.testicle').attr('class', id_of_image_div);     
+        }
+        reader.readAsDataURL(input.files[0]);
+    }}});
+</script>

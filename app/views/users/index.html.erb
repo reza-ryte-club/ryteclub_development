@@ -1,0 +1,15 @@
+<%= render "layouts/side_bar" %>
+<ul>
+<% if @users.present? %>
+<% @users.each do |user| %>
+<ul class="list-inline">
+ <li><%= user.firstname %></li>
+ <li><%= user.role.name if user.role_id.present? %></li>
+ <li><%= link_to "Edit", edit_user_path(user.id) %></li>
+ 
+ </ul>
+<% end %>
+<% else %>
+<%= notice %>
+<% end %>
+</ul>

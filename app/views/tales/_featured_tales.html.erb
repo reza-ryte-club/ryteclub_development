@@ -1,0 +1,90 @@
+
+  <% @featured_tales.in_groups_of(2) do |tale1, tale2 | %>
+  <% if tale1 %>
+    <div class="col-6 col-sm-6 col-lg-6">
+      <div class="thumbnail">
+          <% url = url_for(:controller => 'plots', :action => 'new', :tale_id => tale1.id)  %>
+          <% url2 = "https://ryte.club\/"+"plots\/"+"new?tale_id="+ tale1.id.to_s %>
+          <% url2extend = "https://ryte.club\/"+"plots\/"+"new?tale_id="+ tale1.id.to_s+"#extend" %>
+          
+          <% if user_signed_in? %>
+            <h2><%=link_to tale1.title, url %>&nbsp;&nbsp;&nbsp;
+            <%= link_to "  Extend",url2extend, class: "buttonHome" %> </h2> 
+          <% else %>
+            <h2><%=link_to tale1.title, url %>&nbsp;&nbsp;&nbsp;    
+            <%= render "extend" %>
+            </h2>
+          <% end %>
+          <div class="authors">
+            <em>By<small> <%= plots_contributor(tale1.id) %></small></em>
+          </div>
+          <% tale1.plots.order(:id).take(3).each do |plot| %>
+            <p><%= simple_format plot.description %></p>
+          <% end %>
+          <ul class="list-inline">
+            <li><%= link_to "Read Full Story",url, class: "octicon octicon-book" %></li>
+
+      
+            <li><%#= link_to((image_tag "plus.png",:style => "width:20px; height:20px;", size: 20), url2) %></li>
+            <% dataText = "Ryte Club story :: "  +tale1.title + " \n \r " +url2 %>
+            <% dataTextTwitter = "https://twitter.com\/"+"share?url=ryte.club&text="+ dataText  %>
+            <% dataLink = "https://ryte.club\/"+ "plots\/new\?tale_id="+tale1.id.to_s %>
+            <% dataLinkFull = "https://www.facebook.com\/"+"sharer\/"+"sharer.php?u="+dataLink %>
+
+
+            <li><%= link_to((image_tag "twitter.png",:style => "width:20px; height:20px;", size: 20), dataTextTwitter, target: "_blank") %></li>
+            <li><%= link_to((image_tag "facebook.jpeg",:style => "width:20px; height:20px;", size: 20), dataLinkFull, target: "_blank") %>
+            </li>
+
+          </ul>
+      </div>
+    </div>
+    <% end %>
+    <% if tale2 %>
+      <div class="col-6 col-sm-6 col-lg-6">
+        <div class="thumbnail">
+          <% url = url_for(:controller => 'plots', :action => 'new', :tale_id => tale2.id)  %>
+          <% url2 = "https://ryte.club\/"+"plots\/"+"new?tale_id="+ tale2.id.to_s %>
+          <% url2extend = "https://ryte.club\/"+"plots\/"+"new?tale_id="+ tale2.id.to_s+"#extend" %>
+     
+          <% if user_signed_in? %>
+            <h2><%=link_to tale2.title, url %>&nbsp;&nbsp;&nbsp;
+            <%= link_to "  Extend",url2extend, class: "buttonHome" %> </h2> 
+          <% else %>
+            <h2><%=link_to tale2.title, url %>&nbsp;&nbsp;&nbsp;    
+            <%= render "extend" %>
+            </h2>
+          <% end %>
+         
+          <div class="authors">
+            <em>By<small> <%= plots_contributor(tale2.id) %></small></em>
+          </div>
+          <% tale2.plots.order(:id).take(3).each do |plot| %>
+            <p><%= simple_format plot.description %></p>
+          <% end %>
+          <ul class="list-inline">
+            <li><%= link_to "Read Full Story",url, class: "octicon octicon-book" %>
+            <li><%#= link_to((image_tag "plus.png",:style => "width:20px; height:20px;", size: 20), url2) %></li>
+      
+            <% dataText = "Ryte Club story :: "  +tale2.title + " \n \r " +url2 %>
+            <% dataTextTwitter = "https://twitter.com\/"+"share?url=ryte.club&text="+ dataText  %>
+              <% dataLink = "https://ryte.club\/"+ "plots\/new\?tale_id="+tale2.id.to_s %>
+            <% dataLinkFull = "https://www.facebook.com\/"+"sharer\/"+"sharer.php?u="+dataLink %>
+            <li><%= link_to((image_tag "twitter.png",:style => "width:20px; height:20px;", size: 20), dataTextTwitter, target: "_blank") %></li>
+            <li><%= link_to((image_tag "facebook.jpeg",:style => "width:20px; height:20px;", size: 20), dataLinkFull, target: "_blank") %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+<style>
+.thumbnail a img {
+  margin-left: 3px;
+  margin-right: 0px;
+  margin-bottom: -4px;
+}
+
+
+</style>  

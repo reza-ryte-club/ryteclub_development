@@ -1,0 +1,46 @@
+	.team{
+		width: 100%;
+		margin: 0 auto;
+	}
+	
+	.team h1 {
+		color: #000000;
+	font-family: "fira-sans",sans-serif;	
+	font-size:3vw;
+	letter-spacing: 0.01em;
+	margin-bottom: 100px;
+	margin-top:20vh;
+	left:45vw;
+	}
+	
+	.team p{
+		color: #000000;	
+		line-height: 1.5;
+		letter-spacing: 0.01em;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 20px;
+
+	}	
+
+.cofounder{
+
+  width: 14vw;
+  height: 14vw;				
+  border-radius: 50%;
+  margin-bottom:30px;
+  margin-left: 8vw;
+
+}
+
+ .team-paragraph{
+    color: #000000;
+    font-size: 1.3vw;
+  }
+
+
+  .marjuk{
+  	margin-top: 5vh;
+  }
+  .reza{
+  	margin-top: 10vh;
+  }

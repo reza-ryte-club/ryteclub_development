@@ -1,0 +1,108 @@
+
+<% if user_signed_in? %>
+    <% if @tale.user_id == current_user.id %>    
+        <% if @talecover[0]!= nil %>
+          <div class="story-show-cover">
+            <%= image_tag @talecover[0].cover_url, width: "100%"%>  
+          </div>
+                    
+        <script>
+        $(document).ready(function(){
+        $('.fileUpload').css("position","absolute");
+        $('.fileUpload').css("margin-top","-10vh");    
+        });
+
+        
+        </script>          
+        <div class = "edit_form">
+        <%= form_for(Talephoto.find(@talecover[0].id), html: {multipart: true}) do |f| %>
+            <img id="temp_image" src="#" alt="your image" /> 
+            <div class="fileUpload btn tale-cover-upload">
+            <div class="button-text">Change cover photo</div>
+                <%= f.file_field :cover, class: "upload",accept: " image/jpeg, image/png, image/jpg", required: true %>  
+                <%= f.hidden_field :tale_id, value: @tale.id, class: "cover_value" %>
+            </div>
+          <% end %>
+        </div>
+        <% else %>
+
+        <div class = "edit_form">
+        <%= form_for(Talephoto.new, html: {multipart: true}) do |f| %>
+            <img id="temp_image" src="#" alt="your image" /> 
+            <div class="fileUpload btn tale-cover-upload">
+            <div class="button-text">Add a cover photo</div>
+                <%= f.file_field :cover, class: "upload",accept: " image/jpeg, image/png, image/jpg", required: true %>  
+                <%= f.hidden_field :tale_id, value: @tale.id, class: "cover_value" %>
+            </div>
+        <% end %>
+        </div>
+        <% end %>
+<script>
+$(document).ready(function(){
+$('#temp_image').hide();
+$('.new_talephoto').fileupload();
+$('.edit_talephoto').fileupload();
+$('.edit_plotphoto').fileupload();
+
+
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var goUpload = true;
+         if (!(/\.(jpg|jpeg|png)$/i).test(input.files[0].name)) {
+            alert('You must select an image file only');
+             $('.upload').val("");
+             goUpload = false;
+            }
+
+         if (input.files[0].size > 2000000) { // 2mb
+            alert('Please upload a smaller image, max size is 2 MB');         
+            $('.upload').val("");
+            goUpload = false;
+        }
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          if(goUpload==true)
+            {
+            // image preview  
+            $('#temp_image').show();
+            $('#temp_image').attr('src', e.target.result);
+            $('#temp_image').attr('width', '100%');
+            //upload button
+            $('.button-text').html("");
+            $('.button-text').append("Change the cover photo");
+            }
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+  $("#talephoto_cover").change(function(){
+    $('.story-show-cover').hide();
+    $('.fileUpload').css("position","absolute");
+    $('.fileUpload').css("margin-top","-10vh");
+
+
+    readURL(this);
+  });
+
+});
+</script>
+
+
+    <% else %>
+        <%= render "tale_cover_show" %>
+    <% end %>
+<% else %>
+    <%= render "tale_cover_show" %>
+<% end %>
+
+
+
+
+<style>
+.edit_form{
+    color: black;
+}
+</style>

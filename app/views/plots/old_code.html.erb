@@ -1,0 +1,66 @@
+<h1>Enter your story</h1>
+    
+    <%= image_tag "github.png" %>
+
+
+
+
+  <div class="container" ng-controller="TextAreaWithLimitCtrl">
+      
+
+
+       
+
+
+          <%= form_for(Fruit.new) do |f| %> 
+          <div ng-show="isGreater()">
+            Remaining : <span style="color: green;">{{remaining()}} </span>
+          </div>    
+
+          <div ng-hide="isGreater()">
+            Remaining : <span style="color: red;">{{remaining()}} </span>
+          </div>    
+          
+           <div class="row">
+                
+                <textarea style="width: 276px; height: 90px;" id="fruit_pulp" name="fruit[pulp]" ng-model="message"></textarea>
+           </div>
+           <div ng-show="isGreater()">
+             <button ng-click="submit()">Submit story</button>
+           </div>
+           
+              
+
+<% end %>
+
+
+
+    <div>
+      <h3> Preview</h3>
+
+
+      <% @fruits.each do|fruit|%>
+      <%= fruit.pulp %>
+
+      <% end %>  {{message}} 
+
+      
+
+      </div>
+      
+    <div>
+      
+
+    <% url = url_for(:controller => 'fruits', :action =>'ruin') %>
+    <%= link_to "Delete Story",url,method: :delete, data: { confirm: 'Are you sure?'} %>   
+ 
+    </div>
+
+
+
+           
+   </div>
+
+
+
+

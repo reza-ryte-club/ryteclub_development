@@ -1,0 +1,159 @@
+<div class = "row">
+<div class="b-container">
+  <% tale = Tale.where(:id => 76) %>
+  <% tale.each do |tale| %>
+  
+ <div class="thumbnail">
+<% url = url_for(:controller => 'plots', :action => 'new', :tale_id => tale.id)  %>
+         <% url2 = "https://ryte.club\/"+"plots\/"+"new?tale_id="+ tale.id.to_s %>
+         <% url2extend = "https://ryte.club\/"+"plots\/"+"new?tale_id="+ tale.id.to_s+"#extend" %>
+      
+        <% if user_signed_in? %>
+          <h2><%=link_to tale.title, url %>&nbsp;&nbsp;&nbsp;
+          <%#= link_to "  Extend",url2extend, class: "buttonHome" %> </h2> 
+        <% else %>
+
+            <h2><%=link_to tale.title, url %>&nbsp;&nbsp;&nbsp;    
+            <%= render "extend" %>
+            </h2>
+        <% end %>
+        <div class="authors">
+          <em>By<small> <%= plots_contributor(tale.id) %></small></em>
+        </div>
+      <% word_counter = 0 %>      
+      <% plot_counter = 0 %>
+      <% word_printed = 0 %>
+      <% full_story = '' %>
+      <% tale.plots.order(:id).each do |plot| %>
+      <% full_story = full_story + (simple_format(plot.description)) %>
+      <% end %>
+
+
+
+      <% tale.plots.order(:id).each do |plot| %>
+	      <% word_counter = word_counter+plot.description.split.size %>
+          <% words = plot.description.split(' ') %>
+          <% char_counter = 0 %>
+
+
+          <% if word_printed<99 and word_counter<99 %>
+	           <%= simple_format plot.description %>
+               <% word_printed = word_printed+words.size %>
+          <% elsif word_printed<99 and word_counter>99 %>
+          		                <% loop = word_printed %>
+                <% words.each do|word| %>
+                  <% loop = loop+1 %>
+                  <% if loop>99 %>
+                  <% break %>
+                  <% end %>
+                  <% char_counter = char_counter + word.length %>
+                  <% end %>
+    			
+    			<div class = "extr">
+		              <%= simple_format truncate(plot.description, length: char_counter){link_to "Read More",'', class: 'read-more'} %>
+
+
+		             <script>
+    $(document).ready(function(){
+      $('.read-more').on('click', function(e) {
+        e.preventDefault();
+        $(this).parent().html('<%=escape_javascript simple_format(full_story)%>');
+         });
+      });
+    </script> 	
+
+
+
+
+
+
+
+              	</div>
+			    <% break %>
+             
+          <% end %>  
+
+
+        <% end %>
+         <% if user_signed_in? %>
+                    <%= form_for(Plot.new) do |f| %>
+                    <div class="char-count" style = "color:red;float:right;"></div>
+      
+                      <%= f.text_area :description, placeholder: "It's getting interesting, now what!" %>
+                      <%= f.hidden_field :tale_id, value: tale.id%>   
+                      <%= f.hidden_field :user_id, value: current_user.id %>
+  
+                     <div class="actions">
+                      <%= f.submit "Add to this story", class: "button" %>
+                    </div>
+                     <script>
+        $(document).ready(function(){
+          $('.actions').hide();
+          $('textarea').on('keyup',function(){
+                 console.log($(this).val().length);
+                 var char_counter =  $(this).val().length;
+                 if(char_counter>=300 && char_counter<1001)
+                      {$('.actions').show();
+                       $('.char-count').css("color","green");
+                       $('.char-count').html(char_counter);}
+                 else
+                      {
+                        $('.actions').hide();
+                        if(char_counter<300) { var char_left = 300-char_counter;
+                            if(char_left>1)
+                            $('.char-count').html(char_left+" more characters are needed");
+                            else
+                            $('.char-count').html(char_left+" more character is needed");
+                            $('.char-count').css("color","red");}
+                        if(char_counter>1000) {
+                            var char_surpassed = char_counter-1000;
+                            if(char_surpassed >1)
+                            $('.char-count').html(char_surpassed+" extra characters have been found");
+                            else 
+                            $('.char-count').html(char_surpassed+" extra character has been found");
+                            $('.char-count').css("color","red");
+                             }      
+                      }
+            });
+
+
+
+        });
+    </script>
+
+                    <% end %>
+                                  <% else %>
+                  <textarea placeholder= "It's getting interesting, Please log in to extend!" style="height: 100px"></textarea>
+
+              <% end %>
+
+      <% end %>
+
+      </div>
+
+     </div></div>
+
+    
+
+
+
+
+<style>
+.thumbnail a img {
+  margin-left: 3px;
+  margin-right: 0px;
+  margin-bottom: -4px;
+}
+
+
+.b-container textarea{
+  overflow: auto;
+  width: 100%;
+  height: 150px;
+  resize: none;
+  font-size: 20px;x`
+}
+
+
+</style>  
+

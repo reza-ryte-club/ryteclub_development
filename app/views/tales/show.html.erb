@@ -1,0 +1,353 @@
+<% og_url = "https://ryte.club/tales/"+@tale.id.to_s %>
+<% content_for :for_head do %>
+<meta property="fb:app_id" content="878916972138133" /> 
+<meta property="og:url" content="<%= og_url %>" />
+<meta property="og:title" content="<%= @tale.title.html_safe %>" />
+<meta property="og:description" content=" " />
+<% if @talecover[0] != nil %>
+<meta property="og:image" content="<%= @talecover[0].cover_url %>" />
+<% end %>
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="300" />
+<% end %>
+
+<%= render 'tales/navbar' %>
+<!-- title, header stuff --> 
+
+<% tale_id =  @tale_id %>
+<% content_for :title do %>
+  <%= @titles[0].html_safe %>
+<% end %>
+
+<%= render "cover_photo" %>
+
+
+
+<!-- determines h1, h4 CSS property 'Story-title --> '
+<div class="story-title">
+
+<!-- app/helper/tale_helper.rb --> 
+
+<%= render "header" %>
+<%= render "story_share" %>
+</div>
+
+<!-- Content Section of the Page --> 
+
+
+<div class="content-bucket" >
+
+    <%= render "plot_update" %>
+
+
+
+
+     <%#= render "story_share" %>
+</div>
+
+
+<%= render "add_more" %>
+
+
+<div id="ex1" style="display:none">
+      <p> Please <%= link_to "Login", new_user_session_path %> </a> to Contribute. </p>
+</div>
+
+
+<div id="follow" style="display:none">
+      <p> Please <%= link_to "Login", new_user_session_path %> </a> to Follow this article. </p>
+</div>
+
+<div id="share" style="display:none">
+      <p> Share Via </p>
+      <p>Facebook</p>
+      <p>Twitter</p>
+</div>
+<div id="invite" style="display: none">
+      
+      <div class="enter-email-address"> Enter Email Address </div>
+      
+      
+
+      <script>
+         $(document).ready(function(){
+          // disable inline editing of ckeditor.
+         CKEDITOR.disableAutoInline = true;
+         
+         $("div[id^='plot_editor_']").each(function(){
+
+              var id = parseInt(this.id.replace("plot_editor_", ""));
+              var plot_editor = "plot_editor_" + id;
+              CKEDITOR.inline(plot_editor);
+
+              
+            });
+
+
+
+
+
+
+
+         $('.new_plotphoto').fileupload();
+         $("#invitation-button").mouseup(function(){
+         $(".story-invitation-send-button").show(); 
+         });
+         
+          $("#preloader_1").hide();
+        
+          $(".story-invitation-send-button").mouseup(function(){
+            
+            $(this).hide();
+            var email = $(".enter-email-address-value").html();
+                        var invitation_creation = {
+                          "email": email,
+                          "tale_id": "<%=@tale.id%>"
+                        }
+
+      
+
+            $.ajax({
+                  type: "POST",
+                  url: "/sharings/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(invitation_creation),
+                  success: function(data){ console.log("success")}
+            });
+            $("#preloader_1").show().delay(3000).fadeOut(function(){
+                $.modal.close();
+            });
+
+
+          });
+
+
+
+
+         });
+         
+      </script>
+      <div class="enter-email-address-value" contenteditable="true">
+            
+      </div>
+      <div class="story-invitation-send-button">Send</div>
+      <div id="preloader_1">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+      <style>
+
+      body{
+        min-width:1000px; 
+      width:expression(document.body.clientWidth < 1000? "1000px": "auto" );
+    }
+
+
+
+      #invite{
+        width: 50vw;
+        height: 10vw;
+        background-color: white;
+        border-radius: 1%;
+      }
+      .enter-email-address{
+        color: gray;
+        font-family: "Helvetica neue",lato,sans-serif;
+        font-size: 1.5vw;
+        font-weight: 200;
+      }
+
+      .enter-email-address-value{
+        border: 1px solid gray;
+        height: 30px;
+        width: 45vw;
+        font-family: "Helvetica neue",lato,sans-serif;
+        font-size: 20px;
+      }
+      .story-invitation-send-button{
+        color: #ffffff;
+        font-family: "Helvetica neue",lato,sans-serif;
+        background-color: gray;
+        margin-left: 41.7vw;
+        margin-top: 2vh;
+        padding-left: 5px;
+        width: 3.3vw;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        cursor: pointer;
+        }
+
+        #preloader_1 {
+            margin-left: 42vw;
+            margin-top: 3.5vh;
+        }
+
+      .modal { background: none;
+        background-color: white;
+       }
+
+       .email-sent{
+        
+        color: green;
+        margin-left: 42.0vw;
+        position: absolute;
+        margin-top: 6.2vh;
+        font-size: 1.3vw;
+       }
+      </style>
+
+</div>
+
+
+   
+<style>
+#ex1 {
+  color: #000000;
+}
+#ex1 p{
+  color: #000000;
+}
+
+#follow {
+  color: #000000;
+}
+
+#follow p{
+  color: #000000;
+}
+
+#invite {
+  color: #000000;
+}
+
+#follow p{
+  color: #000000;
+}
+
+a:hover{
+  background-color: transparent;
+  color: rgba(0,0,0,.7);
+  text-decoration: none;
+}
+
+a:active{
+  background-color: transparent;
+  color: black;
+}
+
+a:focus{
+  background-color: transparent;
+  color: black;
+}
+
+a:visited{
+  background-color: transparent;
+  color: black;
+}
+
+.share-button{
+  text-decoration: none;
+}
+.share-button:hover{
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0,0,0,0.3); 
+  background: #006daa;
+  cursor: pointer;
+}
+
+.share-button:focus{
+  text-decoration: none;
+}
+.share-button:active{
+  text-decoration: none;
+}
+.share-button:visited{
+  text-decoration: none;
+}
+
+.publish-button{
+  
+}
+.publish-button:hover{
+  cursor: pointer;
+}
+
+.publish-button:focus{
+  text-decoration: underline;
+}
+.publish-button:active{
+  text-decoration: underline;
+}
+.share-button:visited{
+  text-decoration: underline;
+}
+
+.tale-follow-button {
+  cursor: pointer;  
+  color: black;
+  display: inline-block;
+  font-weight: 400;
+  margin-left: 15vw;
+  margin-top: 0vw;
+  /* padding: 0.75vw; */
+  position: relative;
+  /* text-align: center; */
+  /* width: 8vw; */
+  font-size: 1vw;
+  text-decoration: underline;
+
+}
+
+.tale-follow-button:hover {
+    text-decoration: underline;
+    color: rgba(0,0,0,.8);
+    cursor: pointer; 
+}
+
+.tale-follow-button:focus {
+text-decoration: underline;
+cursor: pointer; 
+}
+
+.update-story-button{
+  border: 1px solid gray;
+  width: 36px;
+  padding: 2px;
+  margin-left: 67vw;
+  cursor: pointer;
+}
+
+.fileUpload {
+  position: relative;
+  overflow: hidden;
+  margin-top: 9vh;
+  margin-left: 10vw;
+
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+#temp_image{
+  height: 55vh;
+}
+.story-show-cover img{
+  height: 65vh;
+}
+
+.follow-button:hover{
+  text-decoration: underline;
+
+}
+
+</style>

@@ -1,0 +1,51 @@
+<%= render "tales/navbar" %>
+<% content_for :title do %>Ryte Club::Your feedback counts a lot!<% end %>
+<br />
+<br />
+<br />
+
+
+
+
+
+<div class="contact">	
+
+<p>
+<%= form_for(Contact.new) do |f| %>
+ <div class="feedback">
+ <p> Our platform is at its infancy. Please let us know what you expect from us.  </p>
+   <p> 
+   <%= f.text_field :name, placeholder: "Hello! Tell us your name.", required: true %></p>
+   <p><%= f.email_field :email, placeholder: "Your email where we can reach you.",required: true %></p>
+   <p><%= f.text_area :feedback, placeholder: "Thank you for visiting. Please tell us how can we make this platform better.",required: true %></p>
+ 
+  </div>
+  
+    <%= f.submit "Send Feedback", class: "button" %>
+  
+<% end %>
+
+        
+
+	
+
+
+
+
+</div>
+<style>
+	
+		p{
+		line-height: 1.5;
+		letter-spacing: 0.01em;
+		font-family: "Times New Roman", Times, serif;
+		font-size: 24px;
+
+	}	
+
+	.b-container textarea{
+		height: 200px;
+		margin-top: 33px;
+
+	}
+</style>

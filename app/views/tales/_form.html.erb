@@ -1,0 +1,336 @@
+<%= render 'navbar' %>
+<% content_for :title do %>
+  <%= "Create a Story" %>
+<% end %>
+
+
+<div class = "edit_form">
+<%= form_for(Talephoto.new, html: {multipart: true}) do |f| %>
+<img id="temp_image" src="#" alt="your image" />  
+        <div class="fileUpload btn tale-cover-upload">
+        <div class="button-text">
+            Add a cover photo
+        </div>
+        <%#= f.file_field :cover, class: "upload", required: true %>  
+        <%= f.file_field :cover, class: "upload",accept: " image/jpeg, image/png, image/jpg", required: true %>  
+        <%= f.hidden_field :tale_id, value: 9, class: "cover_value" %>
+        </div>
+<% end %>
+</div>
+<script>
+$(document).ready(function(){
+$('#temp_image').hide();
+$(".edit_form").hide();
+$('.new_talephoto').fileupload();//has to be checked
+  
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var goUpload = true;
+         if (!(/\.(jpg|jpeg|png)$/i).test(input.files[0].name)) {
+            alert('You must select an image file only');
+             $('.upload').val("");
+             goUpload = false;
+            }
+
+         if (input.files[0].size > 2000000) { // 2mb
+            alert('Please upload a smaller image, max size is 2 MB');         
+            $('.upload').val("");
+            goUpload = false;
+        }
+
+
+
+
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          if(goUpload==true)
+            {
+            // image preview  
+            
+                        $('#temp_image').show();
+            $('#temp_image').attr('src', e.target.result);
+            $('#temp_image').attr('width', '100%');
+
+
+            //upload button
+            $('.button-text').html("");
+            $('.button-text').append("Change the cover photo");
+
+
+
+
+
+            }
+          
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$("#talephoto_cover").change(function(){
+  $('.fileUpload').css("position","absolute");
+  $('.tale-title-container textarea').css("margin","1vh 20vw 0vw 20vw");
+  $('.fileUpload').css("margin-top","-9vh");
+    readURL(this);
+});
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= form_for(@tale, html: {multipart: true}) do |f| %>
+<div class="tale-title-container">
+        <%= f.text_area :title, placeholder: "Start Writing here", required: true, class: 'title_text' %>   
+</div>  
+<div class="tale-subheading-container">
+        <%= f.text_area :subheading, placeholder: "Tell us what it is about", required: true, class: 'subheading_text' %>    
+</div>        
+
+        
+
+  
+
+  <div id="loader-wrapper">
+    <div id="loader"></div> 
+  </div>
+
+<style>
+#loader-wrapper{
+  position: fixed;
+  top: 27vh;
+  left: 40vw;
+}
+
+</style>
+
+
+
+
+        <div class = "tale-title-plot">
+        <%= f.fields_for :plots do|p| %>
+            <%= p.hidden_field :user_id, value: current_user.id %>
+            <%#= p.text_area :description, placeholder: "Content", required: true %> 
+            <%= p.cktext_area :description, class: 'plot_text' %> 
+        <% end %>
+        </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.hidden_field :private_flag, value: 1 %>
+
+<script >
+$(document).ready(function(){
+
+/* code for title */
+
+$("#loader-wrapper").hide();
+$(".tale-title-plot").hide();
+$('.tale-subheading-container').hide();
+
+
+
+
+
+
+//autosave
+  var keyup_counter = 0;
+  var subheading_keyup_counter = 0;
+  var tale_id = 0;
+  var plot_id = 0;
+  var previous_plot = "";
+    $('#tale_title').keyup(function(){
+          $('.tale-title-container').css('margin-top','0vh');
+          $('.tale-subheading-container').show();
+          $(".tale-title-plot").show();
+
+          
+          keyup_counter++;
+          var taleData = {
+                                    "title": $('.title_text').val(),
+                                    "user_id": "<%= current_user.id %>",
+                                    "private_flag": 1
+                        };
+
+           var taleUpdateData = {
+
+                                    "title": $('.title_text').val()
+                                }               
+
+
+     if(keyup_counter<2){             
+     $.ajax({
+                  type: "POST",
+                  url: "/tales/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(taleData),
+                  success: function(data){
+                    tale_id = data.id;
+                    $(".edit_form").show();
+                    $(".cover_value").attr("value",tale_id);
+                    $("#loader-wrapper").show().delay(3500).fadeOut();
+                    
+                    
+                  }});}
+
+      else{
+        $.ajax({
+                  type: "PUT",
+                  url: "/tales/"+tale_id,
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(taleUpdateData),
+                  success: function(data){
+                       
+                    
+                     $("#loader-wrapper").show().delay(3500).fadeOut();
+                    
+                 
+                  }});}
+
+
+
+
+        });
+
+
+$('#tale_subheading').keyup(function(){
+          subheading_keyup_counter++;
+          var subheadingData = {"subheading": $('.subheading_text').val() };
+          $.ajax({
+                  type: "PUT",
+                  url: "/tales/"+tale_id,
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(subheadingData),
+                  success: function(data){                      
+                     $("#loader-wrapper").show().delay(3500).fadeOut();                 
+                  }});
+});
+
+
+  var interval_counter = 0;
+  setInterval(function () {
+  var data = CKEDITOR.instances.tale_plots_attributes_0_description.getData();
+  
+  if(data==""){}
+    else{ 
+
+      if(previous_plot!=data){
+        previous_plot = data; 
+        interval_counter++;
+
+      var plotData = {
+                    "tale_id": tale_id,
+                    "description": data
+                  };
+      var plotUpdateData = {
+                    "description": data
+                  };
+
+
+      
+      if(interval_counter<2){
+              $.ajax({
+                  type: "POST",
+                  url: "/plots/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(plotData),
+                  success: function(data){plot_id = data.id;
+                     
+                    
+                      $("#loader-wrapper").show().delay(3500).fadeOut();
+                    
+                 }});}
+
+      else{
+         $.ajax({
+                  type: "PUT",
+                  url: "/plots/"+plot_id,
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(plotUpdateData),
+                  success: function(data){
+                      $("#loader-wrapper").show().delay(3500).fadeOut();
+                    
+                 
+                  }});}}}}, 3000);});
+</script>
+
+<% end %>
+
+
+
+
+
+<style>
+.fileUpload {
+  /*position: absolute;
+  overflow: hidden;
+  margin-top: -6vh;
+  margin-left: 10vw;*/
+
+  position: relative;
+  overflow: hidden;
+  margin-top: 10vh;
+  margin-left: 10vw;
+}
+.fileUpload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+textarea{
+  resize: none;
+}
+
+.tale-title-plot textarea{
+  font-family: Lucida, sans-serif;
+  font-size: 17px;
+  color: black;
+  margin-top: 10px;
+  position: relative;
+  height: 40vh;
+  border: none;
+  font-weight: 100;
+
+}
+
+
+
+.tale-title-plot textarea:focus{
+  font-size: 17px;
+}
+
+
+
+#temp_image{
+height: 55vh;
+}
+
+.cke_chrome {
+
+margin-left: 24vw;
+}
+</style>
+
+

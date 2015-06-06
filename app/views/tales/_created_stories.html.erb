@@ -1,0 +1,25 @@
+
+<div class="thumbnail">
+<% stories_by_me = Tale.where(user_id: current_user.id) %>
+<% if stories_by_me.count == 0 %>
+<%= "You didn't create any story" %>
+<% else %>
+<h2>Your Created Stories</h2>
+<br/>
+<div>
+<% stories_by_me.each do |s| %>
+    
+    <% url = url_for(:controller => 'plots', :action => 'new', :tale_id => s.id)  %>
+
+    <%= link_to s.title,url %>
+    &nbsp;&nbsp;&nbsp;
+    <%= link_to '',s, method: :delete, data: { confirm: 'Are you sure?' }, class: "octicon octicon-paintcan" %> <br />
+
+    <% end %>
+
+</div>
+
+<% end %>
+
+
+</div>

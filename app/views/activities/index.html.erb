@@ -1,0 +1,66 @@
+<div class="create-story-container">
+ <%= link_to "Create Story",new_tale_path, class: "button" %>
+ 
+ 
+</div>
+
+
+
+
+<div>
+  <div class="row">
+    <div class="span4" >
+     <div class="col-md-4">         
+        <%= render "created_stories" %>
+    </div>
+    </div>
+    <div class="span4">
+    <div class="col-md-4" >         
+
+        <%= render "trending_stories" %>
+
+
+      
+
+    </div>
+    </div>
+    <div class="span4" >
+     <div class="col-md-4">         
+      
+
+<%= render "featured_stories" %>  
+    </div>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+  <%= render 'tales/current_tale' %>
+</div>
+
+
+
+<style>
+h2{
+    text-align: left;
+    font-family: "Crimson Text", Georgia, serif;
+    font-weight: 400;
+    font-size: 50px;
+
+
+}
+</style>

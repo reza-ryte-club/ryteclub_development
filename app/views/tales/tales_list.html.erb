@@ -1,0 +1,14 @@
+<%= render "layouts/side_bar" %>
+<% if current_user.admin? %>
+ <ul>
+   <% @lists.each do |tale| %>
+     <ul class="list-inline">
+       <li><%= tale.title %> </li>
+       <li><%= link_to "Edit", edit_tale_path(tale.id) %></li>
+       <li><%= link_to '',tale, method: :delete, data: { confirm: 'Are you sure?' }, class: "octicon octicon-paintcan" %> </li>
+     </ul>
+    <% end %> 
+  </ul>
+<% else %>
+  <p> <%= notice %></p>
+<% end %>

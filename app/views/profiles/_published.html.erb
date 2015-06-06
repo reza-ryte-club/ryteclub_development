@@ -1,0 +1,719 @@
+<%= render "top" %> 
+
+
+
+
+<section id="download" class="content-section-story text-center">
+<% if @published_story_by_me!= nil %>
+     <% @published_story_by_me.each do |tale| %>
+     <% line_counter  = 0 %>
+     <% char_counter = 0 %>
+     <% title_word_counter = 0 %>
+     <% title_char_counter = 0 %>
+
+
+ <div class="profile-meta-container">  
+    <div class="profile-content-container"> 
+
+<% url_for_twitter = "https:\/"+"\/"+"ryte.club\/"+"tales\/"+tale.id.to_s %>
+      <% dataText = "Ryte Club story :: "  +tale.title + " \n \r " +url_for_twitter %>
+      <% dataTextTwitter = "https://twitter.com\/"+"share?url=ryte.club&text="+ dataText  %>
+      <% dataLink = "https://ryte.club\/"+ "tales\/"+tale.id.to_s %>
+      <% dataLinkFull = "https://www.facebook.com\/"+"sharer\/"+"sharer.php?u="+dataLink %>
+                  
+
+  <div class = "profile-facebook-button" id="<%= tale.id %>">
+<%= link_to "",dataLinkFull,class: "fa fa-facebook-square", target: "_blank"%></div>
+
+
+
+<div class = "profile-twitter-button" id="<%= tale.id %>">
+<%= link_to "",dataTextTwitter,class: "fa fa-twitter", target: "_blank"%>
+</div>
+
+
+          <% talephoto = Talephoto.where(tale_id: tale.id) %>
+          <% if talephoto[0] != nil %>
+            <%= image_tag talephoto[0].cover_url(:thumb), class: "profile-story-image-div" %>
+            <% else %>
+            <%= image_tag "no_cover.jpg", class: "profile-story-image-div" %>
+          <% end %>
+
+
+
+
+            <p class ="profile-story-title-wrapper">
+
+          <% title_word_counter = title_word_counter+tale.title.split.size %>
+            <% title_words = tale.title.split(' ') %> 
+            <% title_words.each do|title_word| %>
+                  <% title_char_counter = title_char_counter + title_word.length %>  
+                  <% if title_char_counter>47 %>
+                  <% break %>
+                  <% else %>
+                  <% title_char_counter = title_char_counter + title_word.length %>
+                  <% end %>
+          <% end %>  
+          <% tale_title = truncate(tale.title, length: title_char_counter){ ""} %>
+          <%= link_to(tale_title.html_safe,tale) %>
+        </p>
+
+
+
+
+      <div class="profile-wrapped-paragraph">
+    <p>  
+    <% if tale.subheading!= nil %>  
+    <%=  sanitize(tale.subheading).truncate(120).html_safe%>
+    <% if tale.subheading.length>120%>
+    <%= link_to "Read More",tale, class: 'read-more'%>
+    <% end %>
+    <% end %>
+    </p>
+    </div>
+
+    <!-- <div class= "profile-contribute"> Contribute </div>
+    <div class= "profile-invite"> Invite </div>
+    <div class="profile-share"> Share </div> -->
+
+
+  <% url = url_for(:controller => 'plots', :action => 'new', :tale_id => tale.id)  %>
+  <ul class="nav nav-pills ">
+    <% if user_signed_in? %>  
+    
+      <%  if current_user.id == tale.user_id or shared_emails(tale.id).include?current_user.email %>
+        <li role="presentation" style = "backgroud-color: white"> 
+            <div class = "profile-button-1">             
+              <%= link_to "  Contribute",url, "data-original-title" => "Extend this content","data-placement" => "top","data-toggle" => "tooltip" %> 
+            </div> 
+        <% end %>      
+          
+          <% if current_user.id != tale.user_id %> 
+            <% ifFollow =  current_user.follows?(Tale.find(tale.id)) %>
+            <% if ifFollow %>
+            <!-- never change the following lines' indentation, it requires for proper jquery navigation -->
+            
+
+
+            <% if shared_emails(tale.id).include?current_user.email %>
+                  <li role="presentation"  style = "backgroud-color: white"><div class = "profile-button-2" id="<%= tale.id %>"><a href="javascript:void(0);">Unfollow</a></div></li>
+            <% else %>
+                  <li role="presentation"  style = "backgroud-color: white"><div class = "profile-button-1" id="<%= tale.id %>"><a href="javascript:void(0);">Unfollow</a></div></li>
+            <% end %>
+
+
+            <% else %>
+            <% if shared_emails(tale.id).include?current_user.email %>
+                  <li role="presentation"  style = "backgroud-color: white"><div class = "profile-button-2" id="<%= tale.id %>"><a href="javascript:void(0);">Follow</a></div></li>
+            <% else %>
+                  <li role="presentation"  style = "backgroud-color: white"><div class = "profile-button-1" id="<%= tale.id %>"><a href="javascript:void(0);">Follow</a></div></li>
+            <% end %>
+            <% end %>
+
+            <% else %>
+             <li role="presentation"  style = "backgroud-color: white"><div class = "profile-button-2" id="<%= tale.id %>"><a href="#invite" rel="modal:open" id="<%= tale.id %>" data-toggle="tooltip" data-placement="top" data-original-title="Invite friends to extend">Invite</a>
+             </div></li>
+             <li role="presentation"  style = "backgroud-color: white"><div class = "profile-delete-button">
+             <%= link_to 'Delete', tale,"data-original-title" => "Remove this content","data-placement" => "right","data-toggle" => "tooltip", method: :delete, data: { confirm: 'This will permanently delete your content. Are you sure?'}  %>
+
+                  
+      
+
+
+
+
+
+
+             </div></li>
+
+
+        <% end %>
+        <% end %>
+
+
+<!--
+<li role="presentation"  style = "backgroud-color: white">
+<div class = "profile-button-3" id="<%= tale.id %>"><a href="javascript:void(0);">Share</a></div>
+    -->
+
+     
+
+
+    
+
+
+
+
+
+      </li>
+      </ul>
+
+
+
+
+
+
+  </div>  <!-- content-container div ending -->
+ </div>  <!-- meta-container div ending -->
+<% end %>
+<% end %>
+
+
+
+
+
+
+
+
+<% if user_signed_in? %>
+<script>
+$(document).ready(function(){
+  var command ;
+
+  $(".profile-button-1").mouseup(function(e){
+    var text_of_div = $(this).text();
+              if(text_of_div == "Follow"){
+                  $(this).html("Unfollow");
+                  command = 0;
+                  autoSaveFollow(e.target, command,$(this).attr('id'));
+                 }
+              if(text_of_div == "Unfollow"){
+                  $(this).html("Follow");
+                  command = 1;
+                  autoSaveFollow(e.target, command,$(this).attr('id'));
+              }
+  });
+
+  $(".profile-button-2").mouseup(function(e){
+    var text_of_div = $(this).text();
+              if(text_of_div == "Follow"){
+                  $(this).html("Unfollow");
+                  command = 0;
+                  autoSaveFollow(e.target, command,$(this).attr('id'));                
+                }
+              else if(text_of_div == "Unfollow"){
+                  $(this).html("Follow");
+                  command = 1;
+                  autoSaveFollow(e.target, command,$(this).attr('id'));
+              }
+              
+              else{
+
+
+              }
+
+  });
+
+
+
+
+
+
+
+
+});
+
+
+
+function autoSaveFollow(context,command,tale_id){
+  //console.log(tale_id);
+
+  if(command==0){
+
+
+                  var followData = {
+                                    "follower_type": "User",
+                                    "follower_id": "<%= current_user.id %>",
+                                    "followable_type": "Tale",
+                                    "followable_id": tale_id
+                  };
+                  
+
+                  console.log(followData);
+                  $.ajax({
+                  type: "POST",
+                  url: "/follows/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(followData),
+                  success: function(data){}
+                  }); 
+                  
+                  }
+  if(command==1){
+    
+                $.ajax({
+                type: "GET",
+                url: "/follows/",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: "",
+                success: function(data){   
+                    for(var i=0; data[i];i++)
+                      {
+                        if(data[i].followable_type=="Tale" && data[i].followable_id==tale_id && data[i].follower_id=="<%= current_user.id %>"){
+                          $.ajax({
+                              type: "DELETE",
+                              url: "/follows/"+data[i].id,
+                              contentType: "application/json; charset=utf-8",
+                              dataType: "json",
+                              data: "",
+                              success: function(data){}});
+                          }
+                      }
+                  }
+                });
+
+
+
+  }  
+}
+</script>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> <!-- profile-story-by-user div ending-->
+
+
+  <!-- Modal HTML embedded directly into document -->
+    <div id="ex1" style="display:none">
+      <p> Please <%= link_to "Login", new_user_session_path %> </a> to Extend. </p>
+    </div>
+    <div id="follow" style="display:none">
+      <p> Please <%= link_to "Login", new_user_session_path %> </a> to Follow. </p>
+    </div>
+    <div id="share" style="display:none">
+      <p> Share Via </p>
+      <p>Facebook</p>
+      <p>Twitter</p>
+    </div>
+
+
+
+
+<div id="invite" style="display: none">
+      
+      <div class="enter-email-address"> Enter Email Address </div>
+      
+      
+
+      <script>
+         $(document).ready(function(){
+          // disable inline editing of ckeditor.
+         CKEDITOR.disableAutoInline = true;
+
+          var tale_id;
+         $(".profile-button-2").mouseup(function(){
+              $(".story-invitation-send-button").show();
+              $(".enter-email-address-value").empty();
+              tale_id = $(this).attr('id');
+         });
+         
+          $("#preloader_1").hide();
+        
+          $(".story-invitation-send-button").mouseup(function(){
+            
+            $(this).hide();
+       
+            var email = $(".enter-email-address-value").html();
+                        var invitation_creation = {
+                          "email": email,
+                          "tale_id": tale_id
+                        }
+
+      
+
+            $.ajax({
+                  type: "POST",
+                  url: "/sharings/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(invitation_creation),
+                  success: function(data){ console.log("success")}
+            });
+            $("#preloader_1").show().delay(3000).fadeOut(function(){
+                $.modal.close();
+            });
+
+          });
+
+
+
+
+         });
+         
+      </script>
+      <div class="enter-email-address-value" contenteditable="true">
+            
+      </div>
+      <div class="story-invitation-send-button">Send</div>
+      <div id="preloader_1">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+     
+
+
+
+
+
+
+
+
+      <style>
+      #invite{
+        width: 50vw;
+        height: 10vw;
+        background-color: white;
+        border-radius: 1%;
+      }
+      .enter-email-address{
+        color: gray;
+        font-family: "Helvetica neue",lato,sans-serif;
+        font-size: 1.5vw;
+        font-weight: 200;
+      }
+
+      .enter-email-address-value{
+        color: black;
+        border: 1px solid gray;
+        height: 30px;
+        width: 45vw;
+        font-family: "Helvetica neue",lato,sans-serif;
+        font-size: 20px;
+        padding: 2px;
+      }
+      .story-invitation-send-button{
+        color: #ffffff;
+        font-family: "Helvetica neue",lato,sans-serif;
+        background-color: gray;
+        margin-left: 41.7vw;
+        margin-top: 2vh;
+        padding-left: 5px;
+        width: 3.3vw;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        cursor: pointer;
+        }
+
+        #preloader_1 {
+            margin-left: 42vw;
+            margin-top: 3.5vh;
+        }
+
+      .modal { background: none;
+        background-color: white;
+       }
+
+       .email-sent{
+        
+        color: green;
+        margin-left: 42.0vw;
+        position: absolute;
+        margin-top: 6.2vh;
+        font-size: 1.3vw;
+       }
+      </style>
+
+</div>
+
+
+
+
+
+<style>
+
+
+
+
+body { overflow-x: hidden;}
+
+
+.profile-story-image-div  {
+
+border-radius: 0.1vw;
+display: block;
+height: 10vw;
+position: relative;
+width: 10vw;
+
+  }
+
+
+
+
+.profile-meta-container {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.9);
+  border-top: 2px solid rgba(0, 0, 0, 0.9);
+  height: 13vw;
+  margin-left: 6vw;
+  padding-bottom: 6vw;
+  padding-top: 1.2vw;
+  position: relative;
+  width: 45vw;
+  margin-top: 1vw;
+}
+
+.profile-content-container {
+    display: inline-block;
+height: 10vh;
+margin-left: 2%;
+margin-top: 0.8vh;
+position: relative;
+width: 43vw;}
+
+p.profile-story-title-wrapper {
+
+font-family: "Helvetica Neue","lato",sans-serif;
+font-weight: 300;
+line-height: 1;
+font-size: 1.4vw;
+left: 13vw;
+top: 0.1vw;
+
+}
+
+.profile-story-title-wrapper a{
+   
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+
+
+
+  .profile-wrapped-paragraph { 
+    
+   width: 31vw;
+display: block;
+position: absolute;
+left: 11.8vw;
+margin-top: -6.5vw;
+line-height: 1;
+font-family: "Helvetica Neue","lato",sans-serif;
+color: rgba(0, 0, 0, 0.5);
+font-size: 1vw;
+letter-spacing: 0.01em;
+font-weight: 300;
+}
+
+
+.profile-wrapped-paragraph p{
+  font-family: "Helvetica Neue","lato",sans-serif;
+  font-weight: 300;
+  font-size: 1.1vw;
+  margin-left: 1.2vw;
+} 
+
+
+.profile-wrapped-paragraph a{
+  color: rgba(0,0,0,0.9);
+  text-decoration: none;
+} 
+
+.profile-wrapped-paragraph a.focus,a.hover{
+  color: rgba(0,0,0,0.9);
+  text-decoration: none;
+}
+
+  
+
+a.read-more:hover{background-color: transparent; color: rgba(0,0,0,.6); text-decoration: none;}
+
+.profile-button-1 {
+
+    color: rgba(0,0,0,0.9);
+    margin-left: 13vw;
+    margin-top: -1vw;
+    position: relative;
+    cursor: pointer;
+    font-size: 1vw;
+
+
+}
+
+.profile-button-1 a, a:visited{
+    color: rgba(0,0,0,0.9);
+    text-decoration: none;
+}
+
+
+.profile-button-1 a:focus, a:hover, a:active{
+
+    color: rgba(0,0,0,0.9);
+    text-decoration: none;
+}
+
+.profile-button-2 {
+
+color: rgba(0, 0, 0, 0.9);
+margin-left: 2vw;
+margin-top: -1vw;
+position: relative;
+cursor: pointer;
+font-size: 1vw;
+
+
+}
+
+
+.profile-button-2 a, a:visited{
+    color: rgba(0,0,0,0.9);
+    text-decoration: none;
+}
+
+
+.profile-button-2 a:focus, a:hover, a:active{
+
+    color: rgba(0,0,0,0.9);
+    text-decoration: none;
+}
+
+.profile-button-3 {
+
+color: rgba(0, 0, 0, 0.9);
+margin-left: 2vw;
+margin-top: -1vw;
+position: relative;
+cursor: pointer;
+font-size: 1vw;
+
+}
+.profile-button-3 a, a:visited{
+    color: rgba(0,0,0,0.9);
+    text-decoration: none;
+}
+
+
+.profile-button-3 a:focus, a:hover, a:active{
+
+    color: rgba(0,0,0,0.9);
+    text-decoration: none;
+}
+
+
+.profile-delete-button{
+  
+margin-left: 17.3vw;
+margin-top: -1vw;
+font-size: 1vw;
+position: absolute;
+}
+
+.profile-delete-button a{
+  color: rgb(255, 142, 84);
+}
+
+.profile-facebook-button {
+  margin-left: 40vw;
+  margin-top: -1.0vw;
+  position: absolute;
+}
+
+.profile-twitter-button {
+  
+  margin-left: 41.5vw;
+  margin-top: -1.0vw;
+  position: absolute;
+
+
+}
+.profile-facebook-button a{
+  color: rgb(52, 96, 163);
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+.profile-twitter-button a{
+  color: rgb(84, 203, 255);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.profile-facebook-button a:visited{
+  text-decoration: none;
+}
+
+.profile-twitter-button a:visited{
+ text-decoration: none;
+}
+
+.fa{
+  font-size: 1.2vw;
+}
+
+.created-stories:hover {
+
+  color: rgba(0,0,0,0.6);
+
+}
+
+.notes-on-thoughts { 
+                    display: inline-block;
+                    padding: 1.2vw;
+                    position: relative;
+                    font-family:"Helvetica neue",lato,sans-serif;                    
+                    color: black;
+                    font-weight: 200; 
+                    font-size: 1.2vw;
+                    cursor: pointer;
+
+                  }
+
+.notes-on-thoughts:hover {
+
+  color: rgba(0,0,0,0.6);
+  
+}
+
+.content-section-story{
+  margin-top: -32vw;
+  margin-left: 20vw;
+  width: 51vw;
+}
+
+.created-stories{
+    
+  font-weight: 200;
+  
+}
+.working-stories { 
+
+  font-weight: 400;
+  
+}
+
+
+</style>

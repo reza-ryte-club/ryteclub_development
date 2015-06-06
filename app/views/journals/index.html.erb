@@ -1,0 +1,76 @@
+		<%= render "tales/navbar" %>
+
+<% content_for :title do %>Ryte Club :: Notifications <% end %>
+<div class="notification">
+
+
+
+ <h3>Ryte Club</h3>
+<p>Notifications</p>
+<div class="journal">
+
+<% journals = Journal.where(notification_to: current_user.id) %>	
+
+<% journals.reverse.each do|j| %>
+	
+
+	<%if j.notification_type == "Follow" %>
+		<% follower_id = Follow.where(id: j.notification_id).pluck(:follower_id) %>
+		<% follower = User.where(id: follower_id[0]).pluck(:firstname) %>
+
+		<li> <%= link_to follower[0], profiles_index_path(follower_id[0]) %> started following you.</li>
+	<% end %>
+
+
+	<%if j.notification_type == "TaleFollow" %>
+		<% follower_id = Follow.where(id: j.notification_id).pluck(:follower_id) %>
+		<% follower = User.where(id: follower_id[0]).pluck(:firstname) %>
+		<% story_id = Follow.where(id: j.notification_id).pluck(:followable_id) %>
+		<% tale = Tale.where(id: story_id[0]) %>
+		<% url = url_for(:controller => 'plots', :action => 'new', :tale_id => tale[0].id)  %>
+
+		<li> <%= link_to follower[0],profiles_index_path(follower_id[0]) %> started following your content 
+		<%= link_to tale[0].title,tale[0] %>. </li>
+	<% end %>
+
+
+	<%if j.notification_type == "StoryCreate" %>
+		<% author = Tale.where(id: j.notification_id).pluck(:user_id) %>
+		<% authorName = User.where(id: author[0]).pluck(:firstname) %>
+		<% tale = Tale.where(id: j.notification_id) %>
+		<% if tale[0]!= nil %>
+		<% if tale[0].private_flag==0 %>
+		<li> <%= link_to authorName[0],profiles_index_path(author[0]) %> started writing a new content 
+		<%= link_to tale[0].title,tale[0] %>. </li>
+		<% end %>
+		<% end %>
+	<% end %>
+
+	<%if j.notification_type == "StoryExtend" %>
+		<% tale_id = Plot.where(id: j.notification_id).pluck(:tale_id) %>
+		<% author_id = Plot.where(id: j.notification_id).pluck(:user_id) %>
+		<% authorName = User.where(id: author_id[0]).pluck(:firstname) %>
+		<% tale = Tale.where(id: tale_id[0]) %>
+		<% url = url_for(:controller => 'plots', :action => 'new', :tale_id => tale_id[0])  %>
+
+		<% if tale[0]!= nil %>
+		<% unless current_user.id == author_id[0] %> 
+		<li> <%= link_to authorName[0],profiles_index_path(author_id[0]) %> extended the content  
+		<%= link_to tale[0].title,tale[0] %>. </li>
+		<% end %>
+
+	<% end %>
+	<% end %>
+
+
+
+
+
+<% end %>
+
+
+
+</div>
+
+</div>	
+		

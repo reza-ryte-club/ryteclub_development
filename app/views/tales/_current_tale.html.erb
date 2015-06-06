@@ -1,0 +1,171 @@
+<% content_for :title do %>Ryte Club :: Peer-to-Peer Homework Network <% end %>
+
+
+
+
+<script>
+/* This code is only applicable for the homepage. */
+var homepage = 1;
+
+$(window).scroll(function() {
+    if(homepage==1){
+    if ($(".navbar").offset().top > 50) {
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
+    } else {
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+    }}
+});
+
+
+
+$(document).ready(function(){
+        $("ul.content").snapscroll();
+});
+
+</script>
+
+
+
+
+
+<!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                
+                <%= link_to(image_tag("logo.png", height: "50px"), '/', class: "logo-image") %>
+                <%= link_to "write", new_tale_path %>
+    
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                   <li><%= link_to "home","/" %></li>
+                     <% if user_signed_in? %>
+                        <li><%= link_to " #{current_user.firstname.downcase}",profiles_index_path(current_user.id) %></li>
+                        <li><%= link_to " exit", destroy_user_session_path, method: :delete %></li>
+                     <% else %>
+                        <li><%= link_to " login", new_user_session_path %> </li>
+                     <% end %>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+<ul class="content">
+    <li>
+
+
+
+ <header class="intro">
+        <div class="intro-body">          
+
+                 <div class="blurred-back">
+            <h1 class="brand-heading">Ryte Club</h1>
+            <p class="intro-text">Welcome to our peer-to-peer homework network</p> 
+              </div>
+
+
+
+
+        </div>
+    </header>
+
+</li>
+
+<li>
+
+    <%= render 'about' %>
+
+</li>
+<li>
+
+    <%= render 'join' %>
+
+</li>
+
+
+</ul>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+.intro {     
+  background: url("https://dyy410q63q7mo.cloudfront.net/Blue.jpg") 30% 40% no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+ }
+
+
+
+
+body {
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #fff;
+}
+
+
+
+
+
+
+<!-- first divsection -->
+
+
+
+/* spooky code!!
+remove it and it will break the layout */
+
+
+ul.content {
+  width: 100%;
+}
+
+ul.content li {
+  display: block;
+  
+}
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+/* this workd for forced scroll */
+ul,li {border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
+
+
+</style>

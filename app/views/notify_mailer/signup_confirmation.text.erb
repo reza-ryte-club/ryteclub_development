@@ -1,0 +1,6 @@
+Welcome to Ryte Club <%= @user.firstname %>
+ 
+<p> Ryte Club coonects with you writers so you can write stories together. </p> 
+<p> Imporvise the story plots started by others. </p> 
+ <%= link_to @user.firstname, profiles_index_path(@user.id) %>
+

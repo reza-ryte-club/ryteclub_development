@@ -1,0 +1,62 @@
+<% if user_signed_in? %>
+<div>
+
+<% if params[:format].to_s!=current_user.id.to_s %>
+	<% if current_user.follows?(User.find(params[:format])) %>
+		<% url1 = url_for(:controller => 'profiles', :action => 'unfollow', :followings_id => params[:format] )  %>
+		<strong><%= link_to "unfollow",url1, class: "button" %></strong>
+	<% else %>
+		<% url = url_for(:controller => 'profiles', :action => 'follow', :followings_id => params[:format] )  %>
+		<strong><%= link_to "follow",url, class: "button" %></strong>
+	<% end %>
+<% end %>
+
+
+
+
+
+
+</div>	
+<% end %>
+
+<div class="follow-container">
+	<div class = "follower-box">
+
+		<% if @numberOfFollowers>1 %>
+		<%=link_to @numberOfFollowers.to_s+" Followers", profiles_index_path(params[:format], filter: "followers") %> 
+		<% else %>
+		<%=link_to @numberOfFollowers.to_s+" Follower", profiles_index_path(params[:format], filter: "followers") %> 
+		<% end %>&nbsp;&nbsp;&nbsp;
+		|&nbsp;&nbsp;&nbsp;
+
+		<% if @numberOfFollowings>1 %>
+		<%=link_to @numberOfFollowings.to_s+" Followings", profiles_index_path(params[:format], filter: "followings") %> 
+		
+		<% else %>
+		<%=link_to @numberOfFollowings.to_s+" Following", profiles_index_path(params[:format], filter: "followings") %> 
+		<% end %> 
+	<div class= "bio">
+<% if @bio[0] == nil %>
+	<% if user_signed_in? and current_user.id.to_s==params[:format].to_s %>
+			<%= link_to "Add Your Short Bio",bios_path %>
+	<% end %>	
+<% else %>
+	<% if user_signed_in? and current_user.id.to_s==params[:format].to_s %>
+	<%= link_to @bio[0].bio, edit_bio_path(@bio[0].id) %>
+	<% else %>
+	<%= @bio[0].bio %>
+	<% end %>
+<% end %>
+</div>
+
+	</div>
+
+
+
+
+
+</div>
+
+
+
+

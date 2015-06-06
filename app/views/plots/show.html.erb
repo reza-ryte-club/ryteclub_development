@@ -1,0 +1,63 @@
+<!-- title, header stuff --> 
+
+<% tale_id =  params[:tale_id] %>
+<% content_for :title do %>
+  <%= @titles[0] %>
+<% end %>
+
+<!-- Classification of content-type whether story of opinion or sci-fi-->
+
+<% genre_type = TaleGenre.where(tale_id: params[:tale_id]).pluck(:genre_id) %>
+<% if genre_type[0] == 2 %>
+<% content_type = " Opinion" %>
+<% elsif genre_type[0] == 3 %>
+<% content_type = " Sci-Fi" %>
+<% else %>
+<% content_type = " Story" %>
+<% end %>
+
+
+<div class="cover-photo-bucket">
+</div>
+
+<!-- determines h1, h4 CSS property 'Story-title --> '
+<div class="story-title">
+
+<!-- app/helper/tale_helper.rb --> 
+
+<%= render "header" %>
+
+</div>
+
+<!-- Content Section of the Page --> 
+
+
+<div class="content-bucket" >
+
+  <% plots = Plot.where(tale_id: params[:tale_id]).order(:id) %>
+
+      
+      <% plots.each do |p| %>
+          <% if user_signed_in? %>
+                  <% if p.user_id == current_user.id %>
+                                <%= simple_format p.description %>
+                  <% else %>
+                                <%= simple_format p.description %>
+                  <% end %>
+          <% else %> 
+                <%= simple_format p.description %>
+          <%end%>
+     <%end%>
+
+     <ul class="list-inline-story-page"> 
+      <div class="button-wrapper"> 
+
+      <li class="extend-button"> Extend </li>
+      <li class="follow-button"> Follow </li>
+      <li class="share-button"> Share </li>
+      
+      </div> 
+
+     </ul>
+
+</div>

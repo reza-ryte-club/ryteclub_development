@@ -1,0 +1,159 @@
+<% if user_signed_in? %>
+<% if params[:format].to_s!=current_user.id.to_s %>
+
+<% ifFollow =  current_user.follows?(User.find(params[:format])) %>
+<% if ifFollow %>
+    <!-- never change the following lines' indentation, it requires for proper jquery navigation -->
+    
+
+    <div class = "profile-page-follow-button">Unfollow</div>
+    <script>
+$(document).ready(function(){
+  var command ;
+  $(".profile-page-follow-button").mouseup(function(e){
+              var text_of_div = $(this).text();
+              console.log(text_of_div);
+
+              if(text_of_div == "Follow"){
+                  console.log("follow detected");
+                  $('.profile-page-follow-button').html("UnFollow");
+                  console.log("changed to unfollow");
+                  command = 0;
+                  autoSaveFollow(e.target, command);
+                
+                }
+              else{
+                  console.log("unfollow detected");
+                  $('.profile-page-follow-button').html("Follow");
+                  console.log("changed to follow");
+                  command = 1;
+                  autoSaveFollow(e.target, command);
+              }    
+              });
+});
+
+
+
+function autoSaveFollow(context,command){
+  if(command==0){
+                  var followData = {
+                                    "follower_type": "User",
+                                    "follower_id": "<%= current_user.id %>",
+                                    "followable_type": "User",
+                                    "followable_id": "<%= params[:format] %>"
+                  };
+                  
+                  $.ajax({
+                  type: "POST",
+                  url: "/follows/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(followData),
+                  success: function(data){}
+                  });}
+  if(command==1){
+                $.ajax({
+                type: "GET",
+                url: "/follows/",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: "",
+                success: function(data){   
+                    for(var i=0; data[i];i++)
+                      {
+                        if(data[i].followable_type=="User" && data[i].followable_id=="<%= params[:format] %>" && data[i].follower_id=="<%= current_user.id %>"){
+                          $.ajax({
+                              type: "DELETE",
+                              url: "/follows/"+data[i].id,
+                              contentType: "application/json; charset=utf-8",
+                              dataType: "json",
+                              data: "",
+                              success: function(data){}});
+                          }
+                      }
+                  }
+                });
+
+  }  
+}
+</script>
+<% else %>
+    <!-- never change the following lines' indentation, it requires for proper jquery navigation -->
+    <div class = "profile-page-follow-button">Follow</div>
+
+
+
+
+<script>
+$(document).ready(function(){
+  var command ;
+  $(".profile-page-follow-button").mouseup(function(e){
+              var text_of_div = $(this).text();
+              console.log(text_of_div);
+
+              if(text_of_div == "Follow"){
+                  console.log("follow detected");
+                  $('.profile-page-follow-button').html("UnFollow");
+                  console.log("changed to unfollow");
+                  command = 0;
+                  autoSaveFollow(e.target, command);
+                
+                }
+              else{
+                  console.log("unfollow detected");
+                  $('.profile-page-follow-button').html("Follow");
+                  console.log("changed to follow");
+                  command = 1;
+                  autoSaveFollow(e.target, command);
+              }    
+              });
+});
+
+
+
+function autoSaveFollow(context,command){
+  if(command==0){
+                  var followData = {
+                                    "follower_type": "User",
+                                    "follower_id": "<%= current_user.id %>",
+                                    "followable_type": "User",
+                                    "followable_id": "<%= params[:format] %>"
+                  };
+                  
+                  $.ajax({
+                  type: "POST",
+                  url: "/follows/",
+                  contentType: "application/json; charset=utf-8",
+                  dataType: "json",
+                  data: JSON.stringify(followData),
+                  success: function(data){}
+                  });}
+  if(command==1){
+                $.ajax({
+                type: "GET",
+                url: "/follows/",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: "",
+                success: function(data){   
+                    for(var i=0; data[i];i++)
+                      {
+                        if(data[i].followable_type=="User" && data[i].followable_id=="<%= params[:format] %>" && data[i].follower_id=="<%= current_user.id %>"){
+                          $.ajax({
+                              type: "DELETE",
+                              url: "/follows/"+data[i].id,
+                              contentType: "application/json; charset=utf-8",
+                              dataType: "json",
+                              data: "",
+                              success: function(data){}});
+                          }
+                      }
+                  }
+                });
+
+  }  
+}
+</script>
+<% end %>
+<% end %>
+<% end %>

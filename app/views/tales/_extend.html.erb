@@ -1,0 +1,16 @@
+<style>
+div#ex1 p{
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 30px;
+  margin-top: 30x;
+}
+</style>
+
+
+  <!-- Modal HTML embedded directly into document -->
+  <div id="ex1" style="display:none">
+    <p> Please <%= link_to "Login", new_user_session_path %> </a> to Extend </p><!-- <a href="#" rel="modal:close">Close</a> or press ESC</p> -->
+  </div>
+  
+   <a href="#ex1" rel="modal:open" > Extend </a>

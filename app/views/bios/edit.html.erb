@@ -1,0 +1,49 @@
+<%= render 'tales/navbar' %>
+<% content_for :title do %>Edit Your Bio<% end %>
+
+
+<%= form_for(@bio) do |f| %>
+
+ <div class="edit-bio-container">    
+ 
+        <h3>Let us know about yourself.</h3>
+
+   
+ 
+<div class="char-count-bio"></div>
+ <%= f.text_area :title, placeholder: "Yourself", required: true, class: "edit-bio-textarea" %>
+   <%= f.hidden_field :user_id, value: current_user.id %>  
+  <div class="actions">
+  
+<%= f.submit "Edit Your Bio", class: "button" %>
+</div>
+<% end %>
+</div>
+        
+<script>
+$(document).ready(function(){
+    $('.actions').hide();
+          $('textarea').on('keyup',function(){
+                 console.log($(this).val().length);
+                 var char_counter =  $(this).val().length;
+                 if(char_counter<300)
+                      {$('.actions').show();
+                       $('.char-count-bio').css("color","green");
+                       $('.char-count-bio').html(char_counter);}
+                 else
+                      {
+                        $('.actions').hide();
+                            var char_surpassed = char_counter-300;
+                            if(char_surpassed >1)
+                            $('.char-count-bio').html(char_surpassed+" extra characters have been found");
+                            else 
+                            $('.char-count-bio').html(char_surpassed+" extra character has been found");
+                            $('.char-count-bio').css("color","red");
+                       }      
+                      
+            });
+
+
+
+});
+</script>
