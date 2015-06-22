@@ -1,0 +1,2297 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-22 23:52:40 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (4.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TalesController#index as HTML
+  [1m[35mTale Load (3.8ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."private_flag" = 0 AND "tales"."featured" = 't'  ORDER BY "tales"."id" ASC LIMIT 6
+  Rendered tales/_about.html.erb (1.9ms)
+  Rendered tales/_footer.html.erb (1.0ms)
+  Rendered tales/_join.html.erb (4.8ms)
+  Rendered tales/_current_tale.html.erb (13.7ms)
+  Rendered tales/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 21919ms (Views: 21805.6ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/assets/sprockets-octicons.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:02 +0600
+
+
+Started GET "/assets/_storytemplate.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:02 +0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:02 +0600
+
+
+Started GET "/assets/_footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:02 +0600
+
+
+Started GET "/assets/_general.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/activities.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/auhentication.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/default.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/editor.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/feedback.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/generalcss.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery.modal.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/landingpage.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/new_tale.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/notification.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/plotphotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/preloader2.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/preloader.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/sharings.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/talephotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/the_team.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/who_we_are.css?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery-fileupload/vendor/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery-fileupload/basic.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/activities.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/classie.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/grayscale.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery.modal.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery.modal.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery.scroll_to.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/jquery.snapscroll.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/plotphotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/readmore.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/sharings.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:03 +0600
+
+
+Started GET "/assets/talephotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:04 +0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:04 +0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-22 23:53:04 +0600
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-06-22 23:53:04 +0600
+
+
+Started GET "/assets/new.png" for 127.0.0.1 at 2015-06-22 23:53:04 +0600
+
+
+Started GET "/assets/new3.png" for 127.0.0.1 at 2015-06-22 23:53:04 +0600
+
+
+Started GET "/assets/new2.png" for 127.0.0.1 at 2015-06-22 23:53:04 +0600
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-06-22 23:53:06 +0600
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-06-22 23:53:08 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered tales/_navbar.html.erb (3.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 75ms (Views: 49.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/octicons.woff" for 127.0.0.1 at 2015-06-22 23:53:08 +0600
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-06-22 23:53:08 +0600
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendered tales/_navbar.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 51ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sprockets-octicons.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/_footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/_general.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/_storytemplate.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/activities.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/auhentication.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/default.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/editor.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/feedback.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/generalcss.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/jquery.modal.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/landingpage.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/new_tale.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/notification.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/plotphotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/preloader.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/preloader2.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/sharings.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/talephotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/the_team.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/who_we_are.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/jquery-fileupload/vendor/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/jquery-fileupload/basic.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:18 +0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/activities.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/classie.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/grayscale.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/jquery.modal.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/jquery.modal.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/jquery.scroll_to.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/jquery.snapscroll.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/plotphotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/readmore.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/sharings.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/talephotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-06-22 23:54:19 +0600
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oejNJNfXlF6LjEOBFLa0RqVOEV6N/K/65V1qTsveiFI=", "user"=>{"email"=>"mrezaurrahman@icloud.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (8.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'mrezaurrahman@icloud.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mSQL (3.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = 9[0m  [["current_sign_in_at", "2015-06-22 17:54:21.323600"], ["last_sign_in_at", "2015-03-31 19:58:06.175271"], ["sign_in_count", 265], ["updated_at", "2015-06-22 17:54:21.326927"]]
+  [1m[35m (1.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/profiles/index.9
+Completed 302 Found in 142ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/profiles/index.9" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+Processing by ProfilesController#index as 
+  [1m[36m (1.8ms)[0m  [1mSELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9[0m
+  [1m[35m (2.9ms)[0m  SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."followable_type" = 'User' AND "follows"."followable_id" = 9
+  [1m[36m (0.7ms)[0m  [1mSELECT "follows"."followable_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'User'[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "follows"  WHERE "follows"."followable_type" = 'User' AND "follows"."followable_id" = 9
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'User'[0m
+  [1m[35m (0.6ms)[0m  SELECT "follows"."followable_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'Tale'
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'Tale'[0m
+  [1m[35mTale Load (1.7ms)[0m  SELECT "tales".* FROM "tales"  WHERE "tales"."user_id" = 9  ORDER BY "tales"."updated_at" ASC
+  [1m[36mTale Load (0.7ms)[0m  [1mSELECT "tales".* FROM "tales"  WHERE "tales"."user_id" = 9 AND "tales"."private_flag" = 0  ORDER BY "tales"."updated_at" ASC[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "tales"  WHERE "tales"."user_id" = 9
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mJournal Load (2.3ms)[0m  SELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4
+  Rendered tales/_navbar.html.erb (17.4ms)
+  [1m[36mIdentity Load (2.2ms)[0m  [1mSELECT "identities".* FROM "identities"  WHERE "identities"."user_id" = 9 AND "identities"."provider" = 'facebook'[0m
+  Rendered profiles/_bio.html.erb (3.2ms)
+  Rendered profiles/_follow_button.html.erb (1.5ms)
+  Rendered profiles/_follow_track.html.erb (1.3ms)
+  [1m[35mTalephoto Load (1.8ms)[0m  SELECT "talephotos".* FROM "talephotos"  WHERE "talephotos"."tale_id" = 342
+  Rendered profiles/_story_by.html.erb (17.8ms)
+  Rendered profiles/index.html.erb within layouts/application (77.0ms)
+Completed 200 OK in 150ms (Views: 92.9ms | ActiveRecord: 26.7ms)
+
+
+Started GET "/assets/sprockets-octicons.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/activities.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/_general.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/_storytemplate.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/_footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/auhentication.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/default.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/editor.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/feedback.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/generalcss.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/jquery.modal.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/landingpage.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/new_tale.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/notification.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/plotphotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/preloader.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/preloader2.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:21 +0600
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/sharings.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/talephotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/the_team.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/who_we_are.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery-fileupload/vendor/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery-fileupload/basic.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/activities.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/classie.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/grayscale.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery.modal.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery.modal.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery.scroll_to.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/jquery.snapscroll.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/plotphotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/readmore.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/sharings.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/talephotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/no_cover.jpg" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont.woff" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started GET "/bios/" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+Processing by BiosController#index as JSON
+  Parameters: {"bio"=>{}}
+  [1m[36mBio Load (4.1ms)[0m  [1mSELECT "bios".* FROM "bios"[0m
+  Rendered bios/index.json.jbuilder (19.0ms)
+Completed 200 OK in 33ms (Views: 26.8ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-06-22 23:54:22 +0600
+
+
+Started DELETE "/tales/342" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+Processing by TalesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UiByWIcvf+r7q9VwX03onTn0ldfVvGHcE8MeoFiGoSk=", "id"=>"342"}
+  [1m[35mTale Load (0.7ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 342]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mJournal Load (1.7ms)[0m  SELECT "journals".* FROM "journals"  WHERE "journals"."notification_type" = 'StoryCreate' AND "journals"."notification_id" = 342
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mTalephoto Load (2.3ms)[0m  SELECT  "talephotos".* FROM "talephotos"  WHERE "talephotos"."tale_id" = $1 LIMIT 1  [["tale_id", 342]]
+  [1m[36mPlot Load (5.9ms)[0m  [1mSELECT "plots".* FROM "plots"  WHERE "plots"."tale_id" = $1  ORDER BY tale_id DESC[0m  [["tale_id", 342]]
+  [1m[35mPlotphoto Load (2.0ms)[0m  SELECT "plotphotos".* FROM "plotphotos"  WHERE "plotphotos"."plot_id" = $1  [["plot_id", 604]]
+  [1m[36mSQL (1.1ms)[0m  [1mDELETE FROM "plots" WHERE "plots"."id" = $1[0m  [["id", 604]]
+  [1m[35mLike Load (2.3ms)[0m  SELECT "likes".* FROM "likes"  WHERE "likes"."likeable_type" = 'Plot' AND "likes"."likeable_id" = 604
+  [1m[36mPlotphoto Load (0.5ms)[0m  [1mSELECT "plotphotos".* FROM "plotphotos"  WHERE "plotphotos"."plot_id" = $1[0m  [["plot_id", 603]]
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "plots" WHERE "plots"."id" = $1  [["id", 603]]
+  [1m[36mLike Load (0.7ms)[0m  [1mSELECT "likes".* FROM "likes"  WHERE "likes"."likeable_type" = 'Plot' AND "likes"."likeable_id" = 603[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "tales" WHERE "tales"."id" = $1  [["id", 342]]
+  [1m[36mFollow Load (0.6ms)[0m  [1mSELECT "follows".* FROM "follows"  WHERE "follows"."followable_type" = 'Tale' AND "follows"."followable_id" = 342[0m
+  [1m[35mLike Load (0.5ms)[0m  SELECT "likes".* FROM "likes"  WHERE "likes"."likeable_type" = 'Tale' AND "likes"."likeable_id" = 342
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/profiles/index.9
+Completed 302 Found in 171ms (ActiveRecord: 37.5ms)
+
+
+Started GET "/profiles/index.9" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+Processing by ProfilesController#index as 
+  [1m[35m (0.6ms)[0m  SELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9
+  [1m[36m (0.5ms)[0m  [1mSELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."followable_type" = 'User' AND "follows"."followable_id" = 9[0m
+  [1m[35m (0.5ms)[0m  SELECT "follows"."followable_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'User'
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "follows"  WHERE "follows"."followable_type" = 'User' AND "follows"."followable_id" = 9[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'User'
+  [1m[36m (0.6ms)[0m  [1mSELECT "follows"."followable_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'Tale'[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'Tale'
+  [1m[36mTale Load (0.6ms)[0m  [1mSELECT "tales".* FROM "tales"  WHERE "tales"."user_id" = 9  ORDER BY "tales"."updated_at" ASC[0m
+  [1m[35mTale Load (0.5ms)[0m  SELECT "tales".* FROM "tales"  WHERE "tales"."user_id" = 9 AND "tales"."private_flag" = 0  ORDER BY "tales"."updated_at" ASC
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "tales"  WHERE "tales"."user_id" = 9[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mJournal Load (0.6ms)[0m  [1mSELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4[0m
+  Rendered tales/_navbar.html.erb (6.5ms)
+  [1m[35mIdentity Load (0.5ms)[0m  SELECT "identities".* FROM "identities"  WHERE "identities"."user_id" = 9 AND "identities"."provider" = 'facebook'
+  Rendered profiles/_bio.html.erb (0.6ms)
+  Rendered profiles/_follow_button.html.erb (0.5ms)
+  Rendered profiles/_follow_track.html.erb (0.5ms)
+  Rendered profiles/_story_by.html.erb (0.6ms)
+  Rendered profiles/index.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 69ms (Views: 49.4ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/assets/_footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/sprockets-octicons.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/activities.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/_general.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/_storytemplate.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/auhentication.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/default.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/editor.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/feedback.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/generalcss.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/jquery.modal.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/landingpage.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/new_tale.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/notification.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/plotphotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/preloader.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/preloader2.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:27 +0600
+
+
+Started GET "/assets/sharings.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/talephotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/the_team.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/who_we_are.css?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery-fileupload/vendor/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery-fileupload/basic.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/activities.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/classie.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/grayscale.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery.modal.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery.modal.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery.scroll_to.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/jquery.snapscroll.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/plotphotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/readmore.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/sharings.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/talephotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+
+
+Started GET "/bios/" for 127.0.0.1 at 2015-06-22 23:54:28 +0600
+Processing by BiosController#index as JSON
+  Parameters: {"bio"=>{}}
+  [1m[36mBio Load (0.8ms)[0m  [1mSELECT "bios".* FROM "bios"[0m
+  Rendered bios/index.json.jbuilder (5.6ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/bios/" for 127.0.0.1 at 2015-06-22 23:54:40 +0600
+Processing by BiosController#index as JSON
+  Parameters: {"bio"=>{}}
+  [1m[35mBio Load (305.2ms)[0m  SELECT "bios".* FROM "bios"
+  Rendered bios/index.json.jbuilder (309.5ms)
+Completed 200 OK in 317ms (Views: 10.7ms | ActiveRecord: 305.2ms)
+
+
+Started PUT "/bios/145" for 127.0.0.1 at 2015-06-22 23:54:40 +0600
+Processing by BiosController#update as JSON
+  Parameters: {"id"=>"145", "user_id"=>"9", "title"=>"I am the guy who wrote Ryte Club.", "bio"=>{"id"=>"145", "user_id"=>"9", "title"=>"I am the guy who wrote Ryte Club."}}
+  [1m[36mBio Load (0.4ms)[0m  [1mSELECT  "bios".* FROM "bios"  WHERE "bios"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+Unpermitted parameters: id
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "bios" SET "title" = $1, "updated_at" = $2 WHERE "bios"."id" = 145  [["title", "I am the guy who wrote Ryte Club."], ["updated_at", "2015-06-22 17:54:40.973076"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mBio Load (0.5ms)[0m  SELECT "bios".* FROM "bios"  WHERE "bios"."id" = 145
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 14ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/profiles/index.9" for 127.0.0.1 at 2015-06-22 23:54:43 +0600
+Processing by ProfilesController#index as 
+  [1m[36m (0.7ms)[0m  [1mSELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9[0m
+  [1m[35m (0.6ms)[0m  SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."followable_type" = 'User' AND "follows"."followable_id" = 9
+  [1m[36m (0.6ms)[0m  [1mSELECT "follows"."followable_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'User'[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "follows"  WHERE "follows"."followable_type" = 'User' AND "follows"."followable_id" = 9
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'User'[0m
+  [1m[35m (0.6ms)[0m  SELECT "follows"."followable_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'Tale'
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'Tale'[0m
+  [1m[35mTale Load (0.5ms)[0m  SELECT "tales".* FROM "tales"  WHERE "tales"."user_id" = 9  ORDER BY "tales"."updated_at" ASC
+  [1m[36mTale Load (0.5ms)[0m  [1mSELECT "tales".* FROM "tales"  WHERE "tales"."user_id" = 9 AND "tales"."private_flag" = 0  ORDER BY "tales"."updated_at" ASC[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "tales"  WHERE "tales"."user_id" = 9
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mJournal Load (0.5ms)[0m  SELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4
+  Rendered tales/_navbar.html.erb (5.0ms)
+  [1m[36mIdentity Load (0.6ms)[0m  [1mSELECT "identities".* FROM "identities"  WHERE "identities"."user_id" = 9 AND "identities"."provider" = 'facebook'[0m
+  Rendered profiles/_bio.html.erb (0.5ms)
+  Rendered profiles/_follow_button.html.erb (0.4ms)
+  Rendered profiles/_follow_track.html.erb (0.5ms)
+  Rendered profiles/_story_by.html.erb (0.6ms)
+  Rendered profiles/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 67ms (Views: 45.8ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/bios/" for 127.0.0.1 at 2015-06-22 23:54:43 +0600
+Processing by BiosController#index as JSON
+  Parameters: {"bio"=>{}}
+  [1m[35mBio Load (0.5ms)[0m  SELECT "bios".* FROM "bios"
+  Rendered bios/index.json.jbuilder (3.1ms)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/tales/new" for 127.0.0.1 at 2015-06-22 23:59:17 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TalesController#new as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mJournal Load (0.8ms)[0m  [1mSELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4[0m
+  Rendered tales/_navbar.html.erb (11.5ms)
+  Rendered tales/_form.html.erb (52.6ms)
+  Rendered tales/new.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 566ms (Views: 440.8ms | ActiveRecord: 18.1ms)
+
+
+Started GET "/assets/sprockets-octicons.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/_footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/_general.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/activities.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/auhentication.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/_storytemplate.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/default.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/editor.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/feedback.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/footer.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/generalcss.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/jquery.modal.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/landingpage.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/new_tale.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/notification.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/plotphotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:18 +0600
+
+
+Started GET "/assets/preloader.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/preloader2.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/sharings.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/talephotos.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/the_team.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/who_we_are.css?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery-fileupload/vendor/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery-fileupload/basic.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/activities.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/classie.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/grayscale.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery.modal.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery.modal.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery.scroll_to.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/jquery.snapscroll.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/plotphotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/readmore.min.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/sharings.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/talephotos.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/tales/new" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+Processing by TalesController#new as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mJournal Load (0.7ms)[0m  [1mSELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4[0m
+  Rendered tales/_navbar.html.erb (21.2ms)
+  Rendered tales/_form.html.erb (31.2ms)
+  Rendered tales/new.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 63ms (Views: 56.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=EAPE" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=EAPE" for 127.0.0.1 at 2015-06-22 23:59:19 +0600
+
+
+Started GET "/assets/ckeditor/styles.js?t=EAPE" for 127.0.0.1 at 2015-06-22 23:59:20 +0600
+
+
+Started GET "/assets/ckeditor/contents.css?t=EAPE" for 127.0.0.1 at 2015-06-22 23:59:20 +0600
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-06-22 23:59:20 +0600
+
+
+Started POST "/tales/" for 127.0.0.1 at 2015-06-22 23:59:23 +0600
+Processing by TalesController#create as JSON
+  Parameters: {"title"=>"M", "user_id"=>"9", "private_flag"=>1, "tale"=>{"title"=>"M", "user_id"=>"9", "private_flag"=>1}}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (1.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  INSERT INTO "tales" ("created_at", "private_flag", "title", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2015-06-22 17:59:23.800807"], ["private_flag", 1], ["title", "M"], ["updated_at", "2015-06-22 17:59:23.800807"], ["user_id", 9]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+heelo Nishat Raihana
+  [1m[35m (1.5ms)[0m  SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."followable_type" = 'User' AND "follows"."followable_id" = 9
+  Rendered tales/show.json.jbuilder (1.3ms)
+  [1m[36mTale Load (0.7ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (2.7ms)[0m  SELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "likes"."liker_id" FROM "likes"  WHERE "likes"."liker_type" = 'User' AND "likes"."likeable_type" = 'Tale' AND "likes"."likeable_id" = 343)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."followable_type" = 'Tale' AND "follows"."followable_id" = 343)
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "plots"  WHERE "plots"."tale_id" = 343[0m
+  [1m[35m (2.1ms)[0m  SELECT COUNT(*) FROM "follows"  WHERE "follows"."followable_type" = 'Tale' AND (created_at > '2015-06-19 17:59:23.868462')
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "likes"  WHERE "likes"."likeable_type" = 'Tale' AND (created_at > '2015-06-19 17:59:23.873561')[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "plots"  WHERE "plots"."tale_id" = 343 AND (created_at > '2015-06-19 17:59:23.875883')
+  [1m[36mTale Load (0.5ms)[0m  [1mSELECT "tales".* FROM "tales"  WHERE "tales"."id" = 343[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "tales" SET "trending_factor" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["trending_factor", 0], ["updated_at", "2015-06-22 17:59:23.880558"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Completed 201 Created in 95ms (Views: 7.2ms | ActiveRecord: 32.1ms)
+
+
+Started PUT "/tales/0" for 127.0.0.1 at 2015-06-22 23:59:23 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"M", "id"=>"0", "tale"=>{"title"=>"M"}}
+  [1m[36mTale Load (2.0ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 8ms
+
+ActiveRecord::RecordNotFound - Couldn't find Tale with 'id'=0:
+  activerecord (4.1.5) lib/active_record/relation/finder_methods.rb:320:in `raise_record_not_found_exception!'
+  activerecord (4.1.5) lib/active_record/relation/finder_methods.rb:420:in `find_one'
+  activerecord (4.1.5) lib/active_record/relation/finder_methods.rb:404:in `find_with_ids'
+  activerecord (4.1.5) lib/active_record/relation/finder_methods.rb:68:in `find'
+  activerecord (4.1.5) lib/active_record/querying.rb:3:in `find'
+  app/controllers/tales_controller.rb:274:in `set_tale'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:424:in `block in make_lambda'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:143:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:143:in `block in halting_and_conditional'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.5) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.5) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.5) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.5) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.5) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.2.2) lib/omniauth/strategy.rb:164:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/rack/agent_hooks.rb:30:in `traced_call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/rack/browser_monitoring.rb:23:in `traced_call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/rack/developer_mode.rb:56:in `traced_call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  activerecord (4.1.5) lib/active_record/query_cache.rb:36:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  activerecord (4.1.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  activerecord (4.1.5) lib/active_record/migration.rb:380:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.5) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.0.0) lib/better_errors/middleware.rb:57:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  railties (4.1.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.5) lib/rails/rack/logger.rb:20:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  activesupport (4.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  actionpack (4.1.5) lib/action_dispatch/middleware/static.rb:64:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  railties (4.1.5) lib/rails/engine.rb:514:in `call'
+  railties (4.1.5) lib/rails/application.rb:144:in `call'
+  newrelic_rpm (3.11.1.284) lib/new_relic/agent/instrumentation/middleware_tracing.rb:67:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rahmanmdrezaur/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/rahmanmdrezaur/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/rahmanmdrezaur/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:24 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My ", "id"=>"343", "tale"=>{"title"=>"My "}}
+  [1m[35mTale Load (0.5ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["title", "My "], ["updated_at", "2015-06-22 17:59:24.066778"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 204 No Content in 15ms (ActiveRecord: 2.9ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:24 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My ", "id"=>"343", "tale"=>{"title"=>"My "}}
+  [1m[36mTale Load (1.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (2.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Completed 204 No Content in 21ms (ActiveRecord: 5.2ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:24 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My f", "id"=>"343", "tale"=>{"title"=>"My f"}}
+  [1m[36mTale Load (0.6ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["title", "My f"], ["updated_at", "2015-06-22 17:59:24.640402"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 17ms (ActiveRecord: 4.8ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:24 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My fa", "id"=>"343", "tale"=>{"title"=>"My fa"}}
+  [1m[35mTale Load (0.5ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["title", "My fa"], ["updated_at", "2015-06-22 17:59:24.786220"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 204 No Content in 15ms (ActiveRecord: 3.0ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:24 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My fav", "id"=>"343", "tale"=>{"title"=>"My fav"}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["title", "My fav"], ["updated_at", "2015-06-22 17:59:24.896872"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 16ms (ActiveRecord: 4.6ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:25 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favo", "id"=>"343", "tale"=>{"title"=>"My favo"}}
+  [1m[35mTale Load (0.7ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["title", "My favo"], ["updated_at", "2015-06-22 17:59:25.212153"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 204 No Content in 42ms (ActiveRecord: 3.6ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:25 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favor", "id"=>"343", "tale"=>{"title"=>"My favor"}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["title", "My favor"], ["updated_at", "2015-06-22 17:59:25.388008"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 17ms (ActiveRecord: 5.0ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:25 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favori", "id"=>"343", "tale"=>{"title"=>"My favori"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["title", "My favori"], ["updated_at", "2015-06-22 17:59:25.574878"]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 15ms (ActiveRecord: 4.4ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:25 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favorit", "id"=>"343", "tale"=>{"title"=>"My favorit"}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["title", "My favorit"], ["updated_at", "2015-06-22 17:59:25.779099"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 16ms (ActiveRecord: 4.4ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:25 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favorite", "id"=>"343", "tale"=>{"title"=>"My favorite"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["title", "My favorite"], ["updated_at", "2015-06-22 17:59:25.893401"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 204 No Content in 13ms (ActiveRecord: 2.8ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:26 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favorite ", "id"=>"343", "tale"=>{"title"=>"My favorite "}}
+  [1m[36mTale Load (0.6ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["title", "My favorite "], ["updated_at", "2015-06-22 17:59:26.060961"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 15ms (ActiveRecord: 3.1ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:26 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favorite O", "id"=>"343", "tale"=>{"title"=>"My favorite O"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["title", "My favorite O"], ["updated_at", "2015-06-22 17:59:26.299968"]]
+  [1m[35m (2.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 15ms (ActiveRecord: 4.4ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:26 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favorite OS", "id"=>"343", "tale"=>{"title"=>"My favorite OS"}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["title", "My favorite OS"], ["updated_at", "2015-06-22 17:59:26.479301"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 15ms (ActiveRecord: 4.2ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:26 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favorite OS", "id"=>"343", "tale"=>{"title"=>"My favorite OS"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 10ms (ActiveRecord: 2.0ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:27 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"title"=>"My favorite OSs", "id"=>"343", "tale"=>{"title"=>"My favorite OSs"}}
+  [1m[35mTale Load (0.6ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "tales" SET "title" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["title", "My favorite OSs"], ["updated_at", "2015-06-22 17:59:27.101606"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 204 No Content in 17ms (ActiveRecord: 3.6ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:33 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"T", "id"=>"343", "tale"=>{"subheading"=>"T"}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "T"], ["updated_at", "2015-06-22 17:59:33.493239"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 14ms (ActiveRecord: 4.7ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:33 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"T", "id"=>"343", "tale"=>{"subheading"=>"T"}}
+  [1m[35mTale Load (0.5ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 13ms (ActiveRecord: 2.2ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:33 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"Th", "id"=>"343", "tale"=>{"subheading"=>"Th"}}
+  [1m[35mTale Load (0.5ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "Th"], ["updated_at", "2015-06-22 17:59:33.685487"]]
+  [1m[35m (2.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 16ms (ActiveRecord: 4.7ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:33 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The ", "id"=>"343", "tale"=>{"subheading"=>"The "}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "The "], ["updated_at", "2015-06-22 17:59:33.797053"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 12ms (ActiveRecord: 3.1ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:33 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The ", "id"=>"343", "tale"=>{"subheading"=>"The "}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 11ms (ActiveRecord: 2.2ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:34 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The O", "id"=>"343", "tale"=>{"subheading"=>"The O"}}
+  [1m[35mTale Load (0.5ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "The O"], ["updated_at", "2015-06-22 17:59:34.554147"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 204 No Content in 15ms (ActiveRecord: 3.2ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:34 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS ", "id"=>"343", "tale"=>{"subheading"=>"The OS "}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "The OS "], ["updated_at", "2015-06-22 17:59:34.652066"]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 19ms (ActiveRecord: 5.1ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:34 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS ", "id"=>"343", "tale"=>{"subheading"=>"The OS "}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 11ms (ActiveRecord: 2.1ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:34 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS ", "id"=>"343", "tale"=>{"subheading"=>"The OS "}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 11ms (ActiveRecord: 2.0ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:49 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I ", "id"=>"343", "tale"=>{"subheading"=>"The OS I "}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "The OS I "], ["updated_at", "2015-06-22 17:59:49.147167"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 13ms (ActiveRecord: 2.8ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:49 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I ", "id"=>"343", "tale"=>{"subheading"=>"The OS I "}}
+  [1m[36mTale Load (1.8ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 204 No Content in 17ms (ActiveRecord: 4.1ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:49 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I ", "id"=>"343", "tale"=>{"subheading"=>"The OS I "}}
+  [1m[36mTale Load (0.9ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 16ms (ActiveRecord: 3.7ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:49 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I l", "id"=>"343", "tale"=>{"subheading"=>"The OS I l"}}
+  [1m[36mTale Load (0.5ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "The OS I l"], ["updated_at", "2015-06-22 17:59:49.432839"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 16ms (ActiveRecord: 3.3ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:49 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I lo", "id"=>"343", "tale"=>{"subheading"=>"The OS I lo"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "The OS I lo"], ["updated_at", "2015-06-22 17:59:49.600171"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 204 No Content in 15ms (ActiveRecord: 3.2ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:49 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I love", "id"=>"343", "tale"=>{"subheading"=>"The OS I love"}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "The OS I love"], ["updated_at", "2015-06-22 17:59:49.813586"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 11ms (ActiveRecord: 2.6ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:49 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I love", "id"=>"343", "tale"=>{"subheading"=>"The OS I love"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 10ms (ActiveRecord: 2.0ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:50 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "The OS I loved"], ["updated_at", "2015-06-22 17:59:50.186618"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 15ms (ActiveRecord: 3.3ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:50 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved ", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved "}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "The OS I loved "], ["updated_at", "2015-06-22 17:59:50.313125"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 12ms (ActiveRecord: 2.7ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:50 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved a", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved a"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "The OS I loved a"], ["updated_at", "2015-06-22 17:59:50.792814"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 204 No Content in 13ms (ActiveRecord: 3.1ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:51 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved al", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved al"}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "The OS I loved al"], ["updated_at", "2015-06-22 17:59:51.084289"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 11ms (ActiveRecord: 2.6ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:51 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved all ", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved all "}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "The OS I loved all "], ["updated_at", "2015-06-22 17:59:51.277247"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 14ms (ActiveRecord: 2.8ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:51 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved all ", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved all "}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 12ms (ActiveRecord: 2.4ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:52 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved all t", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved all t"}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "The OS I loved all t"], ["updated_at", "2015-06-22 17:59:52.406622"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 12ms (ActiveRecord: 2.6ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:52 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved all th", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved all th"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "The OS I loved all th"], ["updated_at", "2015-06-22 17:59:52.614903"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 204 No Content in 12ms (ActiveRecord: 2.9ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:52 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved all the ", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved all the "}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "The OS I loved all the "], ["updated_at", "2015-06-22 17:59:52.784694"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 13ms (ActiveRecord: 3.0ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:52 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved all the ", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved all the "}}
+  [1m[35mTale Load (0.5ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 11ms (ActiveRecord: 2.1ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:52 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved all the w", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved all the w"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "The OS I loved all the w"], ["updated_at", "2015-06-22 17:59:52.964188"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Completed 204 No Content in 13ms (ActiveRecord: 2.9ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:53 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved all the wa", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved all the wa"}}
+  [1m[36mTale Load (0.4ms)[0m  [1mSELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1[0m  [["id", 343]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["subheading", "The OS I loved all the wa"], ["updated_at", "2015-06-22 17:59:53.131480"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Completed 204 No Content in 11ms (ActiveRecord: 2.7ms)
+
+
+Started PUT "/tales/343" for 127.0.0.1 at 2015-06-22 23:59:53 +0600
+Processing by TalesController#update as JSON
+  Parameters: {"subheading"=>"The OS I loved all the way", "id"=>"343", "tale"=>{"subheading"=>"The OS I loved all the way"}}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "tales" SET "subheading" = $1, "updated_at" = $2 WHERE "tales"."id" = 343[0m  [["subheading", "The OS I loved all the way"], ["updated_at", "2015-06-22 17:59:53.283606"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 204 No Content in 12ms (ActiveRecord: 2.8ms)
+
+
+Started POST "/plots/" for 127.0.0.1 at 2015-06-22 23:59:58 +0600
+Processing by PlotsController#create as JSON
+  Parameters: {"tale_id"=>343, "description"=>"<p>Regardi</p>\n", "plot"=>{"tale_id"=>343, "description"=>"<p>Regardi</p>\n"}}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "plots" ("created_at", "description", "tale_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-06-22 17:59:58.626305"], ["description", "<p>Regardi</p>\n"], ["tale_id", 343], ["updated_at", "2015-06-22 17:59:58.626305"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "plots" SET "updated_at" = $1, "user_id" = $2 WHERE "plots"."id" = 605  [["updated_at", "2015-06-22 17:59:58.632264"], ["user_id", 9]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  SELECT "tales"."user_id" FROM "tales"  WHERE "tales"."id" = 343
+  [1m[36m (1.4ms)[0m  [1mSELECT "sharings"."email" FROM "sharings"  WHERE "sharings"."tale_id" = 343[0m
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "likes"."liker_id" FROM "likes"  WHERE "likes"."liker_type" = 'User' AND "likes"."likeable_type" = 'Tale' AND "likes"."likeable_id" = 343)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."followable_type" = 'Tale' AND "follows"."followable_id" = 343)[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "plots"  WHERE "plots"."tale_id" = 343
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "follows"  WHERE "follows"."followable_type" = 'Tale' AND (created_at > '2015-06-19 17:59:58.660193')[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "likes"  WHERE "likes"."likeable_type" = 'Tale' AND (created_at > '2015-06-19 17:59:58.662269')
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "plots"  WHERE "plots"."tale_id" = 343 AND (created_at > '2015-06-19 17:59:58.664238')[0m
+0
+0
+1
+3
+  [1m[35mTale Load (0.5ms)[0m  SELECT "tales".* FROM "tales"  WHERE "tales"."id" = 343
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "tales" SET "trending_factor" = $1, "updated_at" = $2 WHERE "tales"."id" = 343  [["trending_factor", 3], ["updated_at", "2015-06-22 17:59:58.669242"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 51ms (Views: 0.4ms | ActiveRecord: 16.7ms)
+
+
+Started PUT "/plots/605" for 127.0.0.1 at 2015-06-23 00:00:01 +0600
+Processing by PlotsController#update as JSON
+  Parameters: {"description"=>"<p>Regarding linux,&nbsp;</p>\n", "id"=>"605", "plot"=>{"description"=>"<p>Regarding linux,&nbsp;</p>\n"}}
+  [1m[35mPlot Load (0.6ms)[0m  SELECT  "plots".* FROM "plots"  WHERE "plots"."id" = $1  ORDER BY tale_id DESC LIMIT 1  [["id", 605]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "plots" SET "description" = $1, "updated_at" = $2 WHERE "plots"."id" = 605[0m  [["description", "<p>Regarding linux,&nbsp;</p>\n"], ["updated_at", "2015-06-22 18:00:01.625837"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 2.3ms)
+
+
+Started PUT "/plots/605" for 127.0.0.1 at 2015-06-23 00:00:04 +0600
+Processing by PlotsController#update as JSON
+  Parameters: {"description"=>"<p>Regarding linux, OSX and Wo</p>\n", "id"=>"605", "plot"=>{"description"=>"<p>Regarding linux, OSX and Wo</p>\n"}}
+  [1m[36mPlot Load (0.7ms)[0m  [1mSELECT  "plots".* FROM "plots"  WHERE "plots"."id" = $1  ORDER BY tale_id DESC LIMIT 1[0m  [["id", 605]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "plots" SET "description" = $1, "updated_at" = $2 WHERE "plots"."id" = 605  [["description", "<p>Regarding linux, OSX and Wo</p>\n"], ["updated_at", "2015-06-22 18:00:04.633379"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 4.4ms)
+
+
+Started PUT "/plots/605" for 127.0.0.1 at 2015-06-23 00:00:07 +0600
+Processing by PlotsController#update as JSON
+  Parameters: {"description"=>"<p>Regarding linux, OSX and Windows!</p>\n", "id"=>"605", "plot"=>{"description"=>"<p>Regarding linux, OSX and Windows!</p>\n"}}
+  [1m[35mPlot Load (0.7ms)[0m  SELECT  "plots".* FROM "plots"  WHERE "plots"."id" = $1  ORDER BY tale_id DESC LIMIT 1  [["id", 605]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "plots" SET "description" = $1, "updated_at" = $2 WHERE "plots"."id" = 605[0m  [["description", "<p>Regarding linux, OSX and Windows!</p>\n"], ["updated_at", "2015-06-22 18:00:07.629974"]]
+  [1m[35m (2.1ms)[0m  COMMIT
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/profiles/index.9" for 127.0.0.1 at 2015-06-23 00:00:10 +0600
+Processing by ProfilesController#index as 
+  [1m[36m (0.7ms)[0m  [1mSELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9[0m
+  [1m[35m (0.6ms)[0m  SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."followable_type" = 'User' AND "follows"."followable_id" = 9
+  [1m[36m (0.6ms)[0m  [1mSELECT "follows"."followable_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'User'[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "follows"  WHERE "follows"."followable_type" = 'User' AND "follows"."followable_id" = 9
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'User'[0m
+  [1m[35m (0.5ms)[0m  SELECT "follows"."followable_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'Tale'
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."follower_id" = 9 AND "follows"."followable_type" = 'Tale'[0m
+  [1m[35mTale Load (1.8ms)[0m  SELECT "tales".* FROM "tales"  WHERE "tales"."user_id" = 9  ORDER BY "tales"."updated_at" ASC
+  [1m[36mTale Load (0.7ms)[0m  [1mSELECT "tales".* FROM "tales"  WHERE "tales"."user_id" = 9 AND "tales"."private_flag" = 0  ORDER BY "tales"."updated_at" ASC[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "tales"  WHERE "tales"."user_id" = 9
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mJournal Load (0.6ms)[0m  SELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4
+  Rendered tales/_navbar.html.erb (7.0ms)
+  [1m[36mIdentity Load (0.7ms)[0m  [1mSELECT "identities".* FROM "identities"  WHERE "identities"."user_id" = 9 AND "identities"."provider" = 'facebook'[0m
+  Rendered profiles/_bio.html.erb (2.8ms)
+  Rendered profiles/_follow_button.html.erb (1.5ms)
+  Rendered profiles/_follow_track.html.erb (1.8ms)
+  [1m[35mTalephoto Load (0.7ms)[0m  SELECT "talephotos".* FROM "talephotos"  WHERE "talephotos"."tale_id" = 343
+  Rendered profiles/_story_by.html.erb (13.8ms)
+  Rendered profiles/index.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 116ms (Views: 86.7ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont.woff" for 127.0.0.1 at 2015-06-23 00:00:10 +0600
+
+
+Started GET "/bios/" for 127.0.0.1 at 2015-06-23 00:00:10 +0600
+Processing by BiosController#index as JSON
+  Parameters: {"bio"=>{}}
+  [1m[36mBio Load (0.7ms)[0m  [1mSELECT "bios".* FROM "bios"[0m
+  Rendered bios/index.json.jbuilder (7.1ms)
+Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/tales/343" for 127.0.0.1 at 2015-06-23 00:00:11 +0600
+Processing by TalesController#show as HTML
+  Parameters: {"id"=>"343"}
+  [1m[35mTale Load (0.6ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36m (0.7ms)[0m  [1mSELECT plots.user_id FROM "tales" INNER JOIN "plots" ON "plots"."tale_id" = "tales"."id" WHERE (plots.tale_id =343)[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT "tales"."user_id" FROM "tales"  WHERE "tales"."id" = 343[0m
+  [1m[35mTale Load (0.3ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."followable_type" = 'Tale' AND "follows"."followable_id" = 343)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "likes"."liker_id" FROM "likes"  WHERE "likes"."liker_type" = 'User' AND "likes"."likeable_type" = 'Tale' AND "likes"."likeable_id" = 343)[0m
+  [1m[35m (0.5ms)[0m  SELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9
+  [1m[36m (0.6ms)[0m  [1mSELECT "tales"."title" FROM "tales"  WHERE "tales"."id" = 343[0m
+  [1m[35m (0.7ms)[0m  SELECT "tales"."subheading" FROM "tales"  WHERE "tales"."id" = 343
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTalephoto Load (0.6ms)[0m  SELECT "talephotos".* FROM "talephotos"  WHERE "talephotos"."tale_id" = 343
+  [1m[36mJournal Load (0.6ms)[0m  [1mSELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4[0m
+  Rendered tales/_navbar.html.erb (4.8ms)
+  Rendered tales/_cover_photo.html.erb (2.7ms)
+  [1m[35m (0.6ms)[0m  SELECT "plots"."user_id" FROM "plots"  WHERE "plots"."tale_id" = 343  ORDER BY tale_id DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9[0m
+  Rendered tales/_header.html.erb (4.6ms)
+  Rendered tales/_publish.html.erb (1.1ms)
+  Rendered tales/_story_share.html.erb (4.4ms)
+  [1m[35mPlot Load (0.6ms)[0m  SELECT "plots".* FROM "plots"  WHERE "plots"."tale_id" = 343  ORDER BY tale_id DESC, "plots"."id" ASC
+  [1m[36mPlotphoto Load (0.9ms)[0m  [1mSELECT "plotphotos".* FROM "plotphotos"  WHERE "plotphotos"."plot_id" = 605  ORDER BY "plotphotos"."created_at" ASC[0m
+  Rendered tales/_plot_update.html.erb (23.0ms)
+  Rendered tales/_add_files.html.erb (1.9ms)
+  Rendered tales/_add_more.html.erb (4.5ms)
+  Rendered tales/show.html.erb within layouts/application (55.1ms)
+Completed 200 OK in 116ms (Views: 73.3ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/tales/343" for 127.0.0.1 at 2015-06-23 00:00:11 +0600
+Processing by TalesController#show as HTML
+  Parameters: {"id"=>"343"}
+  [1m[35mTale Load (2.9ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36m (0.9ms)[0m  [1mSELECT plots.user_id FROM "tales" INNER JOIN "plots" ON "plots"."tale_id" = "tales"."id" WHERE (plots.tale_id =343)[0m
+  [1m[35mUser Load (6.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT "tales"."user_id" FROM "tales"  WHERE "tales"."id" = 343[0m
+  [1m[35mTale Load (0.5ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."followable_type" = 'Tale' AND "follows"."followable_id" = 343)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "likes"."liker_id" FROM "likes"  WHERE "likes"."liker_type" = 'User' AND "likes"."likeable_type" = 'Tale' AND "likes"."likeable_id" = 343)[0m
+  [1m[35m (0.7ms)[0m  SELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9
+  [1m[36m (0.7ms)[0m  [1mSELECT "tales"."title" FROM "tales"  WHERE "tales"."id" = 343[0m
+  [1m[35m (0.5ms)[0m  SELECT "tales"."subheading" FROM "tales"  WHERE "tales"."id" = 343
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTalephoto Load (0.6ms)[0m  SELECT "talephotos".* FROM "talephotos"  WHERE "talephotos"."tale_id" = 343
+  [1m[36mJournal Load (0.7ms)[0m  [1mSELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4[0m
+  Rendered tales/_navbar.html.erb (4.5ms)
+  Rendered tales/_cover_photo.html.erb (4.9ms)
+  [1m[35m (0.6ms)[0m  SELECT "plots"."user_id" FROM "plots"  WHERE "plots"."tale_id" = 343  ORDER BY tale_id DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9[0m
+  Rendered tales/_header.html.erb (71.5ms)
+  Rendered tales/_publish.html.erb (1.1ms)
+  Rendered tales/_story_share.html.erb (4.9ms)
+  [1m[35mPlot Load (0.8ms)[0m  SELECT "plots".* FROM "plots"  WHERE "plots"."tale_id" = 343  ORDER BY tale_id DESC, "plots"."id" ASC
+  [1m[36mPlotphoto Load (0.7ms)[0m  [1mSELECT "plotphotos".* FROM "plotphotos"  WHERE "plotphotos"."plot_id" = 605  ORDER BY "plotphotos"."created_at" ASC[0m
+  Rendered tales/_plot_update.html.erb (13.4ms)
+  Rendered tales/_add_files.html.erb (2.8ms)
+  Rendered tales/_add_more.html.erb (6.2ms)
+  Rendered tales/show.html.erb within layouts/application (117.3ms)
+Completed 200 OK in 190ms (Views: 142.6ms | ActiveRecord: 19.4ms)
+
+
+Started POST "/plotphotos" for 127.0.0.1 at 2015-06-23 00:00:26 +0600
+Processing by PlotphotosController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UiByWIcvf+r7q9VwX03onTn0ldfVvGHcE8MeoFiGoSk=", "plotphoto"=>{"plot_id"=>"605", "image"=>#<ActionDispatch::Http::UploadedFile:0x007fae401ed020 @tempfile=#<Tempfile:/var/folders/f4/n4rw7nw92ks_kcglsmyl7mmm0000gn/T/RackMultipart20150623-6494-mtat9l>, @original_filename="Photo on 5-27-15 at 8.51 PM.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"plotphoto[image]\"; filename=\"Photo on 5-27-15 at 8.51 PM.jpg\"\r\nContent-Type: image/jpeg\r\n">}}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "plotphotos" ("created_at", "image", "plot_id", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2015-06-22 18:00:27.350787"], ["image", "Photo_on_5-27-15_at_8.51_PM.jpg"], ["plot_id", 605], ["updated_at", "2015-06-22 18:00:27.350787"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/plotphotos/279
+Completed 302 Found in 504ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/plotphotos/279" for 127.0.0.1 at 2015-06-23 00:00:27 +0600
+Processing by PlotphotosController#show as */*
+  Parameters: {"id"=>"279"}
+  [1m[36mPlotphoto Load (0.6ms)[0m  [1mSELECT  "plotphotos".* FROM "plotphotos"  WHERE "plotphotos"."id" = $1 LIMIT 1[0m  [["id", 279]]
+  Rendered plotphotos/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 68ms (Views: 58.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tales/343" for 127.0.0.1 at 2015-06-23 00:00:33 +0600
+Processing by TalesController#show as HTML
+  Parameters: {"id"=>"343"}
+  [1m[35mTale Load (0.8ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36m (2.6ms)[0m  [1mSELECT plots.user_id FROM "tales" INNER JOIN "plots" ON "plots"."tale_id" = "tales"."id" WHERE (plots.tale_id =343)[0m
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT "tales"."user_id" FROM "tales"  WHERE "tales"."id" = 343[0m
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."followable_type" = 'Tale' AND "follows"."followable_id" = 343)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "likes"."liker_id" FROM "likes"  WHERE "likes"."liker_type" = 'User' AND "likes"."likeable_type" = 'Tale' AND "likes"."likeable_id" = 343)[0m
+  [1m[35m (0.8ms)[0m  SELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9
+  [1m[36m (0.7ms)[0m  [1mSELECT "tales"."title" FROM "tales"  WHERE "tales"."id" = 343[0m
+  [1m[35m (2.1ms)[0m  SELECT "tales"."subheading" FROM "tales"  WHERE "tales"."id" = 343
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTalephoto Load (0.6ms)[0m  SELECT "talephotos".* FROM "talephotos"  WHERE "talephotos"."tale_id" = 343
+  [1m[36mJournal Load (0.7ms)[0m  [1mSELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4[0m
+  Rendered tales/_navbar.html.erb (4.9ms)
+  Rendered tales/_cover_photo.html.erb (3.1ms)
+  [1m[35m (0.6ms)[0m  SELECT "plots"."user_id" FROM "plots"  WHERE "plots"."tale_id" = 343  ORDER BY tale_id DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9[0m
+  Rendered tales/_header.html.erb (4.0ms)
+  Rendered tales/_publish.html.erb (0.7ms)
+  Rendered tales/_story_share.html.erb (2.9ms)
+  [1m[35mPlot Load (0.6ms)[0m  SELECT "plots".* FROM "plots"  WHERE "plots"."tale_id" = 343  ORDER BY tale_id DESC, "plots"."id" ASC
+  [1m[36mPlotphoto Load (0.6ms)[0m  [1mSELECT "plotphotos".* FROM "plotphotos"  WHERE "plotphotos"."plot_id" = 605  ORDER BY "plotphotos"."created_at" ASC[0m
+  Rendered tales/_plot_update.html.erb (8.6ms)
+  Rendered tales/_add_files.html.erb (2.0ms)
+  Rendered tales/_add_more.html.erb (4.2ms)
+  Rendered tales/show.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 134ms (Views: 74.1ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/assets/sprockets-octicons.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/activities.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/auhentication.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/_storytemplate.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/_footer.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/_general.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/component.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/default.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/editor.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/feedback.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/footer.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/generalcss.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/jquery.modal.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/landingpage.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/navbar.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/new_tale.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/normalize.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/notification.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/plotphotos.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/preloader.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/preloader2.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/profiles.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/sharings.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/talephotos.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/the_team.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/who_we_are.css?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/jquery-fileupload/vendor/jquery.ui.widget.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.iframe-transport.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/jquery-fileupload/jquery.fileupload.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/jquery-fileupload/basic.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:34 +0600
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/activities.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/ckeditor/config.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/grayscale.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/classie.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/jquery.hotkeys.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/jquery.modal.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/jquery.modal.min.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/jquery.scroll_to.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/jquery.snapscroll.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/modernizr.custom.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/omniauth_callbacks.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/plotphotos.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/profiles.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/readmore.min.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/sharings.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/talephotos.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/logo.png" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/tales/343" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+Processing by TalesController#show as HTML
+  Parameters: {"id"=>"343"}
+  [1m[35mTale Load (0.4ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36m (0.8ms)[0m  [1mSELECT plots.user_id FROM "tales" INNER JOIN "plots" ON "plots"."tale_id" = "tales"."id" WHERE (plots.tale_id =343)[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT "tales"."user_id" FROM "tales"  WHERE "tales"."id" = 343[0m
+  [1m[35mTale Load (0.3ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "follows"."follower_id" FROM "follows"  WHERE "follows"."follower_type" = 'User' AND "follows"."followable_type" = 'Tale' AND "follows"."followable_id" = 343)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "tales".* FROM "tales"  WHERE "tales"."id" = $1 LIMIT 1  [["id", 343]]
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"  WHERE "users"."id" IN (SELECT "likes"."liker_id" FROM "likes"  WHERE "likes"."liker_type" = 'User' AND "likes"."likeable_type" = 'Tale' AND "likes"."likeable_id" = 343)[0m
+  [1m[35m (0.6ms)[0m  SELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9
+  [1m[36m (0.9ms)[0m  [1mSELECT "tales"."title" FROM "tales"  WHERE "tales"."id" = 343[0m
+  [1m[35m (0.5ms)[0m  SELECT "tales"."subheading" FROM "tales"  WHERE "tales"."id" = 343
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 9  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mTalephoto Load (0.5ms)[0m  SELECT "talephotos".* FROM "talephotos"  WHERE "talephotos"."tale_id" = 343
+  [1m[36mJournal Load (0.5ms)[0m  [1mSELECT  "journals".* FROM "journals"  WHERE "journals"."notification_to" = 9  ORDER BY "journals"."id" DESC LIMIT 4[0m
+  Rendered tales/_navbar.html.erb (3.4ms)
+  Rendered tales/_cover_photo.html.erb (1.4ms)
+  [1m[35m (0.6ms)[0m  SELECT "plots"."user_id" FROM "plots"  WHERE "plots"."tale_id" = 343  ORDER BY tale_id DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users"."firstname" FROM "users"  WHERE "users"."id" = 9[0m
+  Rendered tales/_header.html.erb (3.5ms)
+  Rendered tales/_publish.html.erb (0.4ms)
+  Rendered tales/_story_share.html.erb (1.8ms)
+  [1m[35mPlot Load (0.6ms)[0m  SELECT "plots".* FROM "plots"  WHERE "plots"."tale_id" = 343  ORDER BY tale_id DESC, "plots"."id" ASC
+  [1m[36mPlotphoto Load (0.5ms)[0m  [1mSELECT "plotphotos".* FROM "plotphotos"  WHERE "plotphotos"."plot_id" = 605  ORDER BY "plotphotos"."created_at" ASC[0m
+  Rendered tales/_plot_update.html.erb (5.6ms)
+  Rendered tales/_add_files.html.erb (1.3ms)
+  Rendered tales/_add_more.html.erb (2.6ms)
+  Rendered tales/show.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 79ms (Views: 44.0ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/assets/font-awesome/fontawesome-webfont.woff" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
+
+
+Started GET "/assets/favicon.ico" for 127.0.0.1 at 2015-06-23 00:00:35 +0600
