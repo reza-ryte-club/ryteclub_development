@@ -14,13 +14,13 @@
 
 <div class="authentication-form">
  -->
-   <%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-   <%#= f.email_field :email, placeholder:"Email", autofocus: true, required: true %>
-   <%#= f.password_field :password, placeholder: "Password", autocomplete: "off", required: true %>
+   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+   <%= f.email_field :email, placeholder:"Email", autofocus: true, required: true %>
+   <%= f.password_field :password, placeholder: "Password", autocomplete: "off", required: true %>
    
    
-  <h2> <%#= f.submit 'Log in',  class: 'button'  %></h2>
-   <%# end %>
+  <h2> <%= f.submit 'Log in',  class: 'button'  %></h2>
+   <% end %>
 
 <%#- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
   

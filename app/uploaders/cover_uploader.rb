@@ -8,8 +8,8 @@ class CoverUploader < CarrierWave::Uploader::Base
    include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  #storage :file
-   storage :fog
+  storage :file
+  #storage :fog
 
   #include Sprockets::Helpers::RailsHelper
   #include Sprockets::Helpers::IsolatedHelper
